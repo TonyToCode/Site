@@ -4,12 +4,13 @@ class Logo3D {
         this.container = document.getElementById(containerId);
         this.stlPath = stlPath;
         this.options = {
-            width: options.width || 200,
+            width: options.width || 300,
             height: options.height || 80,
             autoRotate: options.autoRotate !== false,
             color: options.color || 0x005dab, // RSM blue
             metalness: options.metalness || 0.3,
             roughness: options.roughness || 0.4,
+            scale: options.scale || 3, // Increased default scale
             ...options
         };
         
@@ -142,7 +143,7 @@ class Logo3D {
         
         // Scale to fit within desired size
         const maxDimension = Math.max(size.x, size.y, size.z);
-        const scale = 2 / maxDimension; // Adjust this value to change logo size
+        const scale = (this.options.scale || 3) / maxDimension; // Use configurable scale
         this.logo.scale.setScalar(scale);
     }
     
@@ -205,12 +206,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const headerLogo = document.getElementById('header-logo-3d');
     if (headerLogo) {
         new Logo3D('header-logo-3d', './rsm.stl', {
-            width: 200,
-            height: 60,
+            width: 300,
+            height: 80,
             autoRotate: true,
             color: 0x005dab,
             metalness: 0.2,
-            roughness: 0.3
+            roughness: 0.3,
+            scale: 4 // Larger scale for header
         });
     }
     

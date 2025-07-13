@@ -21,7 +21,7 @@
     <header class="bg-white/90 backdrop-blur-md sticky top-0 z-40 border-b border-gray-200 shadow-lg transition-all duration-300">
         <div class="container mx-auto px-6 py-3 flex justify-between items-center">
             <a href="../index.html" class="flex-shrink-0">
-                <div id="header-logo-3d" class="w-[200px] h-[60px]"></div>
+                <div id="header-logo-3d" class="w-[300px] h-[80px]"></div>
             </a>
             <nav class="hidden md:flex space-x-8 items-center">
                 <a href="../index.html#why-rsm" class="text-gray-600 hover:text-rsm-blue transition-colors">Why Competitions?</a>
@@ -261,12 +261,13 @@
             const headerLogo = document.getElementById('header-logo-3d');
             if (headerLogo && typeof Logo3D !== 'undefined') {
                 new Logo3D('header-logo-3d', '../rsm.stl', {
-                    width: 200,
-                    height: 60,
+                    width: 300,
+                    height: 80,
                     autoRotate: true,
                     color: 0x005dab,
                     metalness: 0.2,
-                    roughness: 0.3
+                    roughness: 0.3,
+                    scale: 4
                 });
             }
         });
