@@ -79,7 +79,8 @@ async function createMinifiedAssets() {
   // Minify CSS files
   const cssFiles = [
     'assets/css/styles.css',
-    'assets/css/rsm-official.css'
+    'assets/css/rsm-official.css',
+    'assets/css/premium-design.css'
   ];
   
   for (const file of cssFiles) {
