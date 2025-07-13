@@ -36,30 +36,87 @@
 </head>
 <body class="bg-white text-gray-800">
 
-    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-40 border-b border-gray-200">
-        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
-            <a href="#" class="flex-shrink-0">
-                <div id="header-logo-3d" class="w-[300px] h-[80px]"></div>
-            </a>
-            <nav class="hidden md:flex space-x-8 items-center">
-                <a href="#why-rsm" class="text-gray-600 hover:text-rsm-blue transition-colors">Why Competitions?</a>
-                <a href="#pathway" class="text-gray-600 hover:text-rsm-blue transition-colors">The RSM Pathway</a>
-                <a href="#programs" class="text-gray-600 hover:text-rsm-blue transition-colors">Programs</a>
-                <a href="#coaches" class="text-gray-600 hover:text-rsm-blue transition-colors">Our Team</a>
-                <a href="#contact" class="text-gray-600 hover:text-rsm-blue transition-colors">Contacts</a>
-                <a href="#contact" class="bg-rsm-gold text-rsm-dark-blue font-bold py-2 px-4 rounded-lg shadow-md hover:bg-yellow-500 transition-all">Schedule Assessment</a>
-            </nav>
-            <button id="mobile-menu-button" class="md:hidden">
-                <i data-feather="menu" class="text-rsm-dark-blue"></i>
-            </button>
+    <header class="rsm-header sticky top-0 z-40">
+        <div class="rsm-container">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo Section with SVG -->
+                <a href="#" class="flex items-center space-x-3 group">
+                    <img src="assets/RSM/rsm.svg" alt="RSM Logo" class="h-12 w-auto transition-transform group-hover:scale-105">
+                    <div class="hidden sm:block">
+                        <div class="text-rsm-primary font-bold text-xl">RSM Competition</div>
+                        <div class="text-rsm-small -mt-1">Math Excellence</div>
+                    </div>
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <nav class="hidden lg:flex items-center space-x-1">
+                    <a href="#why-rsm" class="rsm-nav-link group">
+                        <i data-feather="target" class="w-4 h-4 mr-2 group-hover:text-rsm-secondary"></i>
+                        Why Competitions?
+                    </a>
+                    <a href="#pathway" class="rsm-nav-link group">
+                        <i data-feather="trending-up" class="w-4 h-4 mr-2 group-hover:text-rsm-secondary"></i>
+                        The RSM Pathway
+                    </a>
+                    <a href="#programs" class="rsm-nav-link group">
+                        <i data-feather="book-open" class="w-4 h-4 mr-2 group-hover:text-rsm-secondary"></i>
+                        Programs
+                    </a>
+                    <a href="#coaches" class="rsm-nav-link group">
+                        <i data-feather="users" class="w-4 h-4 mr-2 group-hover:text-rsm-secondary"></i>
+                        Our Team
+                    </a>
+                    <a href="#contact" class="rsm-nav-link group">
+                        <i data-feather="mail" class="w-4 h-4 mr-2 group-hover:text-rsm-secondary"></i>
+                        Contact
+                    </a>
+                </nav>
+                
+                <!-- CTA Button -->
+                <div class="hidden md:flex items-center space-x-3">
+                    <a href="#contact" class="btn-primary">
+                        <i data-feather="calendar" class="w-4 h-4 mr-2"></i>
+                        Schedule Assessment
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="lg:hidden p-2 rounded-md hover:bg-rsm-gray-100 transition-colors">
+                    <i data-feather="menu" class="w-6 h-6 text-rsm-primary"></i>
+                </button>
+            </div>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
-             <a href="#why-rsm" class="block py-2 text-gray-600 hover:text-rsm-blue transition-colors">Why Competitions?</a>
-             <a href="#pathway" class="block py-2 text-gray-600 hover:text-rsm-blue transition-colors">The RSM Pathway</a>
-             <a href="#programs" class="block py-2 text-gray-600 hover:text-rsm-blue transition-colors">Programs</a>
-             <a href="#coaches" class="block py-2 text-gray-600 hover:text-rsm-blue transition-colors">Our Team</a>
-             <a href="#contact" class="block py-2 text-gray-600 hover:text-rsm-blue transition-colors">Contacts</a>
-             <a href="#contact" class="block mt-2 text-center bg-rsm-gold text-rsm-dark-blue font-bold py-2 px-4 rounded-lg shadow-md hover:bg-yellow-500 transition-all">Schedule Assessment</a>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden border-t border-rsm-gray-200 bg-white">
+            <div class="rsm-container py-4 space-y-2">
+                <a href="#why-rsm" class="rsm-nav-link mobile flex items-center">
+                    <i data-feather="target" class="w-4 h-4 mr-3"></i>
+                    Why Competitions?
+                </a>
+                <a href="#pathway" class="rsm-nav-link mobile flex items-center">
+                    <i data-feather="trending-up" class="w-4 h-4 mr-3"></i>
+                    The RSM Pathway
+                </a>
+                <a href="#programs" class="rsm-nav-link mobile flex items-center">
+                    <i data-feather="book-open" class="w-4 h-4 mr-3"></i>
+                    Programs
+                </a>
+                <a href="#coaches" class="rsm-nav-link mobile flex items-center">
+                    <i data-feather="users" class="w-4 h-4 mr-3"></i>
+                    Our Team
+                </a>
+                <a href="#contact" class="rsm-nav-link mobile flex items-center">
+                    <i data-feather="mail" class="w-4 h-4 mr-3"></i>
+                    Contact
+                </a>
+                <div class="pt-3 border-t border-rsm-gray-200">
+                    <a href="#contact" class="btn-primary btn-small w-full flex items-center justify-center">
+                        <i data-feather="calendar" class="w-4 h-4 mr-2"></i>
+                        Schedule Assessment
+                    </a>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -73,10 +130,12 @@
                     We transform talented students into confident, resilient problem-solvers who excel in the nation's most prestigious math competitions—and beyond.
                 </p>
                 <div class="mt-10 flex flex-col sm:flex-row justify-center items-center gap-4">
-                    <a href="#contact" class="btn-primary btn-large">
+                    <a href="#contact" class="btn-primary btn-large shadow-xl">
+                        <i data-feather="calendar" class="w-5 h-5 mr-2"></i>
                         Schedule a Free Assessment
                     </a>
-                    <a href="#testimonials" class="btn-secondary btn-large">
+                    <a href="#testimonials" class="bg-white/10 backdrop-blur-sm text-white border-2 border-white/30 hover:bg-white hover:text-rsm-primary font-semibold py-4 px-8 rounded-lg transition-all shadow-lg">
+                        <i data-feather="star" class="w-5 h-5 mr-2 inline"></i>
                         See Our Students' Success Stories ↓
                     </a>
                 </div>
@@ -478,10 +537,75 @@
         </section>
     </main>
 
-    <footer class="bg-rsm-dark-blue text-white">
-        <div class="container mx-auto px-6 py-8 text-center text-blue-200">
-            <p>&copy; 2025 Russian School of Mathematics. All Rights Reserved.</p>
-            <p class="text-sm mt-2">This is a conceptual webpage created for demonstration purposes.</p>
+    <footer class="bg-rsm-primary text-white">
+        <div class="rsm-container py-12">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <!-- Logo and Description -->
+                <div class="md:col-span-2">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <img src="assets/RSM/rsm.svg" alt="RSM Logo" class="h-10 w-auto brightness-0 invert">
+                        <div>
+                            <div class="text-white font-bold text-xl">RSM Competition Program</div>
+                            <div class="text-white/80 text-sm">Excellence in Mathematical Training</div>
+                        </div>
+                    </div>
+                    <p class="text-white/90 mb-4 max-w-md">Transforming talented students into confident, resilient problem-solvers who excel in prestigious math competitions and beyond.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-white/80 hover:text-rsm-secondary transition-colors">
+                            <i data-feather="facebook" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="text-white/80 hover:text-rsm-secondary transition-colors">
+                            <i data-feather="twitter" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="text-white/80 hover:text-rsm-secondary transition-colors">
+                            <i data-feather="linkedin" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="text-white/80 hover:text-rsm-secondary transition-colors">
+                            <i data-feather="youtube" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Quick Links</h4>
+                    <div class="space-y-2">
+                        <a href="#why-rsm" class="block text-white/80 hover:text-rsm-secondary transition-colors text-sm">Why Competitions?</a>
+                        <a href="#pathway" class="block text-white/80 hover:text-rsm-secondary transition-colors text-sm">The RSM Pathway</a>
+                        <a href="#programs" class="block text-white/80 hover:text-rsm-secondary transition-colors text-sm">Programs</a>
+                        <a href="#coaches" class="block text-white/80 hover:text-rsm-secondary transition-colors text-sm">Our Team</a>
+                    </div>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Contact</h4>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex items-center text-white/80">
+                            <i data-feather="mail" class="w-4 h-4 mr-2 flex-shrink-0"></i>
+                            <a href="mailto:online.competition@mathschool.com" class="hover:text-rsm-secondary transition-colors">online.competition@mathschool.com</a>
+                        </div>
+                        <div class="flex items-center text-white/80">
+                            <i data-feather="phone" class="w-4 h-4 mr-2 flex-shrink-0"></i>
+                            <a href="tel:1-800-555-6284" class="hover:text-rsm-secondary transition-colors">1-800-555-6284</a>
+                        </div>
+                        <div class="flex items-center text-white/80">
+                            <i data-feather="map-pin" class="w-4 h-4 mr-2 flex-shrink-0"></i>
+                            <span>Multiple Locations</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bottom Bar -->
+            <div class="border-t border-white/20 pt-6 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-white/80 text-sm">&copy; 2025 Russian School of Mathematics. All Rights Reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-white/80 hover:text-rsm-secondary transition-colors text-sm">Privacy Policy</a>
+                    <a href="#" class="text-white/80 hover:text-rsm-secondary transition-colors text-sm">Terms of Service</a>
+                    <a href="#" class="text-white/80 hover:text-rsm-secondary transition-colors text-sm">Accessibility</a>
+                </div>
+            </div>
         </div>
     </footer>
 

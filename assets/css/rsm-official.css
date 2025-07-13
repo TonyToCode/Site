@@ -36,11 +36,12 @@
 
 /* Official RSM Header Styles */
 .rsm-header {
-    background: white;
+    background: rgba(255, 255, 255, 0.95);
     border-bottom: 1px solid var(--rsm-gray-200);
     box-shadow: var(--rsm-shadow-sm);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    transition: all 0.3s ease;
 }
 
 .rsm-nav-link {
@@ -48,20 +49,46 @@
     text-decoration: none;
     font-weight: 500;
     font-size: var(--rsm-text-sm);
-    padding: var(--rsm-space-2) var(--rsm-space-3);
-    border-radius: var(--rsm-radius);
+    padding: var(--rsm-space-3) var(--rsm-space-4);
+    border-radius: var(--rsm-radius-md);
     transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
 }
 
 .rsm-nav-link:hover {
     color: var(--rsm-primary);
     background-color: var(--rsm-gray-50);
+    transform: translateY(-1px);
+}
+
+.rsm-nav-link:hover .feather {
+    color: var(--rsm-secondary);
 }
 
 .rsm-nav-link.active {
     color: var(--rsm-primary);
     background-color: var(--rsm-gray-100);
     font-weight: 600;
+}
+
+.rsm-nav-link.mobile {
+    width: 100%;
+    padding: var(--rsm-space-3);
+    margin: var(--rsm-space-1) 0;
+    border-radius: var(--rsm-radius-md);
+}
+
+.rsm-nav-link.mobile:hover {
+    background-color: var(--rsm-gray-100);
+    padding-left: var(--rsm-space-4);
+}
+
+/* Enhanced logo hover effect */
+.rsm-header .group:hover img {
+    filter: drop-shadow(0 4px 8px rgba(29, 95, 121, 0.2));
 }
 
 /* Official RSM Section Styles */
