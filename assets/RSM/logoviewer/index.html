@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSM Logo Viewer</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Prevent scrollbars */
+        }
+        #container {
+            width: 100vw; /* Use viewport width */
+            height: 100vh; /* Use viewport height */
+            display: flex; /* Use flexbox for centering */
+            justify-content: center;
+            align-items: center;
+        }
+        #vs_iframe {
+            border: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            display: block; /* Important for removing extra space below iframe */
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <iframe id="vs_iframe" src="https://www.viewstl.com/?embedded&url=https%3A%2F%2Fod.lk%2Fd%2FNTlfOTc2NjI5Mzdf%2Frsm.stl" style="border:0;margin:0;width:100%;height:100%;"></iframe>
+    </div>
+</body>
+</html>

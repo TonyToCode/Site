@@ -1,28 +1,139 @@
-/* RSM Competition Program Styles */
+/* RSM Competition Program Styles - Official Design System Adaptation */
 
-/* Custom styles to match RSM branding */
+/* Official RSM Font Stack (matching mathschool.com) */
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-/* Defining RSM brand colors for use with Tailwind's arbitrary value support */
+/* Official RSM Brand Colors (adapted from mathschool.com) */
 :root {
-    --rsm-blue: #005dab;
-    --rsm-gold: #ffc72c;
-    --rsm-dark-blue: #003e7a;
-    --rsm-light-gray: #f8f9fa;
+    /* Primary Colors (Official RSM) */
+    --rsm-primary: #1d5f79;      /* Main RSM teal/blue */
+    --rsm-secondary: #94c041;    /* RSM bright green */
+    --rsm-secondary-hover: #85b032; /* Green hover state */
+    
+    /* Legacy Support (keeping for backward compatibility) */
+    --rsm-blue: #1d5f79;         /* Updated to official primary */
+    --rsm-gold: #94c041;         /* Updated to official secondary */
+    --rsm-dark-blue: #165a73;    /* Darker variant of primary */
+    --rsm-light-gray: #f5f5f5;   /* Updated to match official */
+    
+    /* Extended Color Palette */
+    --rsm-gray-50: #f9fafb;
+    --rsm-gray-100: #f3f4f6;
+    --rsm-gray-200: #e5e7eb;
+    --rsm-gray-300: #d1d5db;
+    --rsm-gray-400: #9ca3af;
+    --rsm-gray-500: #6b7280;
+    --rsm-gray-600: #4b5563;
+    --rsm-gray-700: #374151;
+    --rsm-gray-800: #1f2937;
+    --rsm-gray-900: #111827;
+    
+    /* Typography Scale (Official RSM) */
+    --rsm-text-xs: 0.75rem;      /* 12px */
+    --rsm-text-sm: 0.875rem;     /* 14px */
+    --rsm-text-base: 1rem;       /* 16px */
+    --rsm-text-lg: 1.125rem;     /* 18px */
+    --rsm-text-xl: 1.25rem;      /* 20px */
+    --rsm-text-2xl: 1.5rem;      /* 24px */
+    --rsm-text-3xl: 1.875rem;    /* 30px */
+    --rsm-text-4xl: 2.25rem;     /* 36px */
+    --rsm-text-5xl: 3rem;        /* 48px */
+    
+    /* Spacing Scale */
+    --rsm-space-1: 0.25rem;      /* 4px */
+    --rsm-space-2: 0.5rem;       /* 8px */
+    --rsm-space-3: 0.75rem;      /* 12px */
+    --rsm-space-4: 1rem;         /* 16px */
+    --rsm-space-5: 1.25rem;      /* 20px */
+    --rsm-space-6: 1.5rem;       /* 24px */
+    --rsm-space-8: 2rem;         /* 32px */
+    --rsm-space-10: 2.5rem;      /* 40px */
+    --rsm-space-12: 3rem;        /* 48px */
+    --rsm-space-16: 4rem;        /* 64px */
+    --rsm-space-20: 5rem;        /* 80px */
+    
+    /* Border Radius */
+    --rsm-radius-sm: 0.125rem;   /* 2px */
+    --rsm-radius: 0.25rem;       /* 4px */
+    --rsm-radius-md: 0.375rem;   /* 6px */
+    --rsm-radius-lg: 0.5rem;     /* 8px */
+    --rsm-radius-xl: 0.75rem;    /* 12px */
+    --rsm-radius-2xl: 1rem;      /* 16px */
+    
+    /* Shadows */
+    --rsm-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --rsm-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    --rsm-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --rsm-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --rsm-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
+/* Official RSM Color Utilities */
+.bg-rsm-primary { background-color: var(--rsm-primary); }
+.bg-rsm-secondary { background-color: var(--rsm-secondary); }
+.bg-rsm-secondary-hover { background-color: var(--rsm-secondary-hover); }
+
+/* Legacy Support - Updated Colors */
 .bg-rsm-blue { background-color: var(--rsm-blue); }
 .bg-rsm-gold { background-color: var(--rsm-gold); }
 .bg-rsm-light-gray { background-color: var(--rsm-light-gray); }
+
+/* Text Colors */
+.text-rsm-primary { color: var(--rsm-primary); }
+.text-rsm-secondary { color: var(--rsm-secondary); }
 .text-rsm-blue { color: var(--rsm-blue); }
 .text-rsm-gold { color: var(--rsm-gold); }
 .text-rsm-dark-blue { color: var(--rsm-dark-blue); }
+
+/* Border Colors */
+.border-rsm-primary { border-color: var(--rsm-primary); }
+.border-rsm-secondary { border-color: var(--rsm-secondary); }
 .border-rsm-blue { border-color: var(--rsm-blue); }
 .border-rsm-gold { border-color: var(--rsm-gold); }
+
+/* Hover States */
+.hover\:bg-rsm-primary:hover { background-color: var(--rsm-primary); }
+.hover\:bg-rsm-secondary:hover { background-color: var(--rsm-secondary); }
+.hover\:bg-rsm-secondary-hover:hover { background-color: var(--rsm-secondary-hover); }
 .hover\:bg-rsm-dark-blue:hover { background-color: var(--rsm-dark-blue); }
-.hover\:bg-yellow-500:hover { background-color: #eab308; }
+
+/* Official RSM Typography */
+.text-rsm-h1 {
+    font-size: var(--rsm-text-5xl);
+    font-weight: bold;
+    color: var(--rsm-primary);
+    line-height: 1.1;
+}
+
+.text-rsm-h2 {
+    font-size: var(--rsm-text-3xl);
+    font-weight: bold;
+    color: var(--rsm-primary);
+    line-height: 1.2;
+}
+
+.text-rsm-h3 {
+    font-size: var(--rsm-text-2xl);
+    font-weight: 600;
+    color: var(--rsm-primary);
+    line-height: 1.3;
+}
+
+.text-rsm-body {
+    font-size: var(--rsm-text-base);
+    color: var(--rsm-gray-700);
+    line-height: 1.6;
+}
+
+.text-rsm-small {
+    font-size: var(--rsm-text-sm);
+    color: var(--rsm-gray-600);
+    line-height: 1.5;
+}
 
 /* Smooth scrolling behavior */
 html {
@@ -96,14 +207,77 @@ html {
     backdrop-filter: blur(4px);
 }
 
-/* Custom button styles */
+/* Official RSM Button Styles */
 .btn-primary {
-    background: linear-gradient(135deg, var(--rsm-blue) 0%, var(--rsm-dark-blue) 100%);
+    background-color: var(--rsm-secondary);
+    color: white;
+    border: none;
+    border-radius: var(--rsm-radius-md);
+    padding: var(--rsm-space-3) var(--rsm-space-4);
+    font-weight: 500;
+    font-size: var(--rsm-text-base);
+    cursor: pointer;
     transition: all 0.3s ease;
+    box-shadow: var(--rsm-shadow);
     position: relative;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    text-decoration: none;
+    min-width: fit-content;
 }
 
+.btn-primary:hover {
+    background-color: var(--rsm-secondary-hover);
+    box-shadow: var(--rsm-shadow-md);
+    transform: translateY(-1px);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+    box-shadow: var(--rsm-shadow-sm);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--rsm-primary);
+    border: 2px solid var(--rsm-primary);
+    border-radius: var(--rsm-radius-md);
+    padding: calc(var(--rsm-space-3) - 2px) calc(var(--rsm-space-4) - 2px);
+    font-weight: 500;
+    font-size: var(--rsm-text-base);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    text-decoration: none;
+    min-width: fit-content;
+}
+
+.btn-secondary:hover {
+    background-color: var(--rsm-primary);
+    color: white;
+    transform: translateY(-1px);
+    box-shadow: var(--rsm-shadow-md);
+}
+
+.btn-large {
+    padding: var(--rsm-space-4) var(--rsm-space-6);
+    font-size: var(--rsm-text-lg);
+    border-radius: var(--rsm-radius-lg);
+}
+
+.btn-small {
+    padding: var(--rsm-space-2) var(--rsm-space-3);
+    font-size: var(--rsm-text-sm);
+    border-radius: var(--rsm-radius);
+}
+
+/* Shimmer effect for primary buttons */
 .btn-primary::before {
     content: '';
     position: absolute;

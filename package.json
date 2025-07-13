@@ -1,0 +1,43 @@
+{
+  "name": "rsm-competition-website",
+  "version": "1.0.0",
+  "description": "Russian School of Mathematics Competition Program Website",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext .js,.html --fix",
+    "format": "prettier --write .",
+    "optimize": "npm run build && npm run minify",
+    "minify": "node scripts/minify.js",
+    "serve": "python -m http.server 8000",
+    "test": "jest",
+    "accessibility": "pa11y-ci --sitemap http://localhost:8000/sitemap.xml"
+  },
+  "keywords": [
+    "education",
+    "mathematics",
+    "competition",
+    "rsm",
+    "math-competitions"
+  ],
+  "author": "RSM Competition Program",
+  "license": "MIT",
+  "devDependencies": {
+    "vite": "^5.0.0",
+    "eslint": "^8.0.0",
+    "prettier": "^3.0.0",
+    "terser": "^5.0.0",
+    "cssnano": "^6.0.0",
+    "postcss": "^8.0.0",
+    "autoprefixer": "^10.0.0",
+    "pa11y-ci": "^3.0.0",
+    "jest": "^29.0.0"
+  },
+  "dependencies": {},
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}
