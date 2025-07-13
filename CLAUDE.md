@@ -31,10 +31,48 @@ This is a website project for the Russian School of Mathematics (RSM) competitio
 - `index.html` - Complete landing page for RSM's math competition program
 - `pages/` - Additional website pages (FAQ, NMCP program details)
 - `assets/` - CSS, JavaScript, and media files
+  - `css/` - Custom stylesheets
+  - `js/` - JavaScript modules and components
+  - `RSM/` - **Official RSM brand assets and media**
 - `README.md` - Project documentation and setup instructions
 - `IMPROVEMENT_PLAN.md` - Strategic enhancement roadmap with implementation details
 - `TODO_CHECKLIST.md` - **Detailed task checklist with progress tracking** (UPDATE THIS FREQUENTLY)
 - `CLAUDE.md` - This file with development guidelines
+
+## Available Brand Assets
+
+### Logo Files (Use these instead of placeholders!)
+- `assets/RSM/rsm.svg` - **Scalable vector logo (PREFERRED for web)**
+- `assets/RSM/rsm_header.png` - Header-optimized PNG logo
+- `assets/RSM/rsmheader.png` - Alternative header PNG
+- `assets/RSM/logoviewer/index.html` - Interactive 3D logo viewer
+
+### 3D Models for Three.js Integration
+- `assets/RSM/rsm.stl` - STL file for 3D logo rendering
+- `assets/RSM/rsm3d.stl` - Alternative 3D model
+- `assets/RSM/rsm.gltf` - **GLTF format (PREFERRED for web 3D)**
+- `assets/RSM/rsm.glb` - Binary GLTF format
+
+### Video Assets
+- `assets/RSM/video/rsmrotation.gif` - Animated logo rotation
+- `assets/RSM/video/*.mp4` - Various RSM demonstration videos
+
+## Asset Usage Guidelines
+
+### When Working with Images
+- **Always use `assets/RSM/rsm.svg`** for logos instead of placeholder images
+- Use `rsm_header.png` or `rsmheader.png` for header sections requiring PNG format
+- Optimize images for web performance (WebP conversion when possible)
+
+### When Working with 3D Components
+- **Update `assets/js/logo3d.js`** to use `assets/RSM/rsm.gltf` instead of `./rsm.stl`
+- GLTF format is preferred over STL for better web performance
+- Consider lazy loading 3D components for better page speed
+
+### When Adding Media
+- Use the RSM video assets for demonstrations or backgrounds
+- `rsmrotation.gif` can be used as a fallback for 3D logo on slower devices
+- Always include alt text and proper accessibility attributes
 
 ## Development Setup
 
