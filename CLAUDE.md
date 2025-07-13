@@ -13,6 +13,13 @@ This is a website project for the Russian School of Mathematics (RSM) competitio
 - **ALWAYS push changes** after completing work: Use `git add .`, `git commit -m "descriptive message"`, and `git push origin main`
 - **Collaborate transparently**: Since multiple people may be working on this project, communicate changes clearly through commit messages
 
+### Progress Tracking
+- **ALWAYS update TODO_CHECKLIST.md**: Mark completed tasks as [x] and update progress percentages
+- **ALWAYS update IMPROVEMENT_PLAN.md**: Add implementation notes and mark completed sections
+- **Track time and blockers**: Note any issues encountered and time spent on tasks
+- **Update success metrics**: Record performance improvements and test results
+- **Document learning**: Add notes about what was learned during implementation
+
 ### Developer Support
 - **Assume limited coding experience**: The collaborators on this project are new to coding and development
 - **Provide detailed explanations**: When suggesting changes or fixes, explain what the code does and why the changes are needed
@@ -22,6 +29,12 @@ This is a website project for the Russian School of Mathematics (RSM) competitio
 ## File Structure
 
 - `index.html` - Complete landing page for RSM's math competition program
+- `pages/` - Additional website pages (FAQ, NMCP program details)
+- `assets/` - CSS, JavaScript, and media files
+- `README.md` - Project documentation and setup instructions
+- `IMPROVEMENT_PLAN.md` - Strategic enhancement roadmap with implementation details
+- `TODO_CHECKLIST.md` - **Detailed task checklist with progress tracking** (UPDATE THIS FREQUENTLY)
+- `CLAUDE.md` - This file with development guidelines
 
 ## Development Setup
 
