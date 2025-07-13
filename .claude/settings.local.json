@@ -18,8 +18,26 @@
       "Bash(git pull:*)",
       "Bash(git reset:*)",
       "Bash(git merge:*)",
-      "Bash(mkdir:*)"
+      "Bash(mkdir:*)",
+      "Bash(env)",
+      "Bash(where npx)",
+      "Bash(npx:*)",
+      "Bash(git clone:*)",
+      "Bash(npm install)",
+      "Bash(npm run build:*)",
+      "Bash(ls:*)",
+      "Bash(node:*)",
+      "Bash(mv:*)",
+      "WebFetch(domain:tonytocode.github.io)"
     ],
     "deny": []
+  },
+  "mcpServers": {
+    "playwright": {
+      "command": "node",
+      "args": [
+        "C:/Users/ovsin/dev/RSM/playwright-mcp/index.js"
+      ]
+    }
   }
 }
