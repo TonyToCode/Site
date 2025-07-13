@@ -303,6 +303,11 @@ body {
   overflow: hidden;
 }
 
+/* Keep original header styles - don't override */
+.rsm-header {
+  /* Preserve existing header styling */
+}
+
 .premium-section-hero::before {
   content: '';
   position: absolute;
@@ -409,6 +414,16 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+/* Subtle premium enhancements for existing elements */
+.premium-enhance {
+  /* Add subtle improvements without breaking existing design */
+}
+
+.premium-hover-effect:hover {
+  transform: translateY(-4px);
+  transition: transform var(--transition-normal);
 }
 
 .premium-backdrop {
