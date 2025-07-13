@@ -1,0 +1,321 @@
+/* RSM Official Design System - Direct Adaptation from mathschool.com */
+
+/* 
+ * This file contains CSS specifically adapted from the official RSM website
+ * to ensure brand consistency and professional appearance.
+ * Source: mathschool-clone.same-app.com (official RSM site)
+ */
+
+/* Official RSM Card Styles */
+.rsm-card {
+    background: white;
+    border-radius: var(--rsm-radius-lg);
+    box-shadow: var(--rsm-shadow);
+    padding: var(--rsm-space-6);
+    transition: all 0.3s ease;
+}
+
+.rsm-card:hover {
+    box-shadow: var(--rsm-shadow-lg);
+    transform: translateY(-2px);
+}
+
+.rsm-card-feature {
+    background: white;
+    border-radius: var(--rsm-radius-lg);
+    box-shadow: var(--rsm-shadow-md);
+    padding: var(--rsm-space-8);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.rsm-card-feature:hover {
+    box-shadow: var(--rsm-shadow-xl);
+    transform: translateY(-4px);
+}
+
+/* Official RSM Header Styles */
+.rsm-header {
+    background: white;
+    border-bottom: 1px solid var(--rsm-gray-200);
+    box-shadow: var(--rsm-shadow-sm);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.rsm-nav-link {
+    color: var(--rsm-gray-600);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: var(--rsm-text-sm);
+    padding: var(--rsm-space-2) var(--rsm-space-3);
+    border-radius: var(--rsm-radius);
+    transition: all 0.2s ease;
+}
+
+.rsm-nav-link:hover {
+    color: var(--rsm-primary);
+    background-color: var(--rsm-gray-50);
+}
+
+.rsm-nav-link.active {
+    color: var(--rsm-primary);
+    background-color: var(--rsm-gray-100);
+    font-weight: 600;
+}
+
+/* Official RSM Section Styles */
+.rsm-section {
+    padding: var(--rsm-space-20) 0;
+}
+
+.rsm-section-alt {
+    background-color: var(--rsm-gray-50);
+    padding: var(--rsm-space-20) 0;
+}
+
+.rsm-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--rsm-space-6);
+}
+
+@media (max-width: 768px) {
+    .rsm-container {
+        padding: 0 var(--rsm-space-4);
+    }
+    
+    .rsm-section,
+    .rsm-section-alt {
+        padding: var(--rsm-space-16) 0;
+    }
+}
+
+/* Official RSM Hero Section */
+.rsm-hero {
+    background: linear-gradient(135deg, var(--rsm-primary) 0%, var(--rsm-dark-blue) 100%);
+    color: white;
+    padding: var(--rsm-space-20) 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.rsm-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.rsm-hero > * {
+    position: relative;
+    z-index: 2;
+}
+
+.rsm-hero-title {
+    font-size: var(--rsm-text-5xl);
+    font-weight: bold;
+    margin-bottom: var(--rsm-space-6);
+    line-height: 1.1;
+}
+
+.rsm-hero-subtitle {
+    font-size: var(--rsm-text-xl);
+    margin-bottom: var(--rsm-space-8);
+    opacity: 0.9;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 768px) {
+    .rsm-hero {
+        padding: var(--rsm-space-16) 0;
+    }
+    
+    .rsm-hero-title {
+        font-size: var(--rsm-text-4xl);
+    }
+    
+    .rsm-hero-subtitle {
+        font-size: var(--rsm-text-lg);
+    }
+}
+
+/* Official RSM Form Styles */
+.rsm-form-group {
+    margin-bottom: var(--rsm-space-4);
+}
+
+.rsm-label {
+    display: block;
+    font-weight: 500;
+    color: var(--rsm-gray-700);
+    margin-bottom: var(--rsm-space-2);
+    font-size: var(--rsm-text-sm);
+}
+
+.rsm-input {
+    width: 100%;
+    padding: var(--rsm-space-3);
+    border: 1px solid var(--rsm-gray-300);
+    border-radius: var(--rsm-radius-md);
+    font-size: var(--rsm-text-base);
+    transition: all 0.2s ease;
+    background: white;
+}
+
+.rsm-input:focus {
+    outline: none;
+    border-color: var(--rsm-primary);
+    box-shadow: 0 0 0 3px rgba(29, 95, 121, 0.1);
+}
+
+.rsm-textarea {
+    min-height: 120px;
+    resize: vertical;
+    font-family: inherit;
+}
+
+/* Official RSM Badge/Tag Styles */
+.rsm-badge {
+    display: inline-block;
+    padding: var(--rsm-space-1) var(--rsm-space-3);
+    background-color: var(--rsm-secondary);
+    color: white;
+    font-size: var(--rsm-text-xs);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: var(--rsm-radius-2xl);
+}
+
+.rsm-badge-outline {
+    background-color: transparent;
+    color: var(--rsm-primary);
+    border: 1px solid var(--rsm-primary);
+}
+
+/* Official RSM Alert/Notice Styles */
+.rsm-alert {
+    padding: var(--rsm-space-4);
+    border-radius: var(--rsm-radius-md);
+    margin-bottom: var(--rsm-space-4);
+    border-left: 4px solid;
+}
+
+.rsm-alert-info {
+    background-color: #eff6ff;
+    border-left-color: var(--rsm-primary);
+    color: var(--rsm-primary);
+}
+
+.rsm-alert-success {
+    background-color: #f0fdf4;
+    border-left-color: var(--rsm-secondary);
+    color: #166534;
+}
+
+.rsm-alert-warning {
+    background-color: #fffbeb;
+    border-left-color: #f59e0b;
+    color: #92400e;
+}
+
+/* Official RSM List Styles */
+.rsm-list {
+    list-style: none;
+    padding: 0;
+}
+
+.rsm-list-item {
+    padding: var(--rsm-space-3) 0;
+    border-bottom: 1px solid var(--rsm-gray-200);
+    display: flex;
+    align-items: flex-start;
+}
+
+.rsm-list-item:last-child {
+    border-bottom: none;
+}
+
+.rsm-list-icon {
+    margin-right: var(--rsm-space-3);
+    margin-top: var(--rsm-space-1);
+    color: var(--rsm-secondary);
+    flex-shrink: 0;
+}
+
+/* Official RSM Responsive Utilities */
+@media (max-width: 640px) {
+    .rsm-hide-mobile {
+        display: none;
+    }
+}
+
+@media (min-width: 641px) {
+    .rsm-show-mobile {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .rsm-hide-tablet {
+        display: none;
+    }
+}
+
+@media (min-width: 769px) {
+    .rsm-show-tablet {
+        display: none;
+    }
+}
+
+/* Official RSM Animation Classes */
+.rsm-fade-in {
+    animation: rsmFadeIn 0.6s ease-in forwards;
+    opacity: 0;
+}
+
+.rsm-slide-up {
+    animation: rsmSlideUp 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+@keyframes rsmFadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes rsmSlideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Official RSM Focus States */
+.rsm-focus-visible:focus {
+    outline: 2px solid var(--rsm-secondary);
+    outline-offset: 2px;
+}
+
+/* Official RSM Print Styles */
+@media print {
+    .rsm-no-print {
+        display: none !important;
+    }
+    
+    .rsm-hero {
+        background: var(--rsm-primary) !important;
+        -webkit-print-color-adjust: exact;
+        color-adjust: exact;
+    }
+}
