@@ -7,37 +7,14 @@
     
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
     <script src="https://unpkg.com/feather-icons"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/STLLoader.js"></script>
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/rsm-official.css">
 
     <style>
-        /* Custom styles to match RSM branding */
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        /* Defining RSM brand colors for use with Tailwind's arbitrary value support */
-        :root {
-            --rsm-blue: #005dab;
-            --rsm-gold: #ffc72c;
-            --rsm-dark-blue: #003e7a;
-            --rsm-light-gray: #f8f9fa;
-        }
-        .bg-rsm-blue { background-color: var(--rsm-blue); }
-        .bg-rsm-gold { background-color: var(--rsm-gold); }
-        .bg-rsm-light-gray { background-color: var(--rsm-light-gray); }
-        .text-rsm-blue { color: var(--rsm-blue); }
-        .text-rsm-gold { color: var(--rsm-gold); }
-        .text-rsm-dark-blue { color: var(--rsm-dark-blue); }
-        .border-rsm-blue { border-color: var(--rsm-blue); }
-        .border-rsm-gold { border-color: var(--rsm-gold); }
-        .hover\:bg-rsm-dark-blue:hover { background-color: var(--rsm-dark-blue); }
-        .hover\:bg-yellow-500:hover { background-color: #eab308; } /* A darker gold for hover */
+        /* Inline customizations for specific elements */
 
         /* Smooth scrolling behavior */
         html {
@@ -87,102 +64,101 @@
     </header>
 
     <main>
-        <section class="relative bg-rsm-light-gray text-center py-20 md:py-32">
-            <div class="absolute inset-0 bg-cover bg-center opacity-10" style="background-image: url('https://placehold.co/1920x1080/e0e0e0/ffffff?text=Engaged+Students');"></div>
-            <div class="container mx-auto px-6 relative">
-                <h1 class="text-4xl md:text-6xl font-extrabold text-rsm-dark-blue leading-tight">
+        <section class="rsm-hero">
+            <div class="rsm-container">
+                <h1 class="rsm-hero-title">
                     Beyond the Classroom: <br class="hidden md:block" /> The RSM Pathway to Competitive Excellence
                 </h1>
-                <p class="mt-6 text-lg md:text-xl max-w-3xl mx-auto text-gray-600">
+                <p class="rsm-hero-subtitle">
                     We transform talented students into confident, resilient problem-solvers who excel in the nation's most prestigious math competitions—and beyond.
                 </p>
                 <div class="mt-10 flex flex-col sm:flex-row justify-center items-center gap-4">
-                    <a href="#contact" class="w-full sm:w-auto bg-rsm-blue text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-rsm-dark-blue transition-transform transform hover:scale-105">
+                    <a href="#contact" class="btn-primary btn-large">
                         Schedule a Free Assessment
                     </a>
-                    <a href="#testimonials" class="w-full sm:w-auto bg-transparent text-rsm-blue font-semibold py-3 px-8 rounded-lg border-2 border-rsm-blue hover:bg-rsm-blue hover:text-white transition-all">
+                    <a href="#testimonials" class="btn-secondary btn-large">
                         See Our Students' Success Stories ↓
                     </a>
                 </div>
             </div>
         </section>
 
-        <section id="why-rsm" class="py-20 md:py-24 bg-white">
-            <div class="container mx-auto px-6">
+        <section id="why-rsm" class="rsm-section">
+            <div class="rsm-container">
                 <div class="text-center mb-16">
-                    <h2 class="text-3xl md:text-4xl font-bold text-rsm-dark-blue">Why Math Competitions?</h2>
-                    <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">It’s About Building a Lifelong Intellectual Edge.</p>
+                    <h2 class="text-rsm-h2">Why Math Competitions?</h2>
+                    <p class="mt-4 text-lg text-rsm-body max-w-2xl mx-auto">It's About Building a Lifelong Intellectual Edge.</p>
                 </div>
                 <div class="grid md:grid-cols-3 gap-8 md:gap-12 text-center">
-                    <div class="p-8 bg-rsm-light-gray rounded-xl shadow-sm">
-                        <div class="bg-rsm-blue text-white w-16 h-16 rounded-full mx-auto flex items-center justify-center mb-6">
+                    <div class="rsm-card-feature">
+                        <div class="bg-rsm-primary text-white w-16 h-16 rounded-full mx-auto flex items-center justify-center mb-6">
                             <i data-feather="cpu" class="w-8 h-8"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-rsm-dark-blue mb-3">Develop Elite Problem-Solving</h3>
-                        <p class="text-gray-600">Our students learn to tackle complex, non-standard problems, developing the mental agility and creativity sought by top universities and innovative companies.</p>
+                        <h3 class="text-rsm-h3 mb-3">Develop Elite Problem-Solving</h3>
+                        <p class="text-rsm-body">Our students learn to tackle complex, non-standard problems, developing the mental agility and creativity sought by top universities and innovative companies.</p>
                     </div>
-                    <div class="p-8 bg-rsm-light-gray rounded-xl shadow-sm">
-                        <div class="bg-rsm-blue text-white w-16 h-16 rounded-full mx-auto flex items-center justify-center mb-6">
+                    <div class="rsm-card-feature">
+                        <div class="bg-rsm-primary text-white w-16 h-16 rounded-full mx-auto flex items-center justify-center mb-6">
                             <i data-feather="award" class="w-8 h-8"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-rsm-dark-blue mb-3">Gain a Competitive Advantage</h3>
-                        <p class="text-gray-600">Success in competitions like the AMC series and AIME provides a powerful differentiator on college applications, demonstrating ability at the highest level.</p>
+                        <h3 class="text-rsm-h3 mb-3">Gain a Competitive Advantage</h3>
+                        <p class="text-rsm-body">Success in competitions like the AMC series and AIME provides a powerful differentiator on college applications, demonstrating ability at the highest level.</p>
                     </div>
-                    <div class="p-8 bg-rsm-light-gray rounded-xl shadow-sm">
-                        <div class="bg-rsm-blue text-white w-16 h-16 rounded-full mx-auto flex items-center justify-center mb-6">
+                    <div class="rsm-card-feature">
+                        <div class="bg-rsm-primary text-white w-16 h-16 rounded-full mx-auto flex items-center justify-center mb-6">
                             <i data-feather="trending-up" class="w-8 h-8"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-rsm-dark-blue mb-3">Cultivate Resilience & Character</h3>
-                        <p class="text-gray-600">Competitions teach students to perform under pressure, learn from setbacks, and embrace challenges—invaluable skills for a successful life.</p>
+                        <h3 class="text-rsm-h3 mb-3">Cultivate Resilience & Character</h3>
+                        <p class="text-rsm-body">Competitions teach students to perform under pressure, learn from setbacks, and embrace challenges—invaluable skills for a successful life.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="pathway" class="py-20 md:py-24 bg-rsm-light-gray">
-            <div class="container mx-auto px-6">
+        <section id="pathway" class="rsm-section-alt">
+            <div class="rsm-container">
                 <div class="text-center mb-16">
-                    <h2 class="text-3xl md:text-4xl font-bold text-rsm-dark-blue">Your Child's Journey to the National Stage</h2>
-                    <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">A clear progression from foundational skills to elite competition. This pathway is more than a series of classes; it's a long-term mentorship where students receive continuous guidance from our expert coaches. Our coaches guide students as they progress from local contests to national-level competitions like the AMC and AIME, offering advanced training and strategic preparation to help them succeed.</p>
+                    <h2 class="text-rsm-h2">Your Child's Journey to the National Stage</h2>
+                    <p class="mt-4 text-lg text-rsm-body max-w-3xl mx-auto">A clear progression from foundational skills to elite competition. This pathway is more than a series of classes; it's a long-term mentorship where students receive continuous guidance from our expert coaches. Our coaches guide students as they progress from local contests to national-level competitions like the AMC and AIME, offering advanced training and strategic preparation to help them succeed.</p>
                 </div>
                 <div class="relative">
-                    <div class="hidden md:block absolute top-1/2 left-0 w-full h-1 bg-rsm-gold/50 -translate-y-1/2"></div>
+                    <div class="hidden md:block absolute top-1/2 left-0 w-full h-1 bg-rsm-secondary/50 -translate-y-1/2"></div>
                     
                     <div class="grid md:grid-cols-4 gap-10 relative">
-                        <div class="text-center bg-white p-6 rounded-xl shadow-xl border-t-4 border-rsm-gold card-hover">
-                             <div class="text-rsm-gold font-bold text-sm mb-2">STAGE 1</div>
-                             <h4 class="text-lg font-bold text-rsm-dark-blue mb-2">Foundational Spark</h4>
-                             <p class="text-gray-500 text-sm mb-3">(Grades 3-6)</p>
-                             <p class="text-gray-600 text-sm">Focus on confidence and a love for creative problem-solving via competitions like Purple Comet & MOEMS.</p>
+                        <div class="rsm-card text-center border-t-4 border-rsm-secondary">
+                             <div class="rsm-badge mb-2">STAGE 1</div>
+                             <h4 class="text-rsm-h3 mb-2">Foundational Spark</h4>
+                             <p class="text-rsm-small mb-3">(Grades 3-6)</p>
+                             <p class="text-rsm-body text-sm">Focus on confidence and a love for creative problem-solving via competitions like Purple Comet & MOEMS.</p>
                         </div>
-                        <div class="text-center bg-white p-6 rounded-xl shadow-xl border-t-4 border-rsm-gold card-hover">
-                            <div class="text-rsm-gold font-bold text-sm mb-2">STAGE 2</div>
-                             <h4 class="text-lg font-bold text-rsm-dark-blue mb-2">Building Momentum</h4>
-                             <p class="text-gray-500 text-sm mb-3">(Grades 6-8)</p>
-                             <p class="text-gray-600 text-sm">Introduction to the AMC 8 and structured training in our Math Competition Prep (MCP) program.</p>
+                        <div class="rsm-card text-center border-t-4 border-rsm-secondary">
+                            <div class="rsm-badge mb-2">STAGE 2</div>
+                             <h4 class="text-rsm-h3 mb-2">Building Momentum</h4>
+                             <p class="text-rsm-small mb-3">(Grades 6-8)</p>
+                             <p class="text-rsm-body text-sm">Introduction to the AMC 8 and structured training in our Math Competition Prep (MCP) program.</p>
                         </div>
-                        <div class="text-center bg-white p-6 rounded-xl shadow-xl border-t-4 border-rsm-gold card-hover">
-                            <div class="text-rsm-gold font-bold text-sm mb-2">STAGE 3</div>
-                             <h4 class="text-lg font-bold text-rsm-dark-blue mb-2">High School Ascent</h4>
-                             <p class="text-gray-500 text-sm mb-3">(Grades 9-12)</p>
-                             <p class="text-gray-600 text-sm">Mastery of topics for the AMC 10/12 through our Advanced MCP tracks.</p>
+                        <div class="rsm-card text-center border-t-4 border-rsm-secondary">
+                            <div class="rsm-badge mb-2">STAGE 3</div>
+                             <h4 class="text-rsm-h3 mb-2">High School Ascent</h4>
+                             <p class="text-rsm-small mb-3">(Grades 9-12)</p>
+                             <p class="text-rsm-body text-sm">Mastery of topics for the AMC 10/12 through our Advanced MCP tracks.</p>
                         </div>
-                        <div class="text-center bg-white p-6 rounded-xl shadow-xl border-t-4 border-rsm-gold card-hover">
-                            <div class="text-rsm-gold font-bold text-sm mb-2">STAGE 4</div>
-                             <h4 class="text-lg font-bold text-rsm-dark-blue mb-2">The Elite Level</h4>
-                             <p class="text-gray-500 text-sm mb-3">(Invitation Only)</p>
-                             <p class="text-gray-600 text-sm">Intensive, Olympiad-level training for AIME & USA(J)MO in our NMCP program.</p>
+                        <div class="rsm-card text-center border-t-4 border-rsm-secondary">
+                            <div class="rsm-badge mb-2">STAGE 4</div>
+                             <h4 class="text-rsm-h3 mb-2">The Elite Level</h4>
+                             <p class="text-rsm-small mb-3">(Invitation Only)</p>
+                             <p class="text-rsm-body text-sm">Intensive, Olympiad-level training for AIME & USA(J)MO in our NMCP program.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="programs" class="py-20 md:py-24 bg-white">
-            <div class="container mx-auto px-6">
+        <section id="programs" class="rsm-section">
+            <div class="rsm-container">
                 <div class="text-center mb-16">
-                    <h2 class="text-3xl md:text-4xl font-bold text-rsm-dark-blue">Find Your Child's Perfect Fit</h2>
-                    <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">We offer distinct pathways based on a student's experience and ambition, ensuring the right level of challenge and support.</p>
+                    <h2 class="text-rsm-h2">Find Your Child's Perfect Fit</h2>
+                    <p class="mt-4 text-lg text-rsm-body max-w-3xl mx-auto">We offer distinct pathways based on a student's experience and ambition, ensuring the right level of challenge and support.</p>
                 </div>
                 <div class="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
                     <div class="border-2 border-rsm-gold rounded-xl p-8 flex flex-col shadow-lg bg-amber-50/50">
