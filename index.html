@@ -10,6 +10,7 @@
     <script src="https://unpkg.com/feather-icons"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/STLLoader.js"></script>
+    <script src="assets/js/config.js"></script>
     <script src="assets/js/locations.js"></script>
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/rsm-official.css">
@@ -51,106 +52,138 @@
             z-index: 10;
             pointer-events: none;
         }
+        
+        /* Skip link styles */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: var(--rsm-primary);
+            color: white;
+            padding: 8px;
+            text-decoration: none;
+            border-radius: 0 0 4px 4px;
+            z-index: 1000;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        .skip-link:focus {
+            top: 0;
+        }
+        
+        /* Focus indicators */
+        .rsm-nav-link:focus,
+        .btn-primary:focus,
+        button:focus {
+            outline: 2px solid var(--rsm-secondary);
+            outline-offset: 2px;
+        }
     </style>
 </head>
 <body class="bg-white text-gray-800">
 
-    <header class="rsm-header sticky top-0 z-40">
+    <!-- Skip Navigation Links -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <a href="#main-navigation" class="skip-link">Skip to navigation</a>
+
+    <header class="rsm-header sticky top-0 z-40" role="banner">
         <div class="rsm-container">
             <div class="flex justify-between items-center py-4">
                 <!-- Logo Section with SVG -->
-                <a href="#" class="flex items-center group">
-                    <img src="assets/RSM/rsm.svg" alt="RSM Competition Program" class="h-12 w-auto transition-transform group-hover:scale-105">
+                <a href="#" class="flex items-center group" aria-label="RSM Competition Program - Home">
+                    <img src="assets/RSM/rsm.svg" alt="RSM Competition Program Logo" class="h-12 w-auto transition-transform group-hover:scale-105">
                 </a>
                 
                 <!-- Desktop Navigation -->
-                <nav class="hidden xl:flex items-center space-x-1">
-                    <a href="#why-rsm" class="rsm-nav-link group">
-                        <i data-feather="target" class="w-4 h-4 mr-2 flex-shrink-0 group-hover:text-rsm-secondary"></i>
+                <nav id="main-navigation" class="hidden xl:flex items-center space-x-1" role="navigation" aria-label="Main navigation">
+                    <a href="#why-rsm" class="rsm-nav-link group" aria-describedby="why-rsm-desc">
+                        <i data-feather="target" class="w-4 h-4 mr-2 flex-shrink-0 group-hover:text-rsm-secondary" aria-hidden="true"></i>
                         <span class="hidden 2xl:inline">Why Competitions?</span>
                         <span class="2xl:hidden">Why?</span>
                     </a>
-                    <a href="#pathway" class="rsm-nav-link group">
-                        <i data-feather="trending-up" class="w-4 h-4 mr-2 flex-shrink-0 group-hover:text-rsm-secondary"></i>
+                    <a href="#pathway" class="rsm-nav-link group" aria-describedby="pathway-desc">
+                        <i data-feather="trending-up" class="w-4 h-4 mr-2 flex-shrink-0 group-hover:text-rsm-secondary" aria-hidden="true"></i>
                         <span class="hidden 2xl:inline">The RSM Pathway</span>
                         <span class="2xl:hidden">Pathway</span>
                     </a>
-                    <a href="#programs" class="rsm-nav-link group">
-                        <i data-feather="book-open" class="w-4 h-4 mr-2 flex-shrink-0 group-hover:text-rsm-secondary"></i>
+                    <a href="#programs" class="rsm-nav-link group" aria-describedby="programs-desc">
+                        <i data-feather="book-open" class="w-4 h-4 mr-2 flex-shrink-0 group-hover:text-rsm-secondary" aria-hidden="true"></i>
                         <span>Programs</span>
                     </a>
-                    <a href="#coaches" class="rsm-nav-link group">
-                        <i data-feather="users" class="w-4 h-4 mr-2 flex-shrink-0 group-hover:text-rsm-secondary"></i>
+                    <a href="#coaches" class="rsm-nav-link group" aria-describedby="coaches-desc">
+                        <i data-feather="users" class="w-4 h-4 mr-2 flex-shrink-0 group-hover:text-rsm-secondary" aria-hidden="true"></i>
                         <span class="hidden 2xl:inline">Our Team</span>
                         <span class="2xl:hidden">Team</span>
                     </a>
-                    <a href="#contact" class="rsm-nav-link group">
-                        <i data-feather="mail" class="w-4 h-4 mr-2 flex-shrink-0 group-hover:text-rsm-secondary"></i>
+                    <a href="#contact" class="rsm-nav-link group" aria-describedby="contact-desc">
+                        <i data-feather="mail" class="w-4 h-4 mr-2 flex-shrink-0 group-hover:text-rsm-secondary" aria-hidden="true"></i>
                         <span>Contact</span>
                     </a>
                 </nav>
                 
                 <!-- Icon-only Navigation for medium screens -->
-                <nav class="hidden lg:flex xl:hidden items-center space-x-2">
-                    <a href="#why-rsm" class="rsm-nav-link group p-3" title="Why Competitions?">
-                        <i data-feather="target" class="w-5 h-5 group-hover:text-rsm-secondary"></i>
+                <nav class="hidden lg:flex xl:hidden items-center space-x-2" role="navigation" aria-label="Compact navigation">
+                    <a href="#why-rsm" class="rsm-nav-link group p-3" aria-label="Why Competitions?">
+                        <i data-feather="target" class="w-5 h-5 group-hover:text-rsm-secondary" aria-hidden="true"></i>
                     </a>
-                    <a href="#pathway" class="rsm-nav-link group p-3" title="The RSM Pathway">
-                        <i data-feather="trending-up" class="w-5 h-5 group-hover:text-rsm-secondary"></i>
+                    <a href="#pathway" class="rsm-nav-link group p-3" aria-label="The RSM Pathway">
+                        <i data-feather="trending-up" class="w-5 h-5 group-hover:text-rsm-secondary" aria-hidden="true"></i>
                     </a>
-                    <a href="#programs" class="rsm-nav-link group p-3" title="Programs">
-                        <i data-feather="book-open" class="w-5 h-5 group-hover:text-rsm-secondary"></i>
+                    <a href="#programs" class="rsm-nav-link group p-3" aria-label="Programs">
+                        <i data-feather="book-open" class="w-5 h-5 group-hover:text-rsm-secondary" aria-hidden="true"></i>
                     </a>
-                    <a href="#coaches" class="rsm-nav-link group p-3" title="Our Team">
-                        <i data-feather="users" class="w-5 h-5 group-hover:text-rsm-secondary"></i>
+                    <a href="#coaches" class="rsm-nav-link group p-3" aria-label="Our Team">
+                        <i data-feather="users" class="w-5 h-5 group-hover:text-rsm-secondary" aria-hidden="true"></i>
                     </a>
-                    <a href="#contact" class="rsm-nav-link group p-3" title="Contact">
-                        <i data-feather="mail" class="w-5 h-5 group-hover:text-rsm-secondary"></i>
+                    <a href="#contact" class="rsm-nav-link group p-3" aria-label="Contact">
+                        <i data-feather="mail" class="w-5 h-5 group-hover:text-rsm-secondary" aria-hidden="true"></i>
                     </a>
                 </nav>
                 
                 <!-- CTA Button -->
                 <div class="hidden md:flex items-center space-x-3">
-                    <a href="#contact" class="btn-primary flex-shrink-0">
-                        <i data-feather="calendar" class="w-4 h-4 mr-2 flex-shrink-0"></i>
+                    <a href="#contact" class="btn-primary flex-shrink-0" aria-label="Schedule a free assessment">
+                        <i data-feather="calendar" class="w-4 h-4 mr-2 flex-shrink-0" aria-hidden="true"></i>
                         <span class="hidden xl:inline">Schedule Assessment</span>
                         <span class="xl:hidden">Schedule</span>
                     </a>
                 </div>
                 
                 <!-- Mobile Menu Button -->
-                <button id="mobile-menu-button" class="lg:hidden p-2 rounded-md hover:bg-rsm-gray-100 transition-colors">
-                    <i data-feather="menu" class="w-6 h-6 text-rsm-primary"></i>
+                <button id="mobile-menu-button" class="lg:hidden p-2 rounded-md hover:bg-rsm-gray-100 transition-colors" 
+                        aria-label="Open mobile menu" aria-expanded="false" aria-controls="mobile-menu">
+                    <i data-feather="menu" class="w-6 h-6 text-rsm-primary" aria-hidden="true"></i>
                 </button>
             </div>
         </div>
         
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden lg:hidden border-t border-rsm-gray-200 bg-white">
+        <div id="mobile-menu" class="hidden lg:hidden border-t border-rsm-gray-200 bg-white" role="navigation" aria-label="Mobile navigation">
             <div class="rsm-container py-4 space-y-2">
-                <a href="#why-rsm" class="rsm-nav-link mobile flex items-center">
-                    <i data-feather="target" class="w-4 h-4 mr-3"></i>
+                <a href="#why-rsm" class="rsm-nav-link mobile flex items-center" aria-describedby="why-rsm-desc">
+                    <i data-feather="target" class="w-4 h-4 mr-3" aria-hidden="true"></i>
                     Why Competitions?
                 </a>
-                <a href="#pathway" class="rsm-nav-link mobile flex items-center">
-                    <i data-feather="trending-up" class="w-4 h-4 mr-3"></i>
+                <a href="#pathway" class="rsm-nav-link mobile flex items-center" aria-describedby="pathway-desc">
+                    <i data-feather="trending-up" class="w-4 h-4 mr-3" aria-hidden="true"></i>
                     The RSM Pathway
                 </a>
-                <a href="#programs" class="rsm-nav-link mobile flex items-center">
-                    <i data-feather="book-open" class="w-4 h-4 mr-3"></i>
+                <a href="#programs" class="rsm-nav-link mobile flex items-center" aria-describedby="programs-desc">
+                    <i data-feather="book-open" class="w-4 h-4 mr-3" aria-hidden="true"></i>
                     Programs
                 </a>
-                <a href="#coaches" class="rsm-nav-link mobile flex items-center">
-                    <i data-feather="users" class="w-4 h-4 mr-3"></i>
+                <a href="#coaches" class="rsm-nav-link mobile flex items-center" aria-describedby="coaches-desc">
+                    <i data-feather="users" class="w-4 h-4 mr-3" aria-hidden="true"></i>
                     Our Team
                 </a>
-                <a href="#contact" class="rsm-nav-link mobile flex items-center">
-                    <i data-feather="mail" class="w-4 h-4 mr-3"></i>
+                <a href="#contact" class="rsm-nav-link mobile flex items-center" aria-describedby="contact-desc">
+                    <i data-feather="mail" class="w-4 h-4 mr-3" aria-hidden="true"></i>
                     Contact
                 </a>
                 <div class="pt-3 border-t border-rsm-gray-200">
-                    <a href="#contact" class="btn-primary btn-small w-full flex items-center justify-center">
-                        <i data-feather="calendar" class="w-4 h-4 mr-2"></i>
+                    <a href="#contact" class="btn-primary btn-small w-full flex items-center justify-center" aria-label="Schedule a free assessment">
+                        <i data-feather="calendar" class="w-4 h-4 mr-2" aria-hidden="true"></i>
                         Schedule Assessment
                     </a>
                 </div>
@@ -158,10 +191,10 @@
         </div>
     </header>
 
-    <main>
-        <section class="rsm-hero">
+    <main id="main-content" role="main">
+        <section class="rsm-hero" role="region" aria-labelledby="hero-heading">
             <div class="rsm-container">
-                <h1 class="rsm-hero-title">
+                <h1 id="hero-heading" class="rsm-hero-title">
                     Beyond the Classroom: <br class="hidden md:block" /> The RSM Pathway to Competitive Excellence
                 </h1>
                 <p class="rsm-hero-subtitle">
@@ -791,10 +824,14 @@
             };
 
             async function callGemini(prompt) {
-                // IMPORTANT: The API key is intentionally left blank. 
-                // In the target environment, it will be automatically supplied.
-                const apiKey = ""; 
-                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+                // Use secure configuration
+                const geminiConfig = window.RSMConfig.getSecureConfig('gemini');
+                
+                if (!geminiConfig) {
+                    throw new Error("Gemini API is not properly configured. Please contact support.");
+                }
+                
+                const apiUrl = `${geminiConfig.apiUrl}?key=${geminiConfig.apiKey}`;
                 
                 const payload = {
                     contents: [{
@@ -803,24 +840,35 @@
                     }]
                 };
 
-                const response = await fetch(apiUrl, {
-                    method: 'POST',
-                    headers: { 'Content-Type':'application/json' },
-                    body: JSON.stringify(payload)
-                });
+                try {
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 
+                            'Content-Type': 'application/json',
+                            'User-Agent': 'RSM-Competition-Website/1.0'
+                        },
+                        body: JSON.stringify(payload)
+                    });
 
-                if (!response.ok) {
-                    throw new Error(`API request failed with status ${response.status}`);
-                }
+                    if (!response.ok) {
+                        const errorText = await response.text();
+                        console.error('API Error:', response.status, errorText);
+                        throw new Error(`API request failed with status ${response.status}`);
+                    }
 
-                const result = await response.json();
+                    const result = await response.json();
 
-                if (result.candidates && result.candidates.length > 0 && result.candidates[0].content && result.candidates[0].content.parts && result.candidates[0].content.parts.length > 0) {
-                    return result.candidates[0].content.parts[0].text;
-                } else {
-                    // This handles cases where the API returns a response, but it's not in the expected format.
-                    console.error("Unexpected API response structure:", result);
-                    throw new Error("Invalid response structure from API");
+                    if (result.candidates && result.candidates.length > 0 && 
+                        result.candidates[0].content && result.candidates[0].content.parts && 
+                        result.candidates[0].content.parts.length > 0) {
+                        return result.candidates[0].content.parts[0].text;
+                    } else {
+                        console.error("Unexpected API response structure:", result);
+                        throw new Error("Invalid response structure from API");
+                    }
+                } catch (error) {
+                    console.error('Gemini API call failed:', error);
+                    throw new Error("Problem generation service is temporarily unavailable. Please try again later.");
                 }
             }
 

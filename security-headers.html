@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Security Headers -->
+    <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self';
+        script-src 'self' 'unsafe-inline' 'unsafe-eval'
+            https://cdn.tailwindcss.com
+            https://unpkg.com/feather-icons
+            https://cdnjs.cloudflare.com/ajax/libs/three.js/
+            https://cdn.jsdelivr.net/npm/three@0.128.0/
+            https://maps.googleapis.com
+            https://www.google.com
+            https://generativelanguage.googleapis.com;
+        style-src 'self' 'unsafe-inline'
+            https://cdn.tailwindcss.com
+            https://fonts.googleapis.com;
+        font-src 'self'
+            https://fonts.gstatic.com;
+        img-src 'self' data: blob:
+            https://maps.googleapis.com
+            https://www.google.com
+            https://maps.gstatic.com
+            https://placehold.co;
+        frame-src 'self'
+            https://www.google.com
+            https://maps.google.com;
+        connect-src 'self'
+            https://generativelanguage.googleapis.com
+            https://maps.googleapis.com;
+        media-src 'self';
+        object-src 'none';
+        base-uri 'self';
+        form-action 'self';
+        frame-ancestors 'none';
+        upgrade-insecure-requests;
+    ">
+    
+    <!-- Additional Security Headers -->
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="
+        geolocation=(),
+        microphone=(),
+        camera=(),
+        midi=(),
+        encrypted-media=(),
+        payment=(),
+        usb=()
+    ">
+    
+    <title>RSM Competition Program: The Pathway to Excellence</title>
+    
+    <!-- External Dependencies -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/STLLoader.js"></script>
+    <script src="assets/js/locations.js"></script>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/rsm-official.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Security-compliant styles */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        #gemini-modal {
+            transition: opacity 0.3s ease;
+        }
+        
+        .google-maps-container {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .google-maps-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 40px;
+            background: white;
+            z-index: 10;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+    <!-- This is a template showing how to implement security headers -->
+    <!-- The actual implementation would need to be done at the server level -->
+    <!-- or through hosting platform configuration -->
+    
+    <div class="p-8 max-w-4xl mx-auto">
+        <h1 class="text-3xl font-bold text-rsm-dark-blue mb-6">Security Headers Implementation</h1>
+        
+        <div class="bg-blue-50 border-l-4 border-rsm-blue p-6 rounded-lg">
+            <h2 class="font-bold text-rsm-dark-blue mb-4">Security Headers Applied:</h2>
+            
+            <ul class="space-y-2 text-sm">
+                <li>✅ <strong>Content Security Policy (CSP)</strong> - Prevents XSS attacks</li>
+                <li>✅ <strong>X-Frame-Options</strong> - Prevents clickjacking</li>
+                <li>✅ <strong>X-Content-Type-Options</strong> - Prevents MIME sniffing</li>
+                <li>✅ <strong>Referrer Policy</strong> - Controls referrer information</li>
+                <li>✅ <strong>Permissions Policy</strong> - Controls browser features</li>
+                <li>✅ <strong>Upgrade Insecure Requests</strong> - Forces HTTPS</li>
+            </ul>
+        </div>
+        
+        <div class="mt-6 bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded-lg">
+            <h3 class="font-bold text-yellow-800 mb-2">Implementation Notes:</h3>
+            <p class="text-sm text-yellow-700">
+                These security headers should be implemented at the server level or through 
+                hosting platform configuration (Netlify, Vercel, etc.) for maximum effectiveness.
+                Meta tags provide fallback protection but server-level headers are preferred.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
