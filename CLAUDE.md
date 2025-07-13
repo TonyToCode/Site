@@ -4,7 +4,20 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Repository Overview
 
-This is a single-page web application for the Russian School of Mathematics (RSM) competition program. The project consists of a standalone HTML file with embedded CSS and JavaScript.
+This is a website project for the Russian School of Mathematics (RSM) competition program. The project is a modernization and redesign of the existing RSM website at https://www.mathschool.com/. The goal is to create a more engaging, accessible, and performant digital presence for RSM's math competition programs.
+
+## Collaboration Guidelines
+
+### Git Workflow
+- **ALWAYS check for new commits** before making changes: Run `git pull origin main` to ensure you have the latest changes from other collaborators
+- **ALWAYS push changes** after completing work: Use `git add .`, `git commit -m "descriptive message"`, and `git push origin main`
+- **Collaborate transparently**: Since multiple people may be working on this project, communicate changes clearly through commit messages
+
+### Developer Support
+- **Assume limited coding experience**: The collaborators on this project are new to coding and development
+- **Provide detailed explanations**: When suggesting changes or fixes, explain what the code does and why the changes are needed
+- **Offer learning opportunities**: Help developers understand concepts and best practices as you work together
+- **Be patient and thorough**: Take time to explain technical decisions and provide context for improvements
 
 ## File Structure
 
