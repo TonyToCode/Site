@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NMCP Program - National Math Competition Preparation | RSM</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/STLLoader.js"></script>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body class="bg-white text-gray-800">
+
+    <header class="bg-white/90 backdrop-blur-md sticky top-0 z-40 border-b border-gray-200 shadow-lg transition-all duration-300">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="../index.html" class="flex-shrink-0">
+                <div id="header-logo-3d" class="w-[200px] h-[60px]"></div>
+            </a>
+            <nav class="hidden md:flex space-x-8 items-center">
+                <a href="../index.html#why-rsm" class="text-gray-600 hover:text-rsm-blue transition-colors">Why Competitions?</a>
+                <a href="../index.html#pathway" class="text-gray-600 hover:text-rsm-blue transition-colors">The RSM Pathway</a>
+                <a href="../index.html#programs" class="text-gray-600 hover:text-rsm-blue transition-colors">Programs</a>
+                <a href="../index.html#coaches" class="text-gray-600 hover:text-rsm-blue transition-colors">Our Team</a>
+                <a href="../index.html#contact" class="text-gray-600 hover:text-rsm-blue transition-colors">Contacts</a>
+                <a href="../index.html#contact" class="bg-rsm-gold text-rsm-dark-blue font-bold py-2 px-4 rounded-lg shadow-md hover:bg-yellow-500 transition-all">Schedule Assessment</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden">
+                <i data-feather="menu" class="text-rsm-dark-blue"></i>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+             <a href="../index.html#why-rsm" class="block py-2 text-gray-600 hover:text-rsm-blue transition-colors">Why Competitions?</a>
+             <a href="../index.html#pathway" class="block py-2 text-gray-600 hover:text-rsm-blue transition-colors">The RSM Pathway</a>
+             <a href="../index.html#programs" class="block py-2 text-gray-600 hover:text-rsm-blue transition-colors">Programs</a>
+             <a href="../index.html#coaches" class="block py-2 text-gray-600 hover:text-rsm-blue transition-colors">Our Team</a>
+             <a href="../index.html#contact" class="block py-2 text-gray-600 hover:text-rsm-blue transition-colors">Contacts</a>
+             <a href="../index.html#contact" class="block mt-2 text-center bg-rsm-gold text-rsm-dark-blue font-bold py-2 px-4 rounded-lg shadow-md hover:bg-yellow-500 transition-all">Schedule Assessment</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative gradient-bg text-center py-20 md:py-32 overflow-hidden">
+            <!-- Floating geometric shapes for visual interest -->
+            <div class="absolute inset-0 overflow-hidden pointer-events-none">
+                <div class="absolute top-20 left-10 w-20 h-20 bg-rsm-gold/20 rounded-full float"></div>
+                <div class="absolute top-40 right-20 w-16 h-16 bg-white/30 rounded-full float" style="animation-delay: -1s;"></div>
+                <div class="absolute bottom-20 left-1/4 w-12 h-12 bg-rsm-gold/30 rounded-full float" style="animation-delay: -2s;"></div>
+            </div>
+            <div class="container mx-auto px-6 relative">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight slide-up">
+                    National Math Competition<br class="hidden md:block" />Preparation (NMCP)
+                </h1>
+                <p class="mt-6 text-lg md:text-xl max-w-3xl mx-auto text-blue-100 fade-in">
+                    Elite training for exceptional students aiming for the highest levels of mathematical competition.
+                </p>
+                <div class="mt-10 fade-in">
+                    <a href="../index.html#contact" class="btn-primary text-white font-bold py-4 px-8 rounded-xl shadow-xl hover:shadow-2xl transition-all transform hover:scale-105">
+                        <span class="relative z-10">Apply for NMCP</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Program Overview -->
+        <section class="py-20 md:py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-3xl md:text-4xl font-bold text-rsm-dark-blue mb-8">The Path to Mathematical Excellence</h2>
+                    <div class="prose prose-lg max-w-none">
+                        <p class="text-gray-700 mb-6">
+                            The National Math Competition Preparation (NMCP) program represents the pinnacle of mathematical training at RSM. 
+                            This invitation-only program is designed for students who have demonstrated exceptional ability and are ready to 
+                            compete at the highest levels of American mathematics competitions.
+                        </p>
+                        <p class="text-gray-700 mb-6">
+                            NMCP students receive intensive, Olympiad-level training from our most senior coaches. The curriculum focuses on 
+                            mastering the complex proof-based problems found in elite competitions, with the primary goal of qualifying for 
+                            the AIME and ultimately competing in the USA(J)MO.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Competition Pathway -->
+        <section class="py-20 md:py-24 bg-rsm-light-gray">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-rsm-dark-blue">Competition Progression</h2>
+                    <p class="mt-4 text-lg text-gray-600">The journey to mathematical olympiad excellence</p>
+                </div>
+                
+                <div class="max-w-4xl mx-auto">
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="text-center bg-white p-8 rounded-xl shadow-xl card-hover">
+                            <div class="bg-gradient-to-r from-yellow-400 to-yellow-600 text-white w-16 h-16 rounded-full mx-auto flex items-center justify-center mb-6">
+                                <i data-feather="target" class="w-8 h-8"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-rsm-dark-blue mb-4">AMC 10/12</h3>
+                            <p class="text-gray-600">Master advanced problem-solving techniques for the American Mathematics Competitions, the gateway to elite competitions.</p>
+                        </div>
+                        
+                        <div class="text-center bg-white p-8 rounded-xl shadow-xl card-hover">
+                            <div class="bg-gradient-to-r from-blue-500 to-blue-700 text-white w-16 h-16 rounded-full mx-auto flex items-center justify-center mb-6">
+                                <i data-feather="award" class="w-8 h-8"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-rsm-dark-blue mb-4">AIME</h3>
+                            <p class="text-gray-600">Develop skills for the American Invitational Mathematics Examination, requiring deep mathematical insight and creativity.</p>
+                        </div>
+                        
+                        <div class="text-center bg-white p-8 rounded-xl shadow-xl card-hover">
+                            <div class="bg-gradient-to-r from-purple-500 to-purple-700 text-white w-16 h-16 rounded-full mx-auto flex items-center justify-center mb-6">
+                                <i data-feather="crown" class="w-8 h-8"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-rsm-dark-blue mb-4">USA(J)MO</h3>
+                            <p class="text-gray-600">Reach the pinnacle with training for the USA Mathematical Olympiad, featuring the most challenging proof-based problems.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Curriculum Details -->
+        <section class="py-20 md:py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="max-w-6xl mx-auto">
+                    <h2 class="text-3xl md:text-4xl font-bold text-rsm-dark-blue mb-12 text-center">Advanced Curriculum</h2>
+                    
+                    <div class="grid lg:grid-cols-2 gap-12">
+                        <div>
+                            <h3 class="text-2xl font-bold text-rsm-blue mb-6">Core Topics</h3>
+                            <div class="space-y-4">
+                                <div class="flex items-start">
+                                    <i data-feather="check-circle" class="w-6 h-6 text-green-500 mr-3 mt-1 flex-shrink-0"></i>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-900">Advanced Number Theory</h4>
+                                        <p class="text-gray-600">Modular arithmetic, divisibility, prime factorization, and Diophantine equations</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <i data-feather="check-circle" class="w-6 h-6 text-green-500 mr-3 mt-1 flex-shrink-0"></i>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-900">Combinatorics & Graph Theory</h4>
+                                        <p class="text-gray-600">Counting principles, generating functions, combinatorial optimization</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <i data-feather="check-circle" class="w-6 h-6 text-green-500 mr-3 mt-1 flex-shrink-0"></i>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-900">Abstract Algebra</h4>
+                                        <p class="text-gray-600">Group theory, ring theory, field extensions, and polynomial algebra</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <i data-feather="check-circle" class="w-6 h-6 text-green-500 mr-3 mt-1 flex-shrink-0"></i>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-900">Advanced Geometry</h4>
+                                        <p class="text-gray-600">Projective geometry, trigonometric identities, and complex geometry</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-2xl font-bold text-rsm-blue mb-6">Training Methods</h3>
+                            <div class="space-y-4">
+                                <div class="flex items-start">
+                                    <i data-feather="users" class="w-6 h-6 text-rsm-blue mr-3 mt-1 flex-shrink-0"></i>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-900">Small Group Sessions</h4>
+                                        <p class="text-gray-600">Intensive workshops with 4-6 students for personalized attention</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <i data-feather="edit-3" class="w-6 h-6 text-rsm-blue mr-3 mt-1 flex-shrink-0"></i>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-900">Proof Writing</h4>
+                                        <p class="text-gray-600">Rigorous training in mathematical proof techniques and exposition</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <i data-feather="clock" class="w-6 h-6 text-rsm-blue mr-3 mt-1 flex-shrink-0"></i>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-900">Mock Competitions</h4>
+                                        <p class="text-gray-600">Regular practice tests under competition conditions</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <i data-feather="user-check" class="w-6 h-6 text-rsm-blue mr-3 mt-1 flex-shrink-0"></i>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-900">One-on-One Mentoring</h4>
+                                        <p class="text-gray-600">Individual guidance from experienced olympiad coaches</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Admission Requirements -->
+        <section class="py-20 md:py-24 bg-rsm-light-gray">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold text-rsm-dark-blue mb-8">Admission Requirements</h2>
+                    <p class="text-lg text-gray-600 mb-12">NMCP is highly selective and admission is by invitation only.</p>
+                    
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="bg-white p-8 rounded-xl shadow-lg">
+                            <h3 class="text-xl font-bold text-rsm-blue mb-4">Prerequisites</h3>
+                            <ul class="text-left space-y-3 text-gray-700">
+                                <li class="flex items-center"><i data-feather="arrow-right" class="w-4 h-4 text-rsm-gold mr-2"></i>AMC 10/12 score above 120</li>
+                                <li class="flex items-center"><i data-feather="arrow-right" class="w-4 h-4 text-rsm-gold mr-2"></i>AIME qualification preferred</li>
+                                <li class="flex items-center"><i data-feather="arrow-right" class="w-4 h-4 text-rsm-gold mr-2"></i>Strong performance in MCP program</li>
+                                <li class="flex items-center"><i data-feather="arrow-right" class="w-4 h-4 text-rsm-gold mr-2"></i>Demonstrated passion for mathematics</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-white p-8 rounded-xl shadow-lg">
+                            <h3 class="text-xl font-bold text-rsm-blue mb-4">Selection Process</h3>
+                            <ul class="text-left space-y-3 text-gray-700">
+                                <li class="flex items-center"><i data-feather="arrow-right" class="w-4 h-4 text-rsm-gold mr-2"></i>Advanced placement examination</li>
+                                <li class="flex items-center"><i data-feather="arrow-right" class="w-4 h-4 text-rsm-gold mr-2"></i>Interview with head coach</li>
+                                <li class="flex items-center"><i data-feather="arrow-right" class="w-4 h-4 text-rsm-gold mr-2"></i>Review of competition history</li>
+                                <li class="flex items-center"><i data-feather="arrow-right" class="w-4 h-4 text-rsm-gold mr-2"></i>Commitment to intensive training</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-12">
+                        <a href="../index.html#contact" class="btn-primary text-white font-bold py-4 px-8 rounded-xl shadow-xl hover:shadow-2xl transition-all transform hover:scale-105">
+                            <span class="relative z-10">Request NMCP Information</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-rsm-dark-blue text-white">
+        <div class="container mx-auto px-6 py-8 text-center text-blue-200">
+            <p>&copy; 2025 Russian School of Mathematics. All Rights Reserved.</p>
+            <p class="text-sm mt-2">Elite mathematical training for competition excellence.</p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+    <script>
+        // Initialize 3D logo for NMCP page
+        document.addEventListener('DOMContentLoaded', () => {
+            // Create a custom Logo3D instance for this page
+            const headerLogo = document.getElementById('header-logo-3d');
+            if (headerLogo && typeof Logo3D !== 'undefined') {
+                new Logo3D('header-logo-3d', '../rsm.stl', {
+                    width: 200,
+                    height: 60,
+                    autoRotate: true,
+                    color: 0x005dab,
+                    metalness: 0.2,
+                    roughness: 0.3
+                });
+            }
+        });
+    </script>
+    <script src="../assets/js/logo3d.js"></script>
+</body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequently Asked Questions | RSM Competition Program</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/STLLoader.js"></script>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body class="bg-white text-gray-800">
+
+    <header class="bg-white/90 backdrop-blur-md sticky top-0 z-40 border-b border-gray-200 shadow-lg transition-all duration-300">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="../index.html" class="flex-shrink-0">
+                <div id="header-logo-3d" class="w-[200px] h-[60px]"></div>
+            </a>
+            <nav class="hidden md:flex space-x-8 items-center">
+                <a href="../index.html#why-rsm" class="text-gray-600 hover:text-rsm-blue transition-colors">Why Competitions?</a>
+                <a href="../index.html#pathway" class="text-gray-600 hover:text-rsm-blue transition-colors">The RSM Pathway</a>
+                <a href="../index.html#programs" class="text-gray-600 hover:text-rsm-blue transition-colors">Programs</a>
+                <a href="../index.html#coaches" class="text-gray-600 hover:text-rsm-blue transition-colors">Our Team</a>
+                <a href="../index.html#contact" class="text-gray-600 hover:text-rsm-blue transition-colors">Contacts</a>
+                <a href="../index.html#contact" class="bg-rsm-gold text-rsm-dark-blue font-bold py-2 px-4 rounded-lg shadow-md hover:bg-yellow-500 transition-all">Schedule Assessment</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden">
+                <i data-feather="menu" class="text-rsm-dark-blue"></i>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+             <a href="../index.html#why-rsm" class="block py-2 text-gray-600 hover:text-rsm-blue transition-colors">Why Competitions?</a>
+             <a href="../index.html#pathway" class="block py-2 text-gray-600 hover:text-rsm-blue transition-colors">The RSM Pathway</a>
+             <a href="../index.html#programs" class="block py-2 text-gray-600 hover:text-rsm-blue transition-colors">Programs</a>
+             <a href="../index.html#coaches" class="block py-2 text-gray-600 hover:text-rsm-blue transition-colors">Our Team</a>
+             <a href="../index.html#contact" class="block py-2 text-gray-600 hover:text-rsm-blue transition-colors">Contacts</a>
+             <a href="../index.html#contact" class="block mt-2 text-center bg-rsm-gold text-rsm-dark-blue font-bold py-2 px-4 rounded-lg shadow-md hover:bg-yellow-500 transition-all">Schedule Assessment</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative bg-rsm-light-gray text-center py-16 md:py-20">
+            <div class="container mx-auto px-6">
+                <h1 class="text-4xl md:text-5xl font-extrabold text-rsm-dark-blue leading-tight">
+                    Frequently Asked Questions
+                </h1>
+                <p class="mt-6 text-lg md:text-xl max-w-3xl mx-auto text-gray-600">
+                    Everything you need to know about RSM's competition programs
+                </p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="py-20 md:py-24 bg-white">
+            <div class="container mx-auto px-6 max-w-4xl">
+                <div class="space-y-4">
+                    <!-- FAQ Item 1 -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover border border-gray-100">
+                        <button class="accordion-header w-full flex justify-between items-center text-left p-6">
+                            <span class="font-semibold text-lg text-rsm-dark-blue">The name is the "Russian" School of Math. What does this "Russian" methodology actually mean for my child?</span>
+                            <i data-feather="chevron-down" class="transition-transform"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="p-6 pt-0 text-gray-700">
+                                <p>The "Russian" in our name comes from our approach, which is based on the elite mathematics schools of the former Soviet Union and adapted for the U.S. environment. This methodology has a long and storied history of success, consistently producing many of the world's top performers in international math olympiads.</p>
+                                <p class="mt-4">According to this tradition, the study of mathematics is the pre-eminent tool of mental development. For your child, this means we teach math in a way that not only builds mathematical excellence but also develops intellect and character. Our curriculum focuses on deep conceptual understanding over memorization, teaching students to think logically and creatively. This approach equips them with a powerful framework for problem-solving that will benefit them far beyond mathematics.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 2 -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover border border-gray-100">
+                        <button class="accordion-header w-full flex justify-between items-center text-left p-6">
+                            <span class="font-semibold text-lg text-rsm-dark-blue">How do you determine the right competition program and level for each student?</span>
+                            <i data-feather="chevron-down" class="transition-transform"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="p-6 pt-0 text-gray-700">
+                                <p>Finding the perfect fit is essential for a student's confidence and growth. Our placement process is comprehensive and free of charge. It begins with a multi-part evaluation that assesses not just a student's computational skills but also their logical reasoning and problem-solving abilities.</p>
+                                <p class="mt-4">Following the evaluation, we have a detailed discussion with you and your child to understand their goals, learning style, and previous experience. Based on both the evaluation results and this conversation, we recommend a specific program and level—whether it's building a foundation for the AMC 8 or tackling the advanced concepts required for the AIME.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 3 -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover border border-gray-100">
+                        <button class="accordion-header w-full flex justify-between items-center text-left p-6">
+                            <span class="font-semibold text-lg text-rsm-dark-blue">What qualifications do your competition coaches have?</span>
+                            <i data-feather="chevron-down" class="transition-transform"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="p-6 pt-0 text-gray-700">
+                                <p>We believe that an expert coach is fundamental to a student's success. Every RSM competition coach holds a degree in mathematics or a related field and, most importantly, possesses a deep passion for the subject.</p>
+                                <p class="mt-4">Before leading a classroom, all instructors undergo extensive, mandatory training in our unique methodology to ensure a consistent and high-quality learning experience. Many of our coaches are also former high-level math competitors themselves, bringing invaluable firsthand experience and strategic insight to their teaching.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 4 -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover border border-gray-100">
+                        <button class="accordion-header w-full flex justify-between items-center text-left p-6">
+                            <span class="font-semibold text-lg text-rsm-dark-blue">What is the expected time commitment for the competition program?</span>
+                            <i data-feather="chevron-down" class="transition-transform"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="p-6 pt-0 text-gray-700">
+                                <p>Our Math Competition Preparation (MCP) program typically involves one 90-minute class per week. To reinforce concepts, students are assigned a weekly homework assignment, which generally requires an additional 1-2 hours of focused work.</p>
+                                <p class="mt-4">The National Math Competition Preparation (NMCP) program is more intensive, with a workload that adapts to the competition calendar. We design our programs to be challenging yet manageable, fostering deep learning and passion without overwhelming students.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Additional FAQ items continue... -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover border border-gray-100">
+                        <button class="accordion-header w-full flex justify-between items-center text-left p-6">
+                            <span class="font-semibold text-lg text-rsm-dark-blue">How does the competition program fit with a demanding school schedule?</span>
+                            <i data-feather="chevron-down" class="transition-transform"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="p-6 pt-0 text-gray-700">
+                                <p>We design our program to be a powerful supplement to a student's education. Our class schedules include after-school and weekend options to integrate smoothly with demanding school commitments.</p>
+                                <p class="mt-4">While we don't guarantee specific grade improvements, many parents report that their children become more confident and successful in their school's math classes. Our program focuses on developing deep conceptual understanding and advanced problem-solving skills.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover border border-gray-100">
+                        <button class="accordion-header w-full flex justify-between items-center text-left p-6">
+                            <span class="font-semibold text-lg text-rsm-dark-blue">How are parents kept informed of their child's progress?</span>
+                            <i data-feather="chevron-down" class="transition-transform"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="p-6 pt-0 text-gray-700">
+                                <p>We believe in a strong parent-teacher partnership. You can track your child's progress, view assignments, and see results through our dedicated parent portal, which is updated regularly.</p>
+                                <p class="mt-4">Additionally, our instructors provide detailed feedback reports at key points throughout the semester, highlighting areas of strength and opportunities for growth. For more specific questions, teachers are available for brief discussions before or after class.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover border border-gray-100">
+                        <button class="accordion-header w-full flex justify-between items-center text-left p-6">
+                            <span class="font-semibold text-lg text-rsm-dark-blue">How does this program help with college applications?</span>
+                            <i data-feather="chevron-down" class="transition-transform"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="p-6 pt-0 text-gray-700">
+                                <p>Elite universities seek students who demonstrate intellectual vitality, resilience, and a passion for challenges. Our program is designed to forge these exact traits.</p>
+                                <p class="mt-4">The intense training and high-level competition experience shape students into exceptional candidates, providing compelling material for their applications and essays. The national awards our students earn are simply the evidence of this deeper transformation.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover border border-gray-100">
+                        <button class="accordion-header w-full flex justify-between items-center text-left p-6">
+                            <span class="font-semibold text-lg text-rsm-dark-blue">How do you prepare students for competition pressure?</span>
+                            <i data-feather="chevron-down" class="transition-transform"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="p-6 pt-0 text-gray-700">
+                                <p>Our curriculum is designed to build confidence and resilience right from the start. We integrate timed practice tests and strategic coaching on pacing, focus, and managing test anxiety.</p>
+                                <p class="mt-4">By creating a supportive classroom environment and demystifying the test format, we help students become comfortable with the pressures of competition. This approach ensures they can perform their best when it counts.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover border border-gray-100">
+                        <button class="accordion-header w-full flex justify-between items-center text-left p-6">
+                            <span class="font-semibold text-lg text-rsm-dark-blue">How effective is online learning for competition preparation?</span>
+                            <i data-feather="chevron-down" class="transition-transform"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="p-6 pt-0 text-gray-700">
+                                <p>Our virtual classrooms are purpose-built to be as interactive and collaborative as our physical ones. We use a state-of-the-art online platform that allows for real-time interaction with the teacher and with peers.</p>
+                                <p class="mt-4">Instructors use digital whiteboards to illustrate complex problems, and students can "raise their hand" and work through solutions live. We maintain small class sizes to ensure every student gets individual attention.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-16 text-center">
+                    <div class="bg-rsm-light-gray p-8 rounded-xl">
+                        <h3 class="text-2xl font-bold text-rsm-dark-blue mb-4">Still Have Questions?</h3>
+                        <p class="text-gray-600 mb-6">Our program advisors are here to help you understand how RSM can support your child's mathematical journey.</p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                            <a href="../index.html#contact" class="btn-primary text-white font-bold py-3 px-6 rounded-xl shadow-lg hover:shadow-xl transition-all">
+                                <span class="relative z-10">Contact Us</span>
+                            </a>
+                            <a href="mailto:online.competition@mathschool.com" class="bg-white text-rsm-blue border-2 border-rsm-blue font-bold py-3 px-6 rounded-xl hover:bg-rsm-blue hover:text-white transition-all">
+                                Email Us Directly
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-rsm-dark-blue text-white">
+        <div class="container mx-auto px-6 py-8 text-center text-blue-200">
+            <p>&copy; 2025 Russian School of Mathematics. All Rights Reserved.</p>
+            <p class="text-sm mt-2">Your questions matter to us - we're here to help.</p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+    <script>
+        // Initialize 3D logo for FAQ page
+        document.addEventListener('DOMContentLoaded', () => {
+            const headerLogo = document.getElementById('header-logo-3d');
+            if (headerLogo && typeof Logo3D !== 'undefined') {
+                new Logo3D('header-logo-3d', '../rsm.stl', {
+                    width: 200,
+                    height: 60,
+                    autoRotate: true,
+                    color: 0x005dab,
+                    metalness: 0.2,
+                    roughness: 0.3
+                });
+            }
+        });
+    </script>
+    <script src="../assets/js/logo3d.js"></script>
+</body>
+</html>

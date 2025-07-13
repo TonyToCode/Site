@@ -1,0 +1,147 @@
+/* RSM Competition Program Styles */
+
+/* Custom styles to match RSM branding */
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Defining RSM brand colors for use with Tailwind's arbitrary value support */
+:root {
+    --rsm-blue: #005dab;
+    --rsm-gold: #ffc72c;
+    --rsm-dark-blue: #003e7a;
+    --rsm-light-gray: #f8f9fa;
+}
+
+.bg-rsm-blue { background-color: var(--rsm-blue); }
+.bg-rsm-gold { background-color: var(--rsm-gold); }
+.bg-rsm-light-gray { background-color: var(--rsm-light-gray); }
+.text-rsm-blue { color: var(--rsm-blue); }
+.text-rsm-gold { color: var(--rsm-gold); }
+.text-rsm-dark-blue { color: var(--rsm-dark-blue); }
+.border-rsm-blue { border-color: var(--rsm-blue); }
+.border-rsm-gold { border-color: var(--rsm-gold); }
+.hover\:bg-rsm-dark-blue:hover { background-color: var(--rsm-dark-blue); }
+.hover\:bg-yellow-500:hover { background-color: #eab308; }
+
+/* Smooth scrolling behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Enhanced animations and transitions */
+.fade-in {
+    animation: fadeIn 0.6s ease-in;
+}
+
+.slide-up {
+    animation: slideUp 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { 
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Floating elements animation */
+.float {
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Enhanced hover effects */
+.card-hover {
+    transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+}
+
+/* Gradient backgrounds */
+.gradient-bg {
+    background: linear-gradient(135deg, var(--rsm-blue) 0%, var(--rsm-dark-blue) 100%);
+}
+
+.gradient-gold {
+    background: linear-gradient(135deg, var(--rsm-gold) 0%, #f59e0b 100%);
+}
+
+/* Styling for the accordion */
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+/* Modal styles */
+#gemini-modal {
+    transition: opacity 0.3s ease;
+    backdrop-filter: blur(4px);
+}
+
+/* Custom button styles */
+.btn-primary {
+    background: linear-gradient(135deg, var(--rsm-blue) 0%, var(--rsm-dark-blue) 100%);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn-primary:hover::before {
+    left: 100%;
+}
+
+/* Enhanced icon styling */
+.icon-bounce {
+    transition: transform 0.3s ease;
+}
+
+.icon-bounce:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--rsm-blue);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--rsm-dark-blue);
+}

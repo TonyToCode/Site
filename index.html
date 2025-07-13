@@ -12,6 +12,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
     <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/STLLoader.js"></script>
+    <link rel="stylesheet" href="assets/css/styles.css">
 
     <style>
         /* Custom styles to match RSM branding */
@@ -59,7 +62,7 @@
     <header class="bg-white/80 backdrop-blur-md sticky top-0 z-40 border-b border-gray-200">
         <div class="container mx-auto px-6 py-3 flex justify-between items-center">
             <a href="#" class="flex-shrink-0">
-                <img src="https://www.rsmfoundation.org/images/logo-rsm-long.png" alt="RSM Logo" class="h-10 md:h-12" onerror="this.onerror=null; this.alt='RSM'; this.src='https://placehold.co/200x50/003e7a/ffffff?text=RSM';">
+                <div id="header-logo-3d" class="w-[200px] h-[60px]"></div>
             </a>
             <nav class="hidden md:flex space-x-8 items-center">
                 <a href="#why-rsm" class="text-gray-600 hover:text-rsm-blue transition-colors">Why Competitions?</a>
@@ -205,7 +208,7 @@
                             <li class="flex items-start"><i data-feather="check-circle" class="w-5 h-5 text-green-500 mr-3 mt-1 flex-shrink-0"></i><span><strong>Key Focus:</strong> AMC 10/12, AIME, USA(J)MO.</span></li>
                             <li class="flex items-start"><i data-feather="check-circle" class="w-5 h-5 text-green-500 mr-3 mt-1 flex-shrink-0"></i><span><strong>Selectivity:</strong> Highly Selective; invitation-only based on elite performance.</span></li>
                         </ul>
-                        <a href="nmcp-program.html" class="w-full text-center bg-rsm-blue text-white font-bold py-3 px-6 rounded-lg hover:bg-rsm-dark-blue transition-colors">Learn About the NMCP Path</a>
+                        <a href="pages/nmcp-program.html" class="w-full text-center bg-rsm-blue text-white font-bold py-3 px-6 rounded-lg hover:bg-rsm-dark-blue transition-colors">Learn About the NMCP Path</a>
                         <button class="generate-problem-btn mt-4 w-full text-center bg-gray-200 text-rsm-dark-blue font-semibold py-3 px-6 rounded-lg hover:bg-gray-300 transition-colors" data-level="nmcp">
                            ✨ Generate a Sample Problem
                         </button>
@@ -380,10 +383,10 @@
                     </div>
                     
                     <!-- Show More FAQs Button -->
-                    <div class="text-center mt-8">
-                        <button id="show-more-faqs" class="bg-rsm-blue text-white font-semibold py-3 px-6 rounded-xl hover:bg-rsm-dark-blue transition-all flex items-center mx-auto">
-                            <span>Show More Questions</span>
-                            <i data-feather="chevron-down" class="ml-2 w-5 h-5 transition-transform" id="faq-arrow"></i>
+                    <div class="text-center mt-8" id="show-more-container">
+                        <button id="show-more-faqs" class="group text-rsm-blue hover:text-rsm-dark-blue font-medium text-sm transition-all duration-300 flex items-center mx-auto">
+                            <span class="border-b border-rsm-blue/30 group-hover:border-rsm-dark-blue/50 transition-colors">Show More Questions</span>
+                            <i data-feather="chevron-down" class="ml-2 w-4 h-4 transition-transform duration-300" id="faq-arrow"></i>
                         </button>
                     </div>
                     
@@ -456,7 +459,7 @@
                     </div>
                 </div>
                 <div class="mt-12 text-center">
-                    <p class="text-gray-600">Can't find the answer you're looking for? Visit our full <a href="#" class="text-rsm-blue font-semibold underline hover:text-rsm-dark-blue">FAQ page</a> or <a href="#contact" class="text-rsm-blue font-semibold underline hover:text-rsm-dark-blue">contact us</a> directly.</p>
+                    <p class="text-gray-600">Can't find the answer you're looking for? Visit our full <a href="pages/faq.html" class="text-rsm-blue font-semibold underline hover:text-rsm-dark-blue">FAQ page</a> or <a href="#contact" class="text-rsm-blue font-semibold underline hover:text-rsm-dark-blue">contact us</a> directly.</p>
                 </div>
             </div>
         </section>
@@ -543,22 +546,26 @@
 
             // --- FAQ Show More/Less Functionality ---
             const showMoreButton = document.getElementById('show-more-faqs');
+            const showMoreContainer = document.getElementById('show-more-container');
             const additionalFaqs = document.getElementById('additional-faqs');
             const faqArrow = document.getElementById('faq-arrow');
             let isExpanded = false;
 
-            if (showMoreButton && additionalFaqs && faqArrow) {
+            if (showMoreButton && additionalFaqs && faqArrow && showMoreContainer) {
                 showMoreButton.addEventListener('click', () => {
-                    isExpanded = !isExpanded;
-                    
-                    if (isExpanded) {
-                        additionalFaqs.classList.remove('hidden');
-                        showMoreButton.querySelector('span').textContent = 'Show Fewer Questions';
+                    if (!isExpanded) {
+                        // Expand - rotate arrow and fade out button
                         faqArrow.style.transform = 'rotate(180deg)';
-                    } else {
-                        additionalFaqs.classList.add('hidden');
-                        showMoreButton.querySelector('span').textContent = 'Show More Questions';
-                        faqArrow.style.transform = 'rotate(0deg)';
+                        
+                        // Fade out the container
+                        showMoreContainer.style.opacity = '0';
+                        showMoreContainer.style.transform = 'translateY(-10px)';
+                        
+                        setTimeout(() => {
+                            showMoreContainer.style.display = 'none';
+                            additionalFaqs.classList.remove('hidden');
+                            isExpanded = true;
+                        }, 300);
                     }
                 });
             }
@@ -735,6 +742,8 @@
             });
         });
     </script>
+    
+    <script src="assets/js/logo3d.js"></script>
 
 </body>
 </html>
