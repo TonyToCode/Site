@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSM Locations - Find Your School</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/rsm-official.css">
+    <script src="../assets/js/locations.js"></script>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        #locations-list {
+            max-height: 600px;
+            overflow-y: auto;
+        }
+        
+        .location-card {
+            transition: all 0.2s ease;
+        }
+        
+        .location-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 93, 171, 0.15);
+        }
+        
+        .search-container {
+            position: relative;
+        }
+        
+        .search-icon {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #666;
+        }
+        
+        .search-input {
+            padding-left: 40px;
+        }
+        
+        .state-section {
+            border-left: 4px solid var(--rsm-secondary);
+        }
+        
+        .country-header {
+            background: linear-gradient(135deg, var(--rsm-primary) 0%, var(--rsm-dark-blue) 100%);
+        }
+        
+        /* Hide Google My Maps header */
+        .google-maps-container {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .google-maps-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 40px;
+            background: white;
+            z-index: 10;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+
+    <header class="rsm-header sticky top-0 z-40">
+        <div class="rsm-container">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo Section with SVG -->
+                <a href="../index.html" class="flex items-center group">
+                    <img src="../assets/RSM/rsm.svg" alt="RSM Competition Program" class="h-12 w-auto transition-transform group-hover:scale-105">
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <nav class="hidden xl:flex items-center space-x-1">
+                    <a href="../index.html#why-rsm" class="rsm-nav-link group">
+                        <i data-feather="target" class="w-4 h-4 mr-2 flex-shrink-0 group-hover:text-rsm-secondary"></i>
+                        <span class="hidden 2xl:inline">Why Competitions?</span>
+                        <span class="2xl:hidden">Why?</span>
+                    </a>
+                    <a href="../index.html#pathway" class="rsm-nav-link group">
+                        <i data-feather="trending-up" class="w-4 h-4 mr-2 flex-shrink-0 group-hover:text-rsm-secondary"></i>
+                        <span class="hidden 2xl:inline">The RSM Pathway</span>
+                        <span class="2xl:hidden">Pathway</span>
+                    </a>
+                    <a href="../index.html#programs" class="rsm-nav-link group">
+                        <i data-feather="book-open" class="w-4 h-4 mr-2 flex-shrink-0 group-hover:text-rsm-secondary"></i>
+                        <span>Programs</span>
+                    </a>
+                    <a href="../index.html#coaches" class="rsm-nav-link group">
+                        <i data-feather="users" class="w-4 h-4 mr-2 flex-shrink-0 group-hover:text-rsm-secondary"></i>
+                        <span class="hidden 2xl:inline">Our Team</span>
+                        <span class="2xl:hidden">Team</span>
+                    </a>
+                    <a href="../index.html#contact" class="rsm-nav-link group">
+                        <i data-feather="mail" class="w-4 h-4 mr-2 flex-shrink-0 group-hover:text-rsm-secondary"></i>
+                        <span>Contact</span>
+                    </a>
+                </nav>
+                
+                <!-- CTA Button -->
+                <div class="hidden md:flex items-center space-x-3">
+                    <a href="../index.html#contact" class="btn-primary flex-shrink-0">
+                        <i data-feather="calendar" class="w-4 h-4 mr-2 flex-shrink-0"></i>
+                        <span class="hidden xl:inline">Schedule Assessment</span>
+                        <span class="xl:hidden">Schedule</span>
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="lg:hidden p-2 rounded-md hover:bg-rsm-gray-100 transition-colors">
+                    <i data-feather="menu" class="w-6 h-6 text-rsm-primary"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="rsm-hero-small">
+            <div class="rsm-container">
+                <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">Find Your RSM School</h1>
+                <p class="text-xl text-blue-100 max-w-3xl">
+                    Discover RSM locations across the United States, Canada, Israel, and the UAE. Use our interactive map and search tool to find the center nearest to you.
+                </p>
+            </div>
+        </section>
+
+        <!-- Search and Map Section -->
+        <section class="py-12 bg-white">
+            <div class="container mx-auto px-6">
+                <!-- Search Bar -->
+                <div class="max-w-2xl mx-auto mb-8">
+                    <div class="search-container">
+                        <i data-feather="search" class="search-icon w-5 h-5"></i>
+                        <input 
+                            type="text" 
+                            id="location-search" 
+                            placeholder="Search by city name, state, or ZIP code..."
+                            class="search-input w-full py-4 pr-4 text-lg border-2 border-gray-200 rounded-xl focus:border-rsm-blue focus:outline-none transition-colors"
+                        >
+                    </div>
+                    <p class="text-sm text-gray-600 mt-2 text-center">
+                        Try searching for "California", "Newton", "02458", or "Toronto"
+                    </p>
+                </div>
+
+                <!-- Interactive Google My Maps -->
+                <div class="bg-white rounded-xl shadow-xl overflow-hidden mb-12 google-maps-container">
+                    <!-- Google My Maps embed will show all RSM locations with custom pins -->
+                    <iframe 
+                        src="https://www.google.com/maps/d/embed?mid=1_gIQrPnpmRdjGL-U-AJLk7xkL6B2ykQ&ehbc=2E312F&hl=en" 
+                        width="100%" 
+                        height="540" 
+                        style="border:0; margin-top: -40px;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+
+                <!-- Results Summary -->
+                <div id="search-results" class="text-center mb-8 hidden">
+                    <p class="text-lg text-gray-700">
+                        <span id="results-count">0</span> location(s) found
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Locations List -->
+        <section class="py-12 bg-rsm-light-gray">
+            <div class="container mx-auto px-6">
+                <div class="grid lg:grid-cols-1 gap-8">
+                    <div>
+                        <h2 class="text-3xl font-bold text-rsm-dark-blue mb-8 text-center">All RSM Locations</h2>
+                        <div id="locations-list" class="space-y-6">
+                            <!-- Locations will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="py-16 bg-rsm-blue text-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Get Started?</h2>
+                <p class="text-lg text-blue-100 max-w-2xl mx-auto mb-8">
+                    Found a location near you? Contact us to schedule a free assessment and learn more about our competition programs.
+                </p>
+                <a href="../index.html#contact" class="bg-rsm-gold text-rsm-dark-blue font-bold py-4 px-10 rounded-lg shadow-xl hover:bg-yellow-500 transition-transform transform hover:scale-105 text-lg">
+                    Schedule Your Free Assessment
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-rsm-primary text-white">
+        <div class="rsm-container py-12">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <!-- Logo and Description -->
+                <div class="md:col-span-2">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <img src="../assets/RSM/rsm.svg" alt="RSM Logo" class="h-10 w-auto brightness-0 invert">
+                        <div>
+                            <div class="text-white font-bold text-xl">RSM Competition Program</div>
+                            <div class="text-white/80 text-sm">Excellence in Mathematical Training</div>
+                        </div>
+                    </div>
+                    <p class="text-white/90 mb-4 max-w-md">Transforming talented students into confident, resilient problem-solvers who excel in prestigious math competitions and beyond.</p>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Quick Links</h4>
+                    <div class="space-y-2">
+                        <a href="../index.html#why-rsm" class="block text-white/80 hover:text-rsm-secondary transition-colors text-sm">Why Competitions?</a>
+                        <a href="../index.html#pathway" class="block text-white/80 hover:text-rsm-secondary transition-colors text-sm">The RSM Pathway</a>
+                        <a href="../index.html#programs" class="block text-white/80 hover:text-rsm-secondary transition-colors text-sm">Programs</a>
+                        <a href="../index.html#coaches" class="block text-white/80 hover:text-rsm-secondary transition-colors text-sm">Our Team</a>
+                    </div>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Contact</h4>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex items-center text-white/80">
+                            <i data-feather="mail" class="w-4 h-4 mr-2 flex-shrink-0"></i>
+                            <a href="mailto:online.competition@mathschool.com" class="hover:text-rsm-secondary transition-colors">online.competition@mathschool.com</a>
+                        </div>
+                        <div class="flex items-center text-white/80">
+                            <i data-feather="phone" class="w-4 h-4 mr-2 flex-shrink-0"></i>
+                            <a href="tel:1-800-555-6284" class="hover:text-rsm-secondary transition-colors">1-800-555-6284</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bottom Bar -->
+            <div class="border-t border-white/20 pt-6 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-white/80 text-sm">&copy; 2025 Russian School of Mathematics. All Rights Reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-white/80 hover:text-rsm-secondary transition-colors text-sm">Privacy Policy</a>
+                    <a href="#" class="text-white/80 hover:text-rsm-secondary transition-colors text-sm">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let locationsMap;
+        let allLocations = [];
+        let currentMarkers = [];
+        let searchTimeout;
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', () => {
+            feather.replace();
+            allLocations = getAllLocations();
+            renderLocationsList(allLocations);
+            
+            // Setup search functionality
+            const searchInput = document.getElementById('location-search');
+            searchInput.addEventListener('input', handleSearch);
+            
+            // Mobile menu
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+        });
+
+        // Handle search input with debouncing
+        function handleSearch(event) {
+            clearTimeout(searchTimeout);
+            const query = event.target.value.trim();
+            
+            searchTimeout = setTimeout(() => {
+                if (query.length === 0) {
+                    showAllLocations();
+                } else {
+                    performSearch(query);
+                }
+            }, 300);
+        }
+
+        // Perform search and update results
+        function performSearch(query) {
+            const filteredLocations = searchLocations(query);
+            renderLocationsList(filteredLocations);
+            showSearchResults(filteredLocations.length);
+        }
+
+        // Show all locations
+        function showAllLocations() {
+            renderLocationsList(allLocations);
+            hideSearchResults();
+        }
+
+        // Render locations list
+        function renderLocationsList(locations) {
+            const container = document.getElementById('locations-list');
+            container.innerHTML = '';
+
+            // Group locations by country and state
+            const groupedLocations = groupLocationsByCountry(locations);
+
+            Object.keys(groupedLocations).forEach(country => {
+                const countrySection = document.createElement('div');
+                countrySection.className = 'mb-8';
+                
+                const countryHeader = document.createElement('h3');
+                countryHeader.className = 'country-header text-white px-6 py-4 rounded-t-xl text-2xl font-bold';
+                countryHeader.textContent = country;
+                countrySection.appendChild(countryHeader);
+
+                const countryContent = document.createElement('div');
+                countryContent.className = 'bg-white rounded-b-xl shadow-lg p-6';
+
+                if (country === 'United States') {
+                    // Group US locations by state
+                    const stateGroups = {};
+                    groupedLocations[country].forEach(location => {
+                        if (!stateGroups[location.state]) {
+                            stateGroups[location.state] = [];
+                        }
+                        stateGroups[location.state].push(location);
+                    });
+
+                    Object.keys(stateGroups).sort().forEach(state => {
+                        const stateSection = document.createElement('div');
+                        stateSection.className = 'state-section pl-4 mb-6 last:mb-0';
+                        
+                        const stateHeader = document.createElement('h4');
+                        stateHeader.className = 'text-xl font-bold text-rsm-dark-blue mb-4';
+                        stateHeader.textContent = `${state} (${stateGroups[state].length} location${stateGroups[state].length !== 1 ? 's' : ''})`;
+                        stateSection.appendChild(stateHeader);
+
+                        const locationsGrid = document.createElement('div');
+                        locationsGrid.className = 'grid md:grid-cols-2 lg:grid-cols-3 gap-4';
+
+                        stateGroups[state].forEach(location => {
+                            const locationCard = createLocationCard(location);
+                            locationsGrid.appendChild(locationCard);
+                        });
+
+                        stateSection.appendChild(locationsGrid);
+                        countryContent.appendChild(stateSection);
+                    });
+                } else {
+                    // For international locations, just list them
+                    const locationsGrid = document.createElement('div');
+                    locationsGrid.className = 'grid md:grid-cols-2 lg:grid-cols-3 gap-4';
+
+                    groupedLocations[country].forEach(location => {
+                        const locationCard = createLocationCard(location);
+                        locationsGrid.appendChild(locationCard);
+                    });
+
+                    countryContent.appendChild(locationsGrid);
+                }
+
+                countrySection.appendChild(countryContent);
+                container.appendChild(countrySection);
+            });
+        }
+
+        // Create a location card
+        function createLocationCard(location) {
+            const card = document.createElement('div');
+            card.className = 'location-card bg-rsm-light-gray p-4 rounded-lg border-2 border-transparent hover:border-rsm-secondary cursor-pointer';
+            
+            card.innerHTML = `
+                <h5 class="font-bold text-rsm-dark-blue mb-2">${location.name}</h5>
+                <p class="text-gray-600 text-sm mb-2">${formatLocationName(location)}</p>
+                ${location.zip ? `<p class="text-gray-500 text-xs mb-3">ZIP: ${location.zip}</p>` : '<div class="mb-3"></div>'}
+                <a href="../index.html#contact" class="text-rsm-blue hover:text-rsm-dark-blue font-semibold text-sm transition-colors">
+                    <i data-feather="calendar" class="w-4 h-4 inline mr-1"></i>
+                    Schedule Assessment
+                </a>
+            `;
+
+            // Add click handler to highlight the card
+            card.addEventListener('click', () => {
+                // Remove highlight from other cards
+                document.querySelectorAll('.location-card').forEach(c => {
+                    c.classList.remove('border-rsm-secondary', 'bg-blue-50');
+                });
+                
+                // Highlight this card
+                card.classList.add('border-rsm-secondary', 'bg-blue-50');
+                
+                // Scroll to regional overview
+                document.querySelector('.bg-white.rounded-xl.shadow-xl').scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'center' 
+                });
+            });
+
+            // Replace feather icons in the card
+            setTimeout(() => feather.replace(), 0);
+            
+            return card;
+        }
+
+        // Group locations by country
+        function groupLocationsByCountry(locations) {
+            const groups = {};
+            
+            locations.forEach(location => {
+                let country = location.country;
+                if (country === 'US') country = 'United States';
+                
+                if (!groups[country]) {
+                    groups[country] = [];
+                }
+                groups[country].push(location);
+            });
+
+            return groups;
+        }
+
+        // Show search results count
+        function showSearchResults(count) {
+            const resultsElement = document.getElementById('search-results');
+            const countElement = document.getElementById('results-count');
+            
+            countElement.textContent = count;
+            resultsElement.classList.remove('hidden');
+        }
+
+        // Hide search results count
+        function hideSearchResults() {
+            const resultsElement = document.getElementById('search-results');
+            resultsElement.classList.add('hidden');
+        }
+
+    </script>
+
+</body>
+</html>

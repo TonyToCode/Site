@@ -10,6 +10,7 @@
     <script src="https://unpkg.com/feather-icons"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/STLLoader.js"></script>
+    <script src="assets/js/locations.js"></script>
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/rsm-official.css">
 
@@ -31,6 +32,24 @@
         /* Modal styles */
         #gemini-modal {
             transition: opacity 0.3s ease;
+        }
+        
+        /* Hide Google My Maps header */
+        .google-maps-container {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .google-maps-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 40px;
+            background: white;
+            z-index: 10;
+            pointer-events: none;
         }
     </style>
 </head>
@@ -519,14 +538,38 @@
         </section>
 
         <section id="find-school" class="py-20 md:py-24 bg-white">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="text-3xl md:text-4xl font-bold text-rsm-dark-blue mb-8">Find Your School</h2>
-                <a href="#" class="inline-block bg-rsm-gold text-rsm-dark-blue font-bold py-4 px-10 rounded-lg shadow-lg hover:bg-yellow-500 transition-transform transform hover:scale-105 text-lg">
-                    Find Your School
-                </a>
-                <p class="mt-6 text-gray-600">
-                    Want to search by ZIP code or view all locations? <a href="#" class="text-rsm-blue font-semibold underline hover:text-rsm-dark-blue">Click here</a>.
-                </p>
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-rsm-dark-blue mb-8">Find Your School</h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                        With locations across the United States, Canada, Israel, and the UAE, there's likely an RSM center near you. Explore our locations on the map below.
+                    </p>
+                </div>
+                
+                <!-- Google My Maps Embed with RSM Locations -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-8 google-maps-container">
+                    <iframe 
+                        src="https://www.google.com/maps/d/embed?mid=1_gIQrPnpmRdjGL-U-AJLk7xkL6B2ykQ&ehbc=2E312F&hl=en" 
+                        width="100%" 
+                        height="490" 
+                        style="border:0; margin-top: -40px;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                
+                <div class="text-center">
+                    <a href="pages/locations.html" class="inline-block bg-rsm-gold text-rsm-dark-blue font-bold py-4 px-10 rounded-lg shadow-lg hover:bg-yellow-500 transition-transform transform hover:scale-105 text-lg mr-4">
+                        View All Locations
+                    </a>
+                    <a href="#contact" class="inline-block bg-rsm-blue text-white font-bold py-4 px-10 rounded-lg shadow-lg hover:bg-rsm-dark-blue transition-transform transform hover:scale-105 text-lg">
+                        Schedule Assessment
+                    </a>
+                    <p class="mt-6 text-gray-600">
+                        Want to search by ZIP code or city name? <a href="pages/locations.html" class="text-rsm-blue font-semibold underline hover:text-rsm-dark-blue">Visit our full locations page</a>.
+                    </p>
+                </div>
             </div>
         </section>
 
@@ -860,6 +903,11 @@
                 }
             });
         });
+        
+        // Function to scroll to locations page
+        function scrollToLocations() {
+            window.location.href = 'pages/locations.html';
+        }
     </script>
     
     <script src="assets/js/logo3d.js"></script>

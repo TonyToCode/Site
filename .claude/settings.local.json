@@ -15,7 +15,13 @@
       "Bash(gh api:*)",
       "Bash(git pull:*)",
       "WebFetch(domain:mathschool-clone.same-app.com)",
-      "WebFetch(domain:same-clone-httpswww-mathschool-com-5uzoryjthvl-latest.netlify.app)"
+      "WebFetch(domain:same-clone-httpswww-mathschool-com-5uzoryjthvl-latest.netlify.app)",
+      "Bash(ls:*)",
+      "Bash(find:*)",
+      "WebFetch(domain:docs.anthropic.com)",
+      "Bash(claude mcp add:*)",
+      "Bash(jq:*)",
+      "Bash(claude mcp:*)"
     ],
     "deny": []
   }

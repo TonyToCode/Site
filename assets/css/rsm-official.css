@@ -163,9 +163,39 @@
     margin-right: auto;
 }
 
+/* Small Hero Section for sub-pages */
+.rsm-hero-small {
+    background: linear-gradient(135deg, var(--rsm-primary) 0%, var(--rsm-dark-blue) 100%);
+    color: white;
+    padding: var(--rsm-space-16) 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.rsm-hero-small::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.rsm-hero-small > * {
+    position: relative;
+    z-index: 2;
+}
+
 @media (max-width: 768px) {
     .rsm-hero {
         padding: var(--rsm-space-16) 0;
+    }
+    
+    .rsm-hero-small {
+        padding: var(--rsm-space-12) 0;
     }
     
     .rsm-hero-title {
