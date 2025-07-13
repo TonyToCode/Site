@@ -56,6 +56,9 @@
     align-items: center;
     position: relative;
     overflow: hidden;
+    white-space: nowrap;
+    flex-shrink: 0;
+    min-width: fit-content;
 }
 
 .rsm-nav-link:hover {
@@ -300,6 +303,75 @@
 @media (min-width: 769px) {
     .rsm-show-tablet {
         display: none;
+    }
+}
+
+/* Responsive Navigation Enhancements */
+@media (max-width: 1536px) {
+    .rsm-container {
+        padding: 0 var(--rsm-space-4);
+    }
+}
+
+@media (max-width: 1280px) {
+    .rsm-nav-link {
+        padding: var(--rsm-space-2) var(--rsm-space-3);
+        font-size: var(--rsm-text-xs);
+    }
+}
+
+@media (max-width: 1024px) {
+    .rsm-header .btn-primary {
+        padding: var(--rsm-space-2) var(--rsm-space-3);
+        font-size: var(--rsm-text-sm);
+    }
+    
+    .rsm-header .btn-primary .feather {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+/* Button responsiveness */
+.btn-large {
+    padding: var(--rsm-space-4) var(--rsm-space-6);
+    font-size: var(--rsm-text-lg);
+    border-radius: var(--rsm-radius-lg);
+}
+
+.btn-small {
+    padding: var(--rsm-space-2) var(--rsm-space-3);
+    font-size: var(--rsm-text-sm);
+    border-radius: var(--rsm-radius);
+}
+
+@media (max-width: 768px) {
+    .btn-large {
+        padding: var(--rsm-space-3) var(--rsm-space-4);
+        font-size: var(--rsm-text-base);
+    }
+    
+    .btn-primary, .btn-secondary {
+        min-width: 120px;
+    }
+}
+
+/* Prevent text wrapping in navigation */
+.rsm-nav-link .feather {
+    flex-shrink: 0;
+}
+
+/* Enhanced mobile menu */
+@media (max-width: 1024px) {
+    .rsm-nav-link.mobile {
+        padding: var(--rsm-space-4);
+        font-size: var(--rsm-text-base);
+    }
+    
+    .rsm-nav-link.mobile .feather {
+        width: 20px;
+        height: 20px;
+        margin-right: var(--rsm-space-3);
     }
 }
 

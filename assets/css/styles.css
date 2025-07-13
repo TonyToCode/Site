@@ -221,6 +221,12 @@ html {
     box-shadow: var(--rsm-shadow);
     position: relative;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    text-decoration: none;
+    min-width: fit-content;
 }
 
 .btn-primary:hover {
@@ -244,6 +250,12 @@ html {
     font-size: var(--rsm-text-base);
     cursor: pointer;
     transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    text-decoration: none;
+    min-width: fit-content;
 }
 
 .btn-secondary:hover {

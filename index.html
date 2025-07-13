@@ -40,43 +40,62 @@
         <div class="rsm-container">
             <div class="flex justify-between items-center py-4">
                 <!-- Logo Section with SVG -->
-                <a href="#" class="flex items-center space-x-3 group">
-                    <img src="assets/RSM/rsm.svg" alt="RSM Logo" class="h-12 w-auto transition-transform group-hover:scale-105">
-                    <div class="hidden sm:block">
-                        <div class="text-rsm-primary font-bold text-xl">RSM Competition</div>
-                        <div class="text-rsm-small -mt-1">Math Excellence</div>
-                    </div>
+                <a href="#" class="flex items-center group">
+                    <img src="assets/RSM/rsm.svg" alt="RSM Competition Program" class="h-12 w-auto transition-transform group-hover:scale-105">
                 </a>
                 
                 <!-- Desktop Navigation -->
-                <nav class="hidden lg:flex items-center space-x-1">
+                <nav class="hidden xl:flex items-center space-x-1">
                     <a href="#why-rsm" class="rsm-nav-link group">
-                        <i data-feather="target" class="w-4 h-4 mr-2 group-hover:text-rsm-secondary"></i>
-                        Why Competitions?
+                        <i data-feather="target" class="w-4 h-4 mr-2 flex-shrink-0 group-hover:text-rsm-secondary"></i>
+                        <span class="hidden 2xl:inline">Why Competitions?</span>
+                        <span class="2xl:hidden">Why?</span>
                     </a>
                     <a href="#pathway" class="rsm-nav-link group">
-                        <i data-feather="trending-up" class="w-4 h-4 mr-2 group-hover:text-rsm-secondary"></i>
-                        The RSM Pathway
+                        <i data-feather="trending-up" class="w-4 h-4 mr-2 flex-shrink-0 group-hover:text-rsm-secondary"></i>
+                        <span class="hidden 2xl:inline">The RSM Pathway</span>
+                        <span class="2xl:hidden">Pathway</span>
                     </a>
                     <a href="#programs" class="rsm-nav-link group">
-                        <i data-feather="book-open" class="w-4 h-4 mr-2 group-hover:text-rsm-secondary"></i>
-                        Programs
+                        <i data-feather="book-open" class="w-4 h-4 mr-2 flex-shrink-0 group-hover:text-rsm-secondary"></i>
+                        <span>Programs</span>
                     </a>
                     <a href="#coaches" class="rsm-nav-link group">
-                        <i data-feather="users" class="w-4 h-4 mr-2 group-hover:text-rsm-secondary"></i>
-                        Our Team
+                        <i data-feather="users" class="w-4 h-4 mr-2 flex-shrink-0 group-hover:text-rsm-secondary"></i>
+                        <span class="hidden 2xl:inline">Our Team</span>
+                        <span class="2xl:hidden">Team</span>
                     </a>
                     <a href="#contact" class="rsm-nav-link group">
-                        <i data-feather="mail" class="w-4 h-4 mr-2 group-hover:text-rsm-secondary"></i>
-                        Contact
+                        <i data-feather="mail" class="w-4 h-4 mr-2 flex-shrink-0 group-hover:text-rsm-secondary"></i>
+                        <span>Contact</span>
+                    </a>
+                </nav>
+                
+                <!-- Icon-only Navigation for medium screens -->
+                <nav class="hidden lg:flex xl:hidden items-center space-x-2">
+                    <a href="#why-rsm" class="rsm-nav-link group p-3" title="Why Competitions?">
+                        <i data-feather="target" class="w-5 h-5 group-hover:text-rsm-secondary"></i>
+                    </a>
+                    <a href="#pathway" class="rsm-nav-link group p-3" title="The RSM Pathway">
+                        <i data-feather="trending-up" class="w-5 h-5 group-hover:text-rsm-secondary"></i>
+                    </a>
+                    <a href="#programs" class="rsm-nav-link group p-3" title="Programs">
+                        <i data-feather="book-open" class="w-5 h-5 group-hover:text-rsm-secondary"></i>
+                    </a>
+                    <a href="#coaches" class="rsm-nav-link group p-3" title="Our Team">
+                        <i data-feather="users" class="w-5 h-5 group-hover:text-rsm-secondary"></i>
+                    </a>
+                    <a href="#contact" class="rsm-nav-link group p-3" title="Contact">
+                        <i data-feather="mail" class="w-5 h-5 group-hover:text-rsm-secondary"></i>
                     </a>
                 </nav>
                 
                 <!-- CTA Button -->
                 <div class="hidden md:flex items-center space-x-3">
-                    <a href="#contact" class="btn-primary">
-                        <i data-feather="calendar" class="w-4 h-4 mr-2"></i>
-                        Schedule Assessment
+                    <a href="#contact" class="btn-primary flex-shrink-0">
+                        <i data-feather="calendar" class="w-4 h-4 mr-2 flex-shrink-0"></i>
+                        <span class="hidden xl:inline">Schedule Assessment</span>
+                        <span class="xl:hidden">Schedule</span>
                     </a>
                 </div>
                 
