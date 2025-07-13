@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSM Competition Program: The Pathway to Excellence</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <style>
+        /* Custom styles to match RSM branding */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Defining RSM brand colors for use with Tailwind's arbitrary value support */
+        :root {
+            --rsm-blue: #005dab;
+            --rsm-gold: #ffc72c;
+            --rsm-dark-blue: #003e7a;
+            --rsm-light-gray: #f8f9fa;
+        }
+        .bg-rsm-blue { background-color: var(--rsm-blue); }
+        .bg-rsm-gold { background-color: var(--rsm-gold); }
+        .bg-rsm-light-gray { background-color: var(--rsm-light-gray); }
+        .text-rsm-blue { color: var(--rsm-blue); }
+        .text-rsm-gold { color: var(--rsm-gold); }
+        .text-rsm-dark-blue { color: var(--rsm-dark-blue); }
+        .border-rsm-blue { border-color: var(--rsm-blue); }
+        .border-rsm-gold { border-color: var(--rsm-gold); }
+        .hover\:bg-rsm-dark-blue:hover { background-color: var(--rsm-dark-blue); }
+        .hover\:bg-yellow-500:hover { background-color: #eab308; } /* A darker gold for hover */
+
+        /* Smooth scrolling behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Styling for the accordion */
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        /* Modal styles */
+        #gemini-modal {
+            transition: opacity 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-40 border-b border-gray-200">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="#" class="flex-shrink-0">
+                <img src="https://www.rsmfoundation.org/images/logo-rsm-long.png" alt="RSM Logo" class="h-10 md:h-12" onerror="this.onerror=null; this.alt='RSM'; this.src='https://placehold.co/200x50/003e7a/ffffff?text=RSM';">
+            </a>
+            <nav class="hidden md:flex space-x-8 items-center">
+                <a href="#why-rsm" class="text-gray-600 hover:text-rsm-blue transition-colors">Why Competitions?</a>
+                <a href="#pathway" class="text-gray-600 hover:text-rsm-blue transition-colors">The RSM Pathway</a>
+                <a href="#programs" class="text-gray-600 hover:text-rsm-blue transition-colors">Programs</a>
+                <a href="#coaches" class="text-gray-600 hover:text-rsm-blue transition-colors">Our Team</a>
+                <a href="#contact" class="text-gray-600 hover:text-rsm-blue transition-colors">Contacts</a>
+                <a href="#contact" class="bg-rsm-gold text-rsm-dark-blue font-bold py-2 px-4 rounded-lg shadow-md hover:bg-yellow-500 transition-all">Schedule Assessment</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden">
+                <i data-feather="menu" class="text-rsm-dark-blue"></i>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+             <a href="#why-rsm" class="block py-2 text-gray-600 hover:text-rsm-blue transition-colors">Why Competitions?</a>
+             <a href="#pathway" class="block py-2 text-gray-600 hover:text-rsm-blue transition-colors">The RSM Pathway</a>
+             <a href="#programs" class="block py-2 text-gray-600 hover:text-rsm-blue transition-colors">Programs</a>
+             <a href="#coaches" class="block py-2 text-gray-600 hover:text-rsm-blue transition-colors">Our Team</a>
+             <a href="#contact" class="block py-2 text-gray-600 hover:text-rsm-blue transition-colors">Contacts</a>
+             <a href="#contact" class="block mt-2 text-center bg-rsm-gold text-rsm-dark-blue font-bold py-2 px-4 rounded-lg shadow-md hover:bg-yellow-500 transition-all">Schedule Assessment</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="relative bg-rsm-light-gray text-center py-20 md:py-32">
+            <div class="absolute inset-0 bg-cover bg-center opacity-10" style="background-image: url('https://placehold.co/1920x1080/e0e0e0/ffffff?text=Engaged+Students');"></div>
+            <div class="container mx-auto px-6 relative">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-rsm-dark-blue leading-tight">
+                    Beyond the Classroom: <br class="hidden md:block" /> The RSM Pathway to Competitive Excellence
+                </h1>
+                <p class="mt-6 text-lg md:text-xl max-w-3xl mx-auto text-gray-600">
+                    We transform talented students into confident, resilient problem-solvers who excel in the nation's most prestigious math competitions—and beyond.
+                </p>
+                <div class="mt-10 flex flex-col sm:flex-row justify-center items-center gap-4">
+                    <a href="#contact" class="w-full sm:w-auto bg-rsm-blue text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-rsm-dark-blue transition-transform transform hover:scale-105">
+                        Schedule a Free Assessment
+                    </a>
+                    <a href="#testimonials" class="w-full sm:w-auto bg-transparent text-rsm-blue font-semibold py-3 px-8 rounded-lg border-2 border-rsm-blue hover:bg-rsm-blue hover:text-white transition-all">
+                        See Our Students' Success Stories ↓
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="why-rsm" class="py-20 md:py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-rsm-dark-blue">Why Math Competitions?</h2>
+                    <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">It’s About Building a Lifelong Intellectual Edge.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8 md:gap-12 text-center">
+                    <div class="p-8 bg-rsm-light-gray rounded-xl shadow-sm">
+                        <div class="bg-rsm-blue text-white w-16 h-16 rounded-full mx-auto flex items-center justify-center mb-6">
+                            <i data-feather="cpu" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-rsm-dark-blue mb-3">Develop Elite Problem-Solving</h3>
+                        <p class="text-gray-600">Our students learn to tackle complex, non-standard problems, developing the mental agility and creativity sought by top universities and innovative companies.</p>
+                    </div>
+                    <div class="p-8 bg-rsm-light-gray rounded-xl shadow-sm">
+                        <div class="bg-rsm-blue text-white w-16 h-16 rounded-full mx-auto flex items-center justify-center mb-6">
+                            <i data-feather="award" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-rsm-dark-blue mb-3">Gain a Competitive Advantage</h3>
+                        <p class="text-gray-600">Success in competitions like the AMC series and AIME provides a powerful differentiator on college applications, demonstrating ability at the highest level.</p>
+                    </div>
+                    <div class="p-8 bg-rsm-light-gray rounded-xl shadow-sm">
+                        <div class="bg-rsm-blue text-white w-16 h-16 rounded-full mx-auto flex items-center justify-center mb-6">
+                            <i data-feather="trending-up" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-rsm-dark-blue mb-3">Cultivate Resilience & Character</h3>
+                        <p class="text-gray-600">Competitions teach students to perform under pressure, learn from setbacks, and embrace challenges—invaluable skills for a successful life.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="pathway" class="py-20 md:py-24 bg-rsm-light-gray">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-rsm-dark-blue">Your Child's Journey to the National Stage</h2>
+                    <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">A clear progression from foundational skills to elite competition. This pathway is more than a series of classes; it's a long-term mentorship where students receive continuous guidance from our expert coaches. Our coaches guide students as they progress from local contests to national-level competitions like the AMC and AIME, offering advanced training and strategic preparation to help them succeed.</p>
+                </div>
+                <div class="relative">
+                    <div class="hidden md:block absolute top-1/2 left-0 w-full h-1 bg-rsm-gold/50 -translate-y-1/2"></div>
+                    
+                    <div class="grid md:grid-cols-4 gap-10 relative">
+                        <div class="text-center bg-white p-6 rounded-xl shadow-xl border-t-4 border-rsm-gold card-hover">
+                             <div class="text-rsm-gold font-bold text-sm mb-2">STAGE 1</div>
+                             <h4 class="text-lg font-bold text-rsm-dark-blue mb-2">Foundational Spark</h4>
+                             <p class="text-gray-500 text-sm mb-3">(Grades 3-6)</p>
+                             <p class="text-gray-600 text-sm">Focus on confidence and a love for creative problem-solving via competitions like Purple Comet & MOEMS.</p>
+                        </div>
+                        <div class="text-center bg-white p-6 rounded-xl shadow-xl border-t-4 border-rsm-gold card-hover">
+                            <div class="text-rsm-gold font-bold text-sm mb-2">STAGE 2</div>
+                             <h4 class="text-lg font-bold text-rsm-dark-blue mb-2">Building Momentum</h4>
+                             <p class="text-gray-500 text-sm mb-3">(Grades 6-8)</p>
+                             <p class="text-gray-600 text-sm">Introduction to the AMC 8 and structured training in our Math Competition Prep (MCP) program.</p>
+                        </div>
+                        <div class="text-center bg-white p-6 rounded-xl shadow-xl border-t-4 border-rsm-gold card-hover">
+                            <div class="text-rsm-gold font-bold text-sm mb-2">STAGE 3</div>
+                             <h4 class="text-lg font-bold text-rsm-dark-blue mb-2">High School Ascent</h4>
+                             <p class="text-gray-500 text-sm mb-3">(Grades 9-12)</p>
+                             <p class="text-gray-600 text-sm">Mastery of topics for the AMC 10/12 through our Advanced MCP tracks.</p>
+                        </div>
+                        <div class="text-center bg-white p-6 rounded-xl shadow-xl border-t-4 border-rsm-gold card-hover">
+                            <div class="text-rsm-gold font-bold text-sm mb-2">STAGE 4</div>
+                             <h4 class="text-lg font-bold text-rsm-dark-blue mb-2">The Elite Level</h4>
+                             <p class="text-gray-500 text-sm mb-3">(Invitation Only)</p>
+                             <p class="text-gray-600 text-sm">Intensive, Olympiad-level training for AIME & USA(J)MO in our NMCP program.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="programs" class="py-20 md:py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-rsm-dark-blue">Find Your Child's Perfect Fit</h2>
+                    <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">We offer distinct pathways based on a student's experience and ambition, ensuring the right level of challenge and support.</p>
+                </div>
+                <div class="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                    <div class="border-2 border-rsm-gold rounded-xl p-8 flex flex-col shadow-lg bg-amber-50/50">
+                        <div class="text-rsm-gold font-bold text-sm tracking-wider mb-2">FOUNDATION PROGRAM</div>
+                        <h3 class="text-2xl font-bold text-rsm-dark-blue">Math Competition Preparation (MCP)</h3>
+                        <p class="text-gray-500 mt-2 mb-6">For students eager to begin their competitive journey. In this program, students dive into foundational topics like number theory, combinatorics, and advanced geometry through engaging, non-standard problems. The goal is to build a deep conceptual understanding and the confidence needed to excel, with a key focus on preparing for and achieving high scores on the AMC 8 and MOEMS.</p>
+                        <ul class="space-y-4 text-gray-700 mb-8 flex-grow">
+                            <li class="flex items-start"><i data-feather="check-circle" class="w-5 h-5 text-green-500 mr-3 mt-1 flex-shrink-0"></i><span><strong>Ideal For:</strong> Students ready to move beyond standard school math.</span></li>
+                            <li class="flex items-start"><i data-feather="check-circle" class="w-5 h-5 text-green-500 mr-3 mt-1 flex-shrink-0"></i><span><strong>Key Focus:</strong> AMC 8, MOEMS, Purple Comet.</span></li>
+                            <li class="flex items-start"><i data-feather="check-circle" class="w-5 h-5 text-green-500 mr-3 mt-1 flex-shrink-0"></i><span><strong>Selectivity:</strong> Selective, based on a qualifying admission test.</span></li>
+                        </ul>
+                        <a href="#contact" class="w-full text-center bg-rsm-gold text-rsm-dark-blue font-bold py-3 px-6 rounded-lg hover:bg-yellow-500 transition-colors">Schedule an MCP Assessment</a>
+                        <button class="generate-problem-btn mt-4 w-full text-center bg-gray-200 text-rsm-dark-blue font-semibold py-3 px-6 rounded-lg hover:bg-gray-300 transition-colors" data-level="mcp">
+                            ✨ Generate a Sample Problem
+                        </button>
+                    </div>
+                    <div class="border-2 border-rsm-blue rounded-xl p-8 flex flex-col shadow-lg bg-blue-50/50">
+                        <div class="text-rsm-blue font-bold text-sm tracking-wider mb-2">ELITE PROGRAM</div>
+                        <h3 class="text-2xl font-bold text-rsm-blue">National Math Competition Prep (NMCP)</h3>
+                        <p class="text-gray-500 mt-2 mb-6">For highly advanced students aiming for the national stage. This is where top students receive intensive, Olympiad-level training from our most senior coaches. The curriculum is focused on mastering the complex proof-based problems found in elite competitions. The primary goal is to qualify for the AIME and ultimately compete in the USA(J)MO, the pinnacle of American high school mathematics.</p>
+                        <ul class="space-y-4 text-gray-700 mb-8 flex-grow">
+                            <li class="flex items-start"><i data-feather="check-circle" class="w-5 h-5 text-green-500 mr-3 mt-1 flex-shrink-0"></i><span><strong>Ideal For:</strong> Experienced competitors with a proven track record.</span></li>
+                            <li class="flex items-start"><i data-feather="check-circle" class="w-5 h-5 text-green-500 mr-3 mt-1 flex-shrink-0"></i><span><strong>Key Focus:</strong> AMC 10/12, AIME, USA(J)MO.</span></li>
+                            <li class="flex items-start"><i data-feather="check-circle" class="w-5 h-5 text-green-500 mr-3 mt-1 flex-shrink-0"></i><span><strong>Selectivity:</strong> Highly Selective; invitation-only based on elite performance.</span></li>
+                        </ul>
+                        <a href="nmcp-program.html" class="w-full text-center bg-rsm-blue text-white font-bold py-3 px-6 rounded-lg hover:bg-rsm-dark-blue transition-colors">Learn About the NMCP Path</a>
+                        <button class="generate-problem-btn mt-4 w-full text-center bg-gray-200 text-rsm-dark-blue font-semibold py-3 px-6 rounded-lg hover:bg-gray-300 transition-colors" data-level="nmcp">
+                           ✨ Generate a Sample Problem
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="py-20 md:py-24 bg-rsm-light-gray">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-rsm-dark-blue">Don't Just Take Our Word For It. See the Results.</h2>
+                    <a href="#blog" class="mt-4 text-lg text-rsm-blue hover:underline transition-colors">Stories from the RSM Family</a>
+                </div>
+                <div class="grid lg:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-lg shadow-lg p-8">
+                        <img src="https://placehold.co/100x100/005dab/ffffff?text=Student" alt="Student photo" class="w-24 h-24 rounded-full mx-auto -mt-20 border-4 border-white shadow-xl">
+                        <blockquote class="mt-6 text-gray-600 italic">
+                            RSM didn't just teach me formulas. My coach taught me how to think strategically under pressure. That's what got me to the AIME.
+                        </blockquote>
+                        <div class="mt-4 text-right">
+                            <p class="font-bold text-rsm-dark-blue">Alex Johnson</p>
+                            <p class="text-sm text-gray-500">AIME Qualifier, Grade 10</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg p-8">
+                        <img src="https://placehold.co/100x100/005dab/ffffff?text=Parent" alt="Parent photo" class="w-24 h-24 rounded-full mx-auto -mt-20 border-4 border-white shadow-xl">
+                        <blockquote class="mt-6 text-gray-600 italic">
+                           We saw our daughter's confidence skyrocket. The skills she learned in the competition program didn't just help her in math; they helped her excel in all her AP classes.
+                        </blockquote>
+                        <div class="mt-4 text-right">
+                            <p class="font-bold text-rsm-dark-blue">Maria Garcia</p>
+                            <p class="text-sm text-gray-500">Parent of 8th Grader</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg p-8">
+                        <img src="https://placehold.co/100x100/005dab/ffffff?text=Coach" alt="Coach photo" class="w-24 h-24 rounded-full mx-auto -mt-20 border-4 border-white shadow-xl">
+                        <blockquote class="mt-6 text-gray-600 italic">
+                           I don’t just teach math — I teach students how to think deeply, logically, and bravely. At RSM, we explore challenging problems, train for competitions, and uncover how math helps us understand the world. This journey will stay with you — it builds not just skills for school, but confidence and thinking tools for life.
+                        </blockquote>
+                        <div class="mt-4 text-right">
+                            <p class="font-bold text-rsm-dark-blue">Anton Ovsinskiy</p>
+                            <p class="text-sm text-gray-500">Team Coach & Mentor</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="coaches" class="py-20 md:py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-rsm-dark-blue">Learn from the Best</h2>
+                    <p class="mt-4 text-lg text-gray-600 max-w-4xl mx-auto">The power of RSM lies in our math logic and competition prep, led by world-class educators. This journey is more than just academic — it's a path of discovery that equips students with tools for life and unlocks a deeper understanding of the world.</p>
+                </div>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="text-center">
+                        <img src="https://placehold.co/200x200/e0e0e0/333333?text=T.F." class="w-40 h-40 rounded-full mx-auto mb-4 shadow-lg" alt="Tatyana Felikson">
+                        <h4 class="font-bold text-xl text-rsm-dark-blue">Tatyana Felikson</h4>
+                        <p class="text-rsm-blue font-medium mb-2">Head of MCP Department, Principal</p>
+                        <p class="text-gray-600 text-sm">As the architect of our foundational competitive program, Tatyana masterfully transforms young students' curiosity into formidable problem-solving skills. Her leadership ensures every student begins their journey with confidence, pioneering key online initiatives to make elite training accessible to all.</p>
+                    </div>
+                    <div class="text-center">
+                        <img src="https://placehold.co/200x200/e0e0e0/333333?text=J.S." class="w-40 h-40 rounded-full mx-auto mb-4 shadow-lg" alt="Dr. Jan Shubert">
+                        <h4 class="font-bold text-xl text-rsm-dark-blue">Dr. Jan Shubert</h4>
+                        <p class="text-rsm-blue font-medium mb-2">Head of Math Competition Programs</p>
+                        <p class="text-gray-600 text-sm">Dr. Shubert leads our programs with a core belief that consistency and passion forge champions. He has translated this philosophy into a structured training environment that consistently produces AIME qualifiers and equips students with essential mental resilience.</p>
+                    </div>
+                    <div class="text-center">
+                        <img src="https://placehold.co/200x200/e0e0e0/333333?text=D.T." class="w-40 h-40 rounded-full mx-auto mb-4 shadow-lg" alt="Dmitrii Trushchin">
+                        <h4 class="font-bold text-xl text-rsm-dark-blue">Dmitrii Trushchin</h4>
+                        <p class="text-rsm-blue font-medium mb-2">Grades 4-5 Program Lead</p>
+                        <p class="text-gray-600 text-sm">With over 15 years of experience, Dmitrii is an award-winning coach, recognized for his success in preparing members of the Russian national math team. He specializes in sparking a love for complex problems in our youngest students.</p>
+                    </div>
+                    <div class="text-center">
+                        <img src="https://placehold.co/200x200/e0e0e0/333333?text=E.E." class="w-40 h-40 rounded-full mx-auto mb-4 shadow-lg" alt="Evgeny Epifanov">
+                        <h4 class="font-bold text-xl text-rsm-dark-blue">Evgeny Epifanov</h4>
+                        <p class="text-rsm-blue font-medium mb-2">Grades 6-7 Program Innovator</p>
+                        <p class="text-gray-600 text-sm">For nearly a decade, Evgeny has pioneered the use of modern teaching tools like storytelling and edutainment to make advanced topics engaging. He helps students prepare for difficult challenges with genuine interest and curiosity.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="faq" class="py-20 md:py-24 bg-rsm-light-gray">
+            <div class="container mx-auto px-6 max-w-4xl">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-rsm-dark-blue">Frequently Asked Questions</h2>
+                </div>
+                <div class="space-y-4">
+                    <!-- FAQ Item 1 -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                        <button class="accordion-header w-full flex justify-between items-center text-left p-6">
+                            <span class="font-semibold text-lg text-rsm-dark-blue">The name is the "Russian" School of Math. What does this "Russian" methodology actually mean for my child?</span>
+                            <i data-feather="chevron-down" class="transition-transform"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="p-6 pt-0 text-gray-700">
+                                <p>The "Russian" in our name comes from our approach, which is based on the elite mathematics schools of the former Soviet Union and adapted for the U.S. environment. This methodology has a long and storied history of success, consistently producing many of the world's top performers in international math olympiads.</p>
+                                <p class="mt-4">According to this tradition, the study of mathematics is the pre-eminent tool of mental development. For your child, this means we teach math in a way that not only builds mathematical excellence but also develops intellect and character. Our curriculum focuses on deep conceptual understanding over memorization, teaching students to think logically and creatively. This approach equips them with a powerful framework for problem-solving that will benefit them far beyond mathematics.</p>
+                                <div class="mt-6 bg-gray-50 p-4 rounded-lg">
+                                    <p class="text-sm text-gray-700 mb-1">Learn more about the educational philosophy that has powered our students' success for over two decades.</p>
+                                    <a href="#" class="text-rsm-blue hover:underline font-semibold text-sm">Blog Post: "The RSM Difference: A Deep Dive into Our Classroom Methodology."</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- FAQ Item 2 -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                        <button class="accordion-header w-full flex justify-between items-center text-left p-6">
+                            <span class="font-semibold text-lg text-rsm-dark-blue">How do you determine the right competition program and level for each student?</span>
+                            <i data-feather="chevron-down" class="transition-transform"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="p-6 pt-0 text-gray-700">
+                                <p>Finding the perfect fit is essential for a student's confidence and growth. Our placement process is comprehensive and free of charge. It begins with a multi-part evaluation that assesses not just a student's computational skills but also their logical reasoning and problem-solving abilities. Following the evaluation, we have a detailed discussion with you and your child to understand their goals, learning style, and previous experience. Based on both the evaluation results and this conversation, we recommend a specific program and level—whether it's building a foundation for the AMC 8 or tackling the advanced concepts required for the AIME.</p>
+                                <div class="mt-6 bg-gray-50 p-4 rounded-lg">
+                                    <p class="text-sm text-gray-700 mb-1">Understand our evaluation process and schedule your child's free placement test today.</p>
+                                    <a href="#" class="text-rsm-blue hover:underline font-semibold text-sm">Blog Post: "A Look Inside the RSM Placement Evaluation: Finding the Perfect Starting Point."</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- FAQ Item 3 -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                        <button class="accordion-header w-full flex justify-between items-center text-left p-6">
+                            <span class="font-semibold text-lg text-rsm-dark-blue">What qualifications do your competition coaches have?</span>
+                            <i data-feather="chevron-down" class="transition-transform"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="p-6 pt-0 text-gray-700">
+                                <p>We believe that an expert coach is fundamental to a student's success. Every RSM competition coach holds a degree in mathematics or a related field and, most importantly, possesses a deep passion for the subject. Before leading a classroom, all instructors undergo extensive, mandatory training in our unique methodology to ensure a consistent and high-quality learning experience. Many of our coaches are also former high-level math competitors themselves, bringing invaluable firsthand experience and strategic insight to their teaching.</p>
+                                <div class="mt-6 bg-gray-50 p-4 rounded-lg">
+                                    <p class="text-sm text-gray-700 mb-1">Learn more about the experts who will be guiding your child.</p>
+                                    <a href="#" class="text-rsm-blue hover:underline font-semibold text-sm">Blog Post: "Meet the Minds: The Anatomy of an RSM Competition Coach."</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- FAQ Item 4 -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                        <button class="accordion-header w-full flex justify-between items-center text-left p-6">
+                            <span class="font-semibold text-lg text-rsm-dark-blue">What is the expected time commitment for the competition program?</span>
+                            <i data-feather="chevron-down" class="transition-transform"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="p-6 pt-0 text-gray-700">
+                                <p>Our Math Competition Preparation (MCP) program typically involves one 90-minute class per week. To reinforce concepts, students are assigned a weekly homework assignment, which generally requires an additional 1-2 hours of focused work. The National Math Competition Preparation (NMCP) program is more intensive, with a workload that adapts to the competition calendar. We design our programs to be challenging yet manageable, fostering deep learning and passion without overwhelming students.</p>
+                                <div class="mt-6 bg-gray-50 p-4 rounded-lg">
+                                    <p class="text-sm text-gray-700 mb-1">Get tips on time management and creating effective study habits on our blog.</p>
+                                    <a href="#" class="text-rsm-blue hover:underline font-semibold text-sm">Blog Post: "Finding the Balance: Integrating Advanced Math into a Busy Student's Schedule."</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- FAQ Item 5 -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                        <button class="accordion-header w-full flex justify-between items-center text-left p-6">
+                            <span class="font-semibold text-lg text-rsm-dark-blue">How does the competition program fit with a demanding school schedule and impact school grades?</span>
+                            <i data-feather="chevron-down" class="transition-transform"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="p-6 pt-0 text-gray-700">
+                                <p>We design our program to be a powerful supplement to a student's education. Our class schedules include after-school and weekend options to integrate smoothly with demanding school commitments. While we don't guarantee specific grade improvements, many parents report that their children become more confident and successful in their school's math classes. Our program focuses on developing deep conceptual understanding and advanced problem-solving skills. By learning to think logically and creatively, students are better equipped to tackle any mathematical challenge, which often leads to improved performance and a greater appreciation for the subject across the board.</p>
+                                <div class="mt-6 bg-gray-50 p-4 rounded-lg">
+                                    <p class="text-sm text-gray-700 mb-1">Discover how the RSM methodology enhances overall academic performance.</p>
+                                    <a href="#" class="text-rsm-blue hover:underline font-semibold text-sm">Blog Post: "Beyond Formulas: How Rigorous Math Training Creates Better All-Around Students."</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- FAQ Item 6 -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                        <button class="accordion-header w-full flex justify-between items-center text-left p-6">
+                            <span class="font-semibold text-lg text-rsm-dark-blue">How are parents kept informed of their child's progress?</span>
+                            <i data-feather="chevron-down" class="transition-transform"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="p-6 pt-0 text-gray-700">
+                                <p>We believe in a strong parent-teacher partnership. You can track your child's progress, view assignments, and see results through our dedicated parent portal, which is updated regularly. Additionally, our instructors provide detailed feedback reports at key points throughout the semester, highlighting areas of strength and opportunities for growth. For more specific questions, teachers are available for brief discussions before or after class.</p>
+                                <div class="mt-6 bg-gray-50 p-4 rounded-lg">
+                                    <p class="text-sm text-gray-700 mb-1">Learn how to partner with us in tracking your child's journey.</p>
+                                    <a href="#" class="text-rsm-blue hover:underline font-semibold text-sm">Blog Post: "A Parent's Guide to the RSM Portal: Tracking Progress Together."</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- FAQ Item 7 -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                        <button class="accordion-header w-full flex justify-between items-center text-left p-6">
+                            <span class="font-semibold text-lg text-rsm-dark-blue">How does this program help with college applications?</span>
+                            <i data-feather="chevron-down" class="transition-transform"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="p-6 pt-0 text-gray-700">
+                                <p>Elite universities seek students who demonstrate intellectual vitality, resilience, and a passion for challenges. Our program is designed to forge these exact traits. The intense training and high-level competition experience shape students into exceptional candidates, providing compelling material for their applications and essays. The national awards our students earn are simply the evidence of this deeper transformation. We prepare students not just for college applications, but to thrive once they get there.</p>
+                                <div class="mt-6 bg-gray-50 p-4 rounded-lg">
+                                    <p class="text-sm text-gray-700 mb-1">Read more about how our students stand out in the competitive college application process.</p>
+                                    <a href="#" class="text-rsm-blue hover:underline font-semibold text-sm">Blog Post: "Intellectual Vitality: The RSM Factor in College Admissions."</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- FAQ Item 8 -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                        <button class="accordion-header w-full flex justify-between items-center text-left p-6">
+                            <span class="font-semibold text-lg text-rsm-dark-blue">How do you prepare students for the pressure of a timed competition environment?</span>
+                            <i data-feather="chevron-down" class="transition-transform"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="p-6 pt-0 text-gray-700">
+                                <p>Our curriculum is designed to build confidence and resilience right from the start. We integrate timed practice tests and strategic coaching on pacing, focus, and managing test anxiety. By creating a supportive classroom environment and demystifying the test format, we help students become comfortable with the pressures of competition. This approach ensures they can perform their best when it counts, turning potential anxiety into focused energy.</p>
+                                <div class="mt-6 bg-gray-50 p-4 rounded-lg">
+                                    <p class="text-sm text-gray-700 mb-1">Read more on our blog about how we foster a healthy relationship with challenges.</p>
+                                    <a href="#" class="text-rsm-blue hover:underline font-semibold text-sm">Blog Post: "More Than a Score: How We Build Resilient Problem-Solvers."</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- FAQ Item 9 -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                        <button class="accordion-header w-full flex justify-between items-center text-left p-6">
+                            <span class="font-semibold text-lg text-rsm-dark-blue">My child will be participating online. How do you create an engaging and effective virtual classroom for competition prep?</span>
+                            <i data-feather="chevron-down" class="transition-transform"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="p-6 pt-0 text-gray-700">
+                                <p>Our virtual classrooms are purpose-built to be as interactive and collaborative as our physical ones. We use a state-of-the-art online platform that allows for real-time interaction with the teacher and with peers. Instructors use digital whiteboards to illustrate complex problems, and students can "raise their hand" and work through solutions live. We maintain small class sizes to ensure every student gets individual attention. This ensures our online competition prep students receive the same rigorous, engaging, and high-quality instruction as their in-person peers.</p>
+                                <div class="mt-6 bg-gray-50 p-4 rounded-lg">
+                                    <p class="text-sm text-gray-700 mb-1">See how we make online learning interactive and effective on our blog.</p>
+                                    <a href="#" class="text-rsm-blue hover:underline font-semibold text-sm">Blog Post: "Inside an RSM Online Classroom: A Tour of Our Virtual Learning Environment."</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-12 text-center">
+                    <p class="text-gray-600">Can't find the answer you're looking for? Visit our full <a href="#" class="text-rsm-blue font-semibold underline hover:text-rsm-dark-blue">FAQ page</a> or <a href="#contact" class="text-rsm-blue font-semibold underline hover:text-rsm-dark-blue">contact us</a> directly.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="find-school" class="py-20 md:py-24 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-rsm-dark-blue mb-8">Find Your School</h2>
+                <a href="#" class="inline-block bg-rsm-gold text-rsm-dark-blue font-bold py-4 px-10 rounded-lg shadow-lg hover:bg-yellow-500 transition-transform transform hover:scale-105 text-lg">
+                    Find Your School
+                </a>
+                <p class="mt-6 text-gray-600">
+                    Want to search by ZIP code or view all locations? <a href="#" class="text-rsm-blue font-semibold underline hover:text-rsm-dark-blue">Click here</a>.
+                </p>
+            </div>
+        </section>
+
+        <section id="contact" class="py-20 md:py-32 bg-rsm-blue text-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-5xl font-extrabold">Ready to Begin Your Child's Journey?</h2>
+                <p class="mt-6 text-lg md:text-xl max-w-3xl mx-auto text-blue-100">
+                    The first step is a comprehensive, no-obligation assessment with one of our program advisors. We will help you understand your child's current strengths and place them on the right path for success.
+                </p>
+                <div class="mt-10">
+                    <a href="#" class="bg-rsm-gold text-rsm-dark-blue font-bold py-4 px-10 rounded-lg shadow-xl hover:bg-yellow-500 transition-transform transform hover:scale-105 text-lg">
+                        Schedule Your Free Assessment Now
+                    </a>
+                </div>
+                <div class="mt-12 border-t border-blue-400/50 pt-8">
+                    <h3 class="text-2xl font-bold text-white mb-4">Contact Us</h3>
+                    <p class="text-blue-200">Have specific questions? Reach out to our competition program advisors.</p>
+                    <p class="mt-4 text-lg">
+                        <a href="mailto:online.competition@mathschool.com" class="font-bold underline hover:text-white">online.competition@mathschool.com</a>
+                    </p>
+                    <p class="mt-2 text-lg">
+                        <a href="tel:1-800-555-6284" class="font-bold underline hover:text-white">1-800-555-6284</a>
+                    </p>
+                    <p class="mt-4 text-blue-200 text-sm">(List of locations will be added here)</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-rsm-dark-blue text-white">
+        <div class="container mx-auto px-6 py-8 text-center text-blue-200">
+            <p>&copy; 2025 Russian School of Mathematics. All Rights Reserved.</p>
+            <p class="text-sm mt-2">This is a conceptual webpage created for demonstration purposes.</p>
+        </div>
+    </footer>
+
+    <div id="gemini-modal" class="fixed inset-0 bg-black bg-opacity-60 z-50 hidden items-center justify-center p-4">
+        <div class="bg-white rounded-xl shadow-2xl p-6 md:p-8 max-w-2xl w-full m-4 transform transition-all duration-300 ease-out scale-95" id="gemini-modal-content-area">
+            <div class="flex justify-between items-center mb-4">
+                <h3 id="modal-title" class="text-xl md:text-2xl font-bold text-rsm-dark-blue">Generating Problem...</h3>
+                <button id="modal-close-btn-x" class="text-gray-400 hover:text-gray-600 text-3xl leading-none">&times;</button>
+            </div>
+            <div id="modal-content" class="text-base max-h-[60vh] overflow-y-auto pr-2">
+                <div id="modal-loader" class="flex justify-center items-center py-8">
+                    <div class="animate-spin rounded-full h-16 w-16 border-b-4 border-rsm-blue"></div>
+                </div>
+                </div>
+            <div class="mt-6 text-right border-t pt-4">
+                <button id="modal-close-btn" class="bg-rsm-blue text-white font-bold py-2 px-6 rounded-lg hover:bg-rsm-dark-blue transition-colors">Close</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        // --- Initial Setup ---
+        // This function runs when the DOM is fully loaded.
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // Initialize Feather Icons
+            feather.replace();
+
+            // --- Mobile Menu Toggle ---
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+
+            // --- Accordion Functionality for FAQ ---
+            const accordionHeaders = document.querySelectorAll('.accordion-header');
+            accordionHeaders.forEach(header => {
+                header.addEventListener('click', () => {
+                    const content = header.nextElementSibling;
+                    const icon = header.querySelector('svg');
+
+                    // Check if the current accordion is open
+                    const isOpen = content.style.maxHeight;
+
+                    // Close all other accordions first
+                    accordionHeaders.forEach(otherHeader => {
+                        if (otherHeader !== header) {
+                            const otherContent = otherHeader.nextElementSibling;
+                            const otherIcon = otherHeader.querySelector('svg');
+                            if (otherContent) {
+                                otherContent.style.maxHeight = null;
+                            }
+                            if (otherIcon) {
+                                otherIcon.style.transform = 'rotate(0deg)';
+                            }
+                        }
+                    });
+
+                    // Toggle the clicked accordion
+                    if (isOpen) {
+                        content.style.maxHeight = null;
+                        if (icon) icon.style.transform = 'rotate(0deg)';
+                    } else {
+                        if (content) {
+                            content.style.maxHeight = content.scrollHeight + "px";
+                        }
+                        if (icon) icon.style.transform = 'rotate(180deg)';
+                    }
+                });
+            });
+
+            // --- Gemini API Feature Script ---
+            const modal = document.getElementById('gemini-modal');
+            const modalContentArea = document.getElementById('gemini-modal-content-area');
+            const modalTitle = document.getElementById('modal-title');
+            const modalContent = document.getElementById('modal-content');
+            const modalLoader = document.getElementById('modal-loader');
+            const modalCloseBtn = document.getElementById('modal-close-btn');
+            const modalCloseBtnX = document.getElementById('modal-close-btn-x');
+            const generateButtons = document.querySelectorAll('.generate-problem-btn');
+
+            const prompts = {
+                mcp: {
+                    title: "Sample MCP Problem",
+                    prompt: "As an expert in mathematics education for gifted youth, generate a single, challenging math problem suitable for a talented middle school student preparing for competitions like the AMC 8 or Purple Comet. The problem should require logical reasoning or creative thinking, not just standard algorithms. Format the output clearly with 'Problem:' on one line, followed by the problem statement, and then 'Solution:' on a new line, followed by a step-by-step explanation of the solution. Do not include any other text before 'Problem:' or after the solution."
+                },
+                nmcp: {
+                    title: "Sample NMCP Problem",
+                    prompt: "As an expert in advanced mathematics competitions, generate a single, difficult math problem appropriate for a top high school student preparing for the AIME (American Invitational Mathematics Examination). The problem should cover topics like advanced algebra, number theory, combinatorics, or geometry. Format the output clearly with 'Problem:' on one line, followed by the problem statement, and then 'Solution:' on a new line, followed by a detailed, step-by-step explanation of the solution. Do not include any other text before 'Problem:' or after the solution."
+                }
+            };
+
+            async function callGemini(prompt) {
+                // IMPORTANT: The API key is intentionally left blank. 
+                // In the target environment, it will be automatically supplied.
+                const apiKey = ""; 
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+                
+                const payload = {
+                    contents: [{
+                        role: "user",
+                        parts: [{ text: prompt }]
+                    }]
+                };
+
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type':'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (!response.ok) {
+                    throw new Error(`API request failed with status ${response.status}`);
+                }
+
+                const result = await response.json();
+
+                if (result.candidates && result.candidates.length > 0 && result.candidates[0].content && result.candidates[0].content.parts && result.candidates[0].content.parts.length > 0) {
+                    return result.candidates[0].content.parts[0].text;
+                } else {
+                    // This handles cases where the API returns a response, but it's not in the expected format.
+                    console.error("Unexpected API response structure:", result);
+                    throw new Error("Invalid response structure from API");
+                }
+            }
+
+            function openModal() {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                setTimeout(() => {
+                    modal.style.opacity = '1';
+                    modalContentArea.style.transform = 'scale(1)';
+                }, 10);
+            }
+
+            function closeModal() {
+                modal.style.opacity = '0';
+                modalContentArea.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    modal.classList.add('hidden');
+                    modal.classList.remove('flex');
+                }, 300);
+            }
+
+            generateButtons.forEach(button => {
+                button.addEventListener('click', async (e) => {
+                    e.preventDefault();
+                    const level = button.dataset.level;
+                    const { title, prompt } = prompts[level];
+
+                    // Show modal and loader
+                    openModal();
+                    modalTitle.textContent = `✨ Generating ${title}...`;
+                    modalContent.innerHTML = ''; // Clear previous content
+                    modalLoader.style.display = 'flex';
+                    modalContent.appendChild(modalLoader);
+
+                    try {
+                        const resultText = await callGemini(prompt);
+                        
+                        // Sanitize and format the output
+                        let problem = "Could not parse problem.";
+                        let solution = "No solution was provided.";
+
+                        if (resultText.includes('Solution:')) {
+                            let parts = result.split('Solution:');
+                            problem = parts[0].replace('Problem:', '').trim();
+                            solution = parts[1].trim();
+                        } else {
+                            problem = resultText.replace('Problem:', '').trim();
+                        }
+
+
+                        const formattedHtml = `
+                            <div class="space-y-4 text-left">
+                                <p class="font-semibold text-gray-800">${problem.replace(/\n/g, '<br>')}</p>
+                                <hr class="my-4">
+                                <p class="font-bold text-rsm-blue">Solution:</p>
+                                <p class="text-gray-600">${solution.replace(/\n/g, '<br>')}</p>
+                            </div>
+                        `;
+
+                        modalTitle.textContent = `✨ ${title}`;
+                        modalLoader.style.display = 'none';
+                        modalContent.innerHTML = formattedHtml;
+
+                    } catch (error) {
+                        console.error("Gemini API call failed:", error);
+                        modalTitle.textContent = "Error";
+                        modalLoader.style.display = 'none';
+                        modalContent.innerHTML = `<p class="text-red-500 text-center">Sorry, we couldn't generate a problem at this time. This may be due to high demand or a network issue. Please try again later.</p>`;
+                    }
+                });
+            });
+
+            modalCloseBtn.addEventListener('click', closeModal);
+            modalCloseBtnX.addEventListener('click', closeModal);
+
+            // Close modal if clicking on the background overlay
+            modal.addEventListener('click', (event) => {
+                if (event.target === modal) {
+                    closeModal();
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
