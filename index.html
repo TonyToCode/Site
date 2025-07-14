@@ -105,30 +105,39 @@
         .testimonial-container {
             overflow: hidden;
             position: relative;
-            width: 100%;
+            width: 100vw;
+            margin-left: calc(-50vw + 50%);
+            padding: 40px 0;
         }
         
         .testimonial-track {
             display: flex;
-            animation: scroll 60s linear infinite;
-            width: calc(320px * 16); /* 16 testimonials * 320px width */
+            animation: scroll 80s linear infinite;
+            width: calc(275px * 16); /* 16 testimonials * 275px width (260px + margin) */
+            padding-left: 100px; /* Start with proper padding */
         }
         
         .testimonial-card {
             background: white;
             border-radius: 12px;
-            padding: 1.5rem;
-            margin: 0 1rem;
+            padding: 1.25rem;
+            margin: 0 0.75rem;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            min-width: 280px;
-            max-width: 280px;
+            min-width: 260px;
+            max-width: 260px;
             flex-shrink: 0;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
         
         .testimonial-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+            z-index: 10;
+            position: relative;
         }
         
         @keyframes scroll {
@@ -410,15 +419,15 @@
             </div>
         </section>
 
-        <section id="testimonials" class="py-20 md:py-24 bg-rsm-light-gray overflow-hidden">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-16">
+        <section id="testimonials" class="py-20 md:py-24 bg-rsm-light-gray">
+            <div class="w-full">
+                <div class="text-center mb-16 px-6">
                     <h2 class="text-3xl md:text-4xl font-bold text-rsm-dark-blue">Don't Just Take Our Word For It. See the Results.</h2>
                     <p class="mt-4 text-lg text-rsm-blue font-semibold">Stories from the RSM Family</p>
                 </div>
                 
                 <!-- Auto-scrolling testimonials -->
-                <div class="relative">
+                <div class="relative overflow-hidden">
                     <div class="testimonial-container">
                         <div class="testimonial-track" id="testimonial-track">
                             <!-- First set of testimonials -->
@@ -602,8 +611,8 @@
                     </div>
                     
                     <!-- Gradient overlays for smooth edges -->
-                    <div class="absolute top-0 left-0 w-20 h-full bg-gradient-to-r from-rsm-light-gray to-transparent z-10 pointer-events-none"></div>
-                    <div class="absolute top-0 right-0 w-20 h-full bg-gradient-to-l from-rsm-light-gray to-transparent z-10 pointer-events-none"></div>
+                    <div class="absolute top-0 left-0 w-24 h-full bg-gradient-to-r from-rsm-light-gray via-rsm-light-gray/90 to-transparent z-10 pointer-events-none"></div>
+                    <div class="absolute top-0 right-0 w-24 h-full bg-gradient-to-l from-rsm-light-gray via-rsm-light-gray/90 to-transparent z-10 pointer-events-none"></div>
                 </div>
             </div>
         </section>
