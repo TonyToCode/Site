@@ -12,6 +12,8 @@
     <script src="https://threejs.org/examples/js/loaders/STLLoader.js"></script>
     <script src="assets/js/config.js"></script>
     <script src="assets/js/locations.js"></script>
+    <script src="assets/js/maps.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBXq9Xd8W8d_j5Rn7KVz1Z2Q3Y4M5N6P7R&callback=initFindSchoolMap"></script>
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/rsm-official.css">
 
@@ -579,17 +581,9 @@
                     </p>
                 </div>
                 
-                <!-- Google My Maps Embed with RSM Locations -->
+                <!-- Interactive Google Maps with RSM Locations and Website Links -->
                 <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-8 google-maps-container">
-                    <iframe 
-                        src="https://www.google.com/maps/d/embed?mid=1_gIQrPnpmRdjGL-U-AJLk7xkL6B2ykQ&ehbc=2E312F&hl=en" 
-                        width="100%" 
-                        height="490" 
-                        style="border:0; margin-top: -40px;" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
+                    <div id="find-school-map" style="width: 100%; height: 490px;"></div>
                 </div>
                 
                 <div class="text-center">
@@ -723,6 +717,37 @@
 
 
     <script>
+        // --- Global Map Variables ---
+        let map;
+        let infoWindow;
+        let markers = [];
+
+        // --- Google Maps Initialization for Find School Section ---
+        function initFindSchoolMap() {
+            const mapElement = document.getElementById('find-school-map');
+            if (mapElement) {
+                // Initialize the map using the maps.js functionality
+                map = new google.maps.Map(mapElement, {
+                    zoom: 4,
+                    center: { lat: 39.8283, lng: -98.5795 }, // Center of US
+                    styles: [
+                        {
+                            featureType: 'poi',
+                            elementType: 'labels',
+                            stylers: [{ visibility: 'off' }]
+                        }
+                    ]
+                });
+                
+                infoWindow = new google.maps.InfoWindow();
+                
+                // Add markers for all locations using the function from maps.js
+                if (typeof addLocationMarkers === 'function') {
+                    addLocationMarkers();
+                }
+            }
+        }
+
         // --- Initial Setup ---
         // This function runs when the DOM is fully loaded.
         document.addEventListener('DOMContentLoaded', () => {
