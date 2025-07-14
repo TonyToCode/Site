@@ -579,8 +579,8 @@
                     </p>
                 </div>
                 
-                <!-- Google My Maps Embed with RSM Locations -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-8 google-maps-container">
+                <!-- Google My Maps with Custom Info Panel -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-8 google-maps-container relative">
                     <iframe 
                         src="https://www.google.com/maps/d/embed?mid=1_gIQrPnpmRdjGL-U-AJLk7xkL6B2ykQ&ehbc=2E312F&hl=en" 
                         width="100%" 
@@ -588,15 +588,29 @@
                         style="border:0; margin-top: -40px;" 
                         allowfullscreen="" 
                         loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade">
+                        referrerpolicy="no-referrer-when-downgrade"
+                        id="rsm-map-iframe">
                     </iframe>
-                </div>
-                
-                <!-- Alternative: Interactive Location Cards -->
-                <div class="bg-rsm-light-gray rounded-xl p-6 mb-8">
-                    <h3 class="text-xl font-bold text-rsm-dark-blue mb-4 text-center">Quick Links to RSM Locations</h3>
-                    <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-4" id="quick-location-links">
-                        <!-- Location links will be populated by JavaScript -->
+                    
+                    <!-- Custom Location Info Panel -->
+                    <div id="location-info-panel" class="absolute top-4 left-4 bg-white rounded-lg shadow-xl p-4 w-72 hidden z-10">
+                        <div class="flex justify-between items-start mb-3">
+                            <h4 id="location-name" class="font-bold text-lg text-rsm-dark-blue"></h4>
+                            <button id="close-info-panel" class="text-gray-400 hover:text-gray-600">&times;</button>
+                        </div>
+                        <div id="location-details" class="space-y-2 text-sm text-gray-600 mb-4">
+                            <!-- Location details will be populated here -->
+                        </div>
+                        <div class="space-y-2">
+                            <a id="location-website-link" href="#" target="_blank" class="block bg-rsm-blue text-white text-center py-2 px-4 rounded-lg hover:bg-rsm-dark-blue transition-colors text-sm font-semibold">
+                                <i class="inline-block w-4 h-4 mr-2">🏫</i>
+                                Visit Branch Website
+                            </a>
+                            <a href="#contact" class="block bg-rsm-gold text-rsm-dark-blue text-center py-2 px-4 rounded-lg hover:bg-yellow-500 transition-colors text-sm font-semibold">
+                                <i class="inline-block w-4 h-4 mr-2">📅</i>
+                                Schedule Assessment
+                            </a>
+                        </div>
                     </div>
                 </div>
                 
@@ -732,30 +746,76 @@
 
     <script>
 
-        // --- Populate Quick Location Links ---
-        function populateQuickLocationLinks() {
-            const container = document.getElementById('quick-location-links');
-            if (!container) return;
+        // --- Handle Map Location Info Panel ---
+        function setupLocationInfoPanel() {
+            const iframe = document.getElementById('rsm-map-iframe');
+            const infoPanel = document.getElementById('location-info-panel');
+            const closeButton = document.getElementById('close-info-panel');
             
-            // Get a sample of popular locations
-            const allLocations = getAllLocations();
-            const popularLocations = allLocations.filter(location => 
-                ['Newton', 'Lexington', 'Bellevue', 'Cupertino', 'Plano', 'Dublin', 'Brooklyn', 'Irvine']
-                .includes(location.name)
-            ).slice(0, 8);
+            if (!iframe || !infoPanel || !closeButton) return;
             
-            popularLocations.forEach(location => {
-                const locationURL = generateLocationURL(location);
-                const linkCard = document.createElement('a');
-                linkCard.href = locationURL;
-                linkCard.target = '_blank';
-                linkCard.className = 'block bg-white p-3 rounded-lg shadow hover:shadow-lg transition-all hover:bg-rsm-blue hover:text-white text-center group';
-                linkCard.innerHTML = `
-                    <div class="font-semibold text-sm text-rsm-dark-blue group-hover:text-white">${location.name}</div>
-                    <div class="text-xs text-gray-600 group-hover:text-blue-100">${location.state}</div>
-                `;
-                container.appendChild(linkCard);
+            // Close panel when close button is clicked
+            closeButton.addEventListener('click', () => {
+                infoPanel.classList.add('hidden');
             });
+            
+            // Sample locations for demonstration (in a real implementation, this would detect map clicks)
+            const sampleLocations = [
+                { name: 'RSM Newton', city: 'Newton', state: 'MA', zip: '02459', country: 'United States' },
+                { name: 'RSM Plano', city: 'Plano', state: 'TX', zip: '75023', country: 'United States' },
+                { name: 'RSM Bellevue', city: 'Bellevue', state: 'WA', zip: '98004', country: 'United States' }
+            ];
+            
+            // Add click handler to simulate location selection (for demonstration)
+            iframe.addEventListener('load', () => {
+                // Add a button to test the info panel
+                const testButton = document.createElement('button');
+                testButton.textContent = 'Click to see location info (Test)';
+                testButton.className = 'absolute bottom-4 right-4 bg-rsm-blue text-white px-4 py-2 rounded-lg shadow-lg text-sm z-20';
+                testButton.addEventListener('click', () => {
+                    showLocationInfo(sampleLocations[0]);
+                });
+                iframe.parentElement.appendChild(testButton);
+            });
+        }
+        
+        function showLocationInfo(locationData) {
+            const infoPanel = document.getElementById('location-info-panel');
+            const locationName = document.getElementById('location-name');
+            const locationDetails = document.getElementById('location-details');
+            const websiteLink = document.getElementById('location-website-link');
+            
+            if (!infoPanel || !locationName || !locationDetails || !websiteLink) return;
+            
+            // Find matching location from our data
+            const allLocations = getAllLocations();
+            const matchedLocation = allLocations.find(loc => 
+                loc.name.toLowerCase().includes(locationData.name.toLowerCase().replace('RSM ', ''))
+            );
+            
+            if (matchedLocation) {
+                // Populate panel with location info
+                locationName.textContent = locationData.name;
+                locationDetails.innerHTML = `
+                    <div><strong>Address:</strong> ${locationData.city}</div>
+                    <div><strong>City:</strong> ${locationData.city}</div>
+                    <div><strong>State:</strong> ${locationData.state}</div>
+                    <div><strong>Country:</strong> ${locationData.country}</div>
+                    <div><strong>ZIP:</strong> ${locationData.zip}</div>
+                    <div><strong>Description:</strong> Russian School of Mathematics - Competition Math Program</div>
+                `;
+                
+                // Set website link
+                const websiteURL = generateLocationURL(matchedLocation);
+                websiteLink.href = websiteURL;
+                websiteLink.innerHTML = `
+                    <i class="inline-block w-4 h-4 mr-2">🏫</i>
+                    Visit ${matchedLocation.name} Website
+                `;
+                
+                // Show the panel
+                infoPanel.classList.remove('hidden');
+            }
         }
 
         // --- Initial Setup ---
@@ -765,8 +825,8 @@
             // Initialize Feather Icons
             feather.replace();
             
-            // Populate quick location links
-            populateQuickLocationLinks();
+            // Setup location info panel
+            setupLocationInfoPanel();
 
             // --- Mobile Menu Toggle ---
             const mobileMenuButton = document.getElementById('mobile-menu-button');
