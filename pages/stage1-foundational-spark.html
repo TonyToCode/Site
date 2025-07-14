@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stage 1: Foundational Spark - RSM Competition Program</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/rsm-official.css">
+    <link rel="stylesheet" href="../assets/css/premium-design.css">
+    
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        .stage-hero {
+            background: linear-gradient(135deg, #005dab 0%, #003e7a 100%);
+            padding: 4rem 0;
+            color: white;
+        }
+        
+        .breadcrumb {
+            background: rgba(0, 93, 171, 0.1);
+            padding: 1rem 0;
+        }
+        
+        .skill-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .competition-badge {
+            background: #ffc72c;
+            color: #003e7a;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            display: inline-block;
+            margin: 0.25rem;
+        }
+        
+        .sample-problem {
+            background: #f8f9fa;
+            border-left: 4px solid #005dab;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+        }
+        
+        .milestone-item {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            margin: 0.5rem 0;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .milestone-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: #005dab;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+        }
+    </style>
+</head>
+<body class="premium-body">
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container mx-auto px-6">
+            <nav class="flex items-center space-x-2 text-sm">
+                <a href="../index.html" class="text-rsm-blue hover:underline">Home</a>
+                <span class="text-gray-500">›</span>
+                <a href="../index.html#pathway" class="text-rsm-blue hover:underline">Competition Pathway</a>
+                <span class="text-gray-500">›</span>
+                <span class="text-gray-700">Stage 1: Foundational Spark</span>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="stage-hero">
+        <div class="container mx-auto px-6 text-center">
+            <div class="rsm-badge mb-4">STAGE 1</div>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Foundational Spark</h1>
+            <p class="text-xl text-blue-100 mb-2">Grades 3-6</p>
+            <p class="text-lg text-blue-200 max-w-3xl mx-auto">
+                Building confidence and nurturing a love for creative problem-solving through engaging mathematical challenges and foundational competition experiences.
+            </p>
+        </div>
+    </section>
+
+    <!-- Overview -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold text-rsm-dark-blue mb-6">The Beginning of Excellence</h2>
+                    <p class="text-gray-600 mb-6">
+                        Stage 1 is where young mathematicians discover their passion for problem-solving. We focus on building fundamental skills while introducing students to the joy of mathematical thinking through carefully crafted challenges that go beyond traditional classroom mathematics.
+                    </p>
+                    <p class="text-gray-600 mb-6">
+                        Students develop confidence in their mathematical abilities through exposure to creative problems that require logical reasoning, pattern recognition, and innovative thinking strategies.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="competition-badge">Purple Comet</span>
+                        <span class="competition-badge">MOEMS</span>
+                        <span class="competition-badge">Local Math Contests</span>
+                    </div>
+                </div>
+                <div class="bg-rsm-light-gray rounded-lg p-8">
+                    <h3 class="text-xl font-bold text-rsm-dark-blue mb-4">Program Highlights</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i data-feather="star" class="w-5 h-5 text-rsm-gold mr-3 mt-1"></i>
+                            <span>Creative problem-solving techniques</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="star" class="w-5 h-5 text-rsm-gold mr-3 mt-1"></i>
+                            <span>Introduction to mathematical competitions</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="star" class="w-5 h-5 text-rsm-gold mr-3 mt-1"></i>
+                            <span>Confidence-building activities</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="star" class="w-5 h-5 text-rsm-gold mr-3 mt-1"></i>
+                            <span>Collaborative learning environment</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Skills Developed -->
+    <section class="py-16 bg-rsm-light-gray">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-rsm-dark-blue mb-4">Key Skills Developed</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Our Stage 1 program focuses on developing essential mathematical thinking skills that form the foundation for future competition success.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="skill-card">
+                    <div class="w-12 h-12 bg-rsm-blue rounded-lg flex items-center justify-center mb-4">
+                        <i data-feather="eye" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-rsm-dark-blue mb-3">Pattern Recognition</h3>
+                    <p class="text-gray-600">
+                        Students learn to identify mathematical patterns and relationships, developing the ability to see connections that lead to elegant solutions.
+                    </p>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="w-12 h-12 bg-rsm-blue rounded-lg flex items-center justify-center mb-4">
+                        <i data-feather="zap" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-rsm-dark-blue mb-3">Creative Thinking</h3>
+                    <p class="text-gray-600">
+                        Through non-standard problems, students develop the ability to think outside the box and approach challenges from multiple angles.
+                    </p>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="w-12 h-12 bg-rsm-blue rounded-lg flex items-center justify-center mb-4">
+                        <i data-feather="target" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-rsm-dark-blue mb-3">Logical Reasoning</h3>
+                    <p class="text-gray-600">
+                        Students strengthen their ability to construct logical arguments and follow step-by-step reasoning processes.
+                    </p>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="w-12 h-12 bg-rsm-blue rounded-lg flex items-center justify-center mb-4">
+                        <i data-feather="shield" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-rsm-dark-blue mb-3">Mathematical Confidence</h3>
+                    <p class="text-gray-600">
+                        Building self-assurance in mathematical abilities through successful problem-solving experiences and positive reinforcement.
+                    </p>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="w-12 h-12 bg-rsm-blue rounded-lg flex items-center justify-center mb-4">
+                        <i data-feather="users" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-rsm-dark-blue mb-3">Collaborative Skills</h3>
+                    <p class="text-gray-600">
+                        Learning to work with peers, share ideas, and learn from different problem-solving approaches.
+                    </p>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="w-12 h-12 bg-rsm-blue rounded-lg flex items-center justify-center mb-4">
+                        <i data-feather="clock" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-rsm-dark-blue mb-3">Time Management</h3>
+                    <p class="text-gray-600">
+                        Introduction to working efficiently within time constraints while maintaining accuracy and thoroughness.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sample Problem -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-rsm-dark-blue mb-4">Sample Problem</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Here's an example of the type of engaging problem our Stage 1 students work on:
+                </p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <div class="sample-problem">
+                    <h3 class="text-xl font-bold text-rsm-blue mb-4">Pattern Detective</h3>
+                    <p class="text-gray-700 mb-4">
+                        Emma notices that when she arranges her toy blocks in a square pattern, she always has some blocks left over. When she makes a 3×3 square, she has 4 blocks left. When she makes a 4×4 square, she has 4 blocks left. When she makes a 5×5 square, she has 4 blocks left.
+                    </p>
+                    <p class="text-gray-700 mb-4">
+                        How many blocks does Emma have in total?
+                    </p>
+                    
+                    <div class="mt-6 p-4 bg-blue-50 rounded-lg">
+                        <h4 class="font-bold text-rsm-blue mb-2">Teaching Approach:</h4>
+                        <p class="text-gray-700 text-sm">
+                            This problem introduces students to modular arithmetic concepts in an age-appropriate way. Students learn to look for patterns, make connections between different cases, and develop systematic thinking. The problem encourages multiple solution strategies and helps students understand that mathematics is about finding patterns and relationships.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Milestones -->
+    <section class="py-16 bg-rsm-light-gray">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-rsm-dark-blue mb-4">Learning Milestones</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Track your child's progress through our carefully designed progression of skills and achievements.
+                </p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <div class="space-y-4">
+                    <div class="milestone-item">
+                        <div class="milestone-icon">
+                            <span class="font-bold">1</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-rsm-dark-blue">Mathematical Curiosity</h3>
+                            <p class="text-gray-600">Students develop enthusiasm for exploring mathematical concepts and asking "what if" questions.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="milestone-item">
+                        <div class="milestone-icon">
+                            <span class="font-bold">2</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-rsm-dark-blue">Problem-Solving Strategies</h3>
+                            <p class="text-gray-600">Introduction to systematic approaches: drawing diagrams, making tables, looking for patterns, and working backwards.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="milestone-item">
+                        <div class="milestone-icon">
+                            <span class="font-bold">3</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-rsm-dark-blue">First Competition Experience</h3>
+                            <p class="text-gray-600">Participation in beginner-friendly competitions like Purple Comet and MOEMS with proper preparation and support.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="milestone-item">
+                        <div class="milestone-icon">
+                            <span class="font-bold">4</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-rsm-dark-blue">Mathematical Communication</h3>
+                            <p class="text-gray-600">Students learn to explain their thinking clearly and understand others' mathematical reasoning.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="milestone-item">
+                        <div class="milestone-icon">
+                            <span class="font-bold">5</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-rsm-dark-blue">Readiness for Stage 2</h3>
+                            <p class="text-gray-600">Students demonstrate confidence in problem-solving and are ready to tackle more structured competition preparation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-16 bg-rsm-blue text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-4">Ready to Ignite Your Child's Mathematical Spark?</h2>
+            <p class="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+                Join our Stage 1 program and watch your child develop confidence, creativity, and a lifelong love for mathematical problem-solving.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="../index.html#contact" class="bg-rsm-gold text-rsm-dark-blue font-bold py-3 px-8 rounded-lg hover:bg-yellow-500 transition-colors">
+                    Schedule Assessment
+                </a>
+                <a href="../index.html#pathway" class="bg-white/10 border-2 border-white/30 text-white font-bold py-3 px-8 rounded-lg hover:bg-white hover:text-rsm-blue transition-colors">
+                    View All Stages
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Initialize Feather Icons
+        feather.replace();
+    </script>
+</body>
+</html>

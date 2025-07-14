@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stage 3: High School Ascent - RSM Competition Program</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/rsm-official.css">
+    <link rel="stylesheet" href="../assets/css/premium-design.css">
+    
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        .stage-hero {
+            background: linear-gradient(135deg, #005dab 0%, #003e7a 100%);
+            padding: 4rem 0;
+            color: white;
+        }
+        
+        .breadcrumb {
+            background: rgba(0, 93, 171, 0.1);
+            padding: 1rem 0;
+        }
+        
+        .skill-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .competition-badge {
+            background: #ffc72c;
+            color: #003e7a;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            display: inline-block;
+            margin: 0.25rem;
+        }
+        
+        .sample-problem {
+            background: #f8f9fa;
+            border-left: 4px solid #005dab;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+        }
+        
+        .milestone-item {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            margin: 0.5rem 0;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .milestone-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: #005dab;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+        }
+        
+        .topic-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid #dee2e6;
+            transition: all 0.3s ease;
+        }
+        
+        .topic-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .track-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-top: 4px solid #005dab;
+            transition: all 0.3s ease;
+        }
+        
+        .track-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+</head>
+<body class="premium-body">
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container mx-auto px-6">
+            <nav class="flex items-center space-x-2 text-sm">
+                <a href="../index.html" class="text-rsm-blue hover:underline">Home</a>
+                <span class="text-gray-500">›</span>
+                <a href="../index.html#pathway" class="text-rsm-blue hover:underline">Competition Pathway</a>
+                <span class="text-gray-500">›</span>
+                <span class="text-gray-700">Stage 3: High School Ascent</span>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="stage-hero">
+        <div class="container mx-auto px-6 text-center">
+            <div class="rsm-badge mb-4">STAGE 3</div>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">High School Ascent</h1>
+            <p class="text-xl text-blue-100 mb-2">Grades 9-12</p>
+            <p class="text-lg text-blue-200 max-w-3xl mx-auto">
+                Mastering advanced topics for the AMC 10/12 through our rigorous Advanced MCP tracks, preparing students for AIME qualification.
+            </p>
+        </div>
+    </section>
+
+    <!-- Overview -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold text-rsm-dark-blue mb-6">The Path to Elite Competition</h2>
+                    <p class="text-gray-600 mb-6">
+                        Stage 3 represents the pinnacle of structured competition preparation, where students tackle the most challenging problems in American high school mathematics. Our Advanced MCP program provides comprehensive preparation for the AMC 10/12 and serves as the gateway to AIME qualification.
+                    </p>
+                    <p class="text-gray-600 mb-6">
+                        Students work with sophisticated mathematical concepts, develop advanced problem-solving techniques, and build the mathematical maturity required for success at the highest levels of competition mathematics.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="competition-badge">AMC 10/12</span>
+                        <span class="competition-badge">AIME</span>
+                        <span class="competition-badge">ARML</span>
+                        <span class="competition-badge">Regional Contests</span>
+                    </div>
+                </div>
+                <div class="bg-rsm-light-gray rounded-lg p-8">
+                    <h3 class="text-xl font-bold text-rsm-dark-blue mb-4">Program Highlights</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i data-feather="award" class="w-5 h-5 text-rsm-gold mr-3 mt-1"></i>
+                            <span>Advanced AMC 10/12 preparation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="target" class="w-5 h-5 text-rsm-gold mr-3 mt-1"></i>
+                            <span>AIME qualification strategies</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="layers" class="w-5 h-5 text-rsm-gold mr-3 mt-1"></i>
+                            <span>Advanced mathematical concepts</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="users" class="w-5 h-5 text-rsm-gold mr-3 mt-1"></i>
+                            <span>Collaborative problem-solving sessions</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advanced MCP Tracks -->
+    <section class="py-16 bg-rsm-light-gray">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-rsm-dark-blue mb-4">Advanced MCP Tracks</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Our Stage 3 program offers specialized tracks designed to meet students at their current level and accelerate their progress toward AIME qualification.
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-8">
+                <div class="track-card">
+                    <h3 class="text-2xl font-bold text-rsm-dark-blue mb-4">AMC 10 Focus Track</h3>
+                    <p class="text-gray-600 mb-4">
+                        Designed for students in grades 9-10 who are building toward AMC 10 excellence. This track emphasizes foundational advanced topics while developing competition-level problem-solving skills.
+                    </p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-start">
+                            <i data-feather="check" class="w-4 h-4 text-green-500 mr-2 mt-1"></i>
+                            <span>Algebra II and Precalculus concepts</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="w-4 h-4 text-green-500 mr-2 mt-1"></i>
+                            <span>Intermediate geometry and trigonometry</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="w-4 h-4 text-green-500 mr-2 mt-1"></i>
+                            <span>Number theory and combinatorics</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="w-4 h-4 text-green-500 mr-2 mt-1"></i>
+                            <span>Problem-solving strategies and techniques</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="track-card">
+                    <h3 class="text-2xl font-bold text-rsm-dark-blue mb-4">AMC 12 Excellence Track</h3>
+                    <p class="text-gray-600 mb-4">
+                        Our most advanced track, designed for students ready to tackle the full breadth of AMC 12 topics. This track focuses on AIME qualification and beyond.
+                    </p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-start">
+                            <i data-feather="check" class="w-4 h-4 text-green-500 mr-2 mt-1"></i>
+                            <span>Advanced calculus and analytic geometry</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="w-4 h-4 text-green-500 mr-2 mt-1"></i>
+                            <span>Complex numbers and polynomials</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="w-4 h-4 text-green-500 mr-2 mt-1"></i>
+                            <span>Advanced combinatorics and probability</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="w-4 h-4 text-green-500 mr-2 mt-1"></i>
+                            <span>Olympiad-style problem approaches</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advanced Topics -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-rsm-dark-blue mb-4">Advanced Mathematical Topics</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Our comprehensive curriculum covers the full spectrum of topics tested on the AMC 10/12 and required for AIME success.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="topic-card">
+                    <div class="w-12 h-12 bg-rsm-blue rounded-lg flex items-center justify-center mb-4">
+                        <i data-feather="activity" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-rsm-dark-blue mb-3">Advanced Algebra</h3>
+                    <p class="text-gray-600">
+                        Polynomials, rational functions, sequences and series, complex numbers, and advanced equation solving techniques.
+                    </p>
+                </div>
+                
+                <div class="topic-card">
+                    <div class="w-12 h-12 bg-rsm-blue rounded-lg flex items-center justify-center mb-4">
+                        <i data-feather="compass" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-rsm-dark-blue mb-3">Advanced Geometry</h3>
+                    <p class="text-gray-600">
+                        Circles, triangles, coordinate geometry, transformations, 3D geometry, and advanced geometric relationships.
+                    </p>
+                </div>
+                
+                <div class="topic-card">
+                    <div class="w-12 h-12 bg-rsm-blue rounded-lg flex items-center justify-center mb-4">
+                        <i data-feather="trending-up" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-rsm-dark-blue mb-3">Calculus Concepts</h3>
+                    <p class="text-gray-600">
+                        Limits, derivatives, integrals, optimization problems, and applications of calculus to competition problems.
+                    </p>
+                </div>
+                
+                <div class="topic-card">
+                    <div class="w-12 h-12 bg-rsm-blue rounded-lg flex items-center justify-center mb-4">
+                        <i data-feather="hash" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-rsm-dark-blue mb-3">Advanced Number Theory</h3>
+                    <p class="text-gray-600">
+                        Modular arithmetic, Diophantine equations, quadratic residues, and advanced divisibility concepts.
+                    </p>
+                </div>
+                
+                <div class="topic-card">
+                    <div class="w-12 h-12 bg-rsm-blue rounded-lg flex items-center justify-center mb-4">
+                        <i data-feather="grid" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-rsm-dark-blue mb-3">Advanced Combinatorics</h3>
+                    <p class="text-gray-600">
+                        Generating functions, inclusion-exclusion, recurrence relations, and advanced counting techniques.
+                    </p>
+                </div>
+                
+                <div class="topic-card">
+                    <div class="w-12 h-12 bg-rsm-blue rounded-lg flex items-center justify-center mb-4">
+                        <i data-feather="pie-chart" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-rsm-dark-blue mb-3">Advanced Probability</h3>
+                    <p class="text-gray-600">
+                        Conditional probability, expectation, variance, and advanced probability distributions.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sample Problem -->
+    <section class="py-16 bg-rsm-light-gray">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-rsm-dark-blue mb-4">Sample AMC 12 Problem</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Here's an example of the challenging problems our Stage 3 students master:
+                </p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <div class="sample-problem">
+                    <h3 class="text-xl font-bold text-rsm-blue mb-4">Complex Numbers and Geometry</h3>
+                    <p class="text-gray-700 mb-4">
+                        Let z₁, z₂, z₃ be complex numbers such that |z₁| = |z₂| = |z₃| = 1 and z₁ + z₂ + z₃ = 0. 
+                        If z₁z₂ + z₂z₃ + z₃z₁ = 0, find |z₁ - z₂|².
+                    </p>
+                    <p class="text-gray-700 mb-4">
+                        <strong>Answer choices:</strong> (A) 1 (B) 2 (C) 3 (D) 4 (E) 6
+                    </p>
+                    
+                    <div class="mt-6 p-4 bg-blue-50 rounded-lg">
+                        <h4 class="font-bold text-rsm-blue mb-2">Solution Strategy:</h4>
+                        <p class="text-gray-700 text-sm mb-2">
+                            Since z₁, z₂, z₃ lie on the unit circle and sum to zero, they form vertices of a triangle centered at the origin.
+                        </p>
+                        <p class="text-gray-700 text-sm mb-2">
+                            Using the constraint z₁z₂ + z₂z₃ + z₃z₁ = 0 and properties of complex numbers on the unit circle.
+                        </p>
+                        <p class="text-gray-700 text-sm">
+                            This leads to the conclusion that the triangle is equilateral, giving |z₁ - z₂|² = 3.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Development -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-rsm-dark-blue mb-4">Advanced Skills Development</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Stage 3 students develop the sophisticated mathematical thinking skills required for elite competition performance.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="skill-card">
+                    <div class="w-12 h-12 bg-rsm-blue rounded-lg flex items-center justify-center mb-4">
+                        <i data-feather="brain" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-rsm-dark-blue mb-3">Mathematical Intuition</h3>
+                    <p class="text-gray-600">
+                        Developing the ability to recognize patterns, make educated guesses, and choose effective approaches quickly.
+                    </p>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="w-12 h-12 bg-rsm-blue rounded-lg flex items-center justify-center mb-4">
+                        <i data-feather="layers" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-rsm-dark-blue mb-3">Multi-Concept Integration</h3>
+                    <p class="text-gray-600">
+                        Combining knowledge from different mathematical areas to solve complex, multi-step problems.
+                    </p>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="w-12 h-12 bg-rsm-blue rounded-lg flex items-center justify-center mb-4">
+                        <i data-feather="zap" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-rsm-dark-blue mb-3">Elegant Solutions</h3>
+                    <p class="text-gray-600">
+                        Learning to find beautiful, efficient solutions that demonstrate deep mathematical understanding.
+                    </p>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="w-12 h-12 bg-rsm-blue rounded-lg flex items-center justify-center mb-4">
+                        <i data-feather="shield" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-rsm-dark-blue mb-3">Competition Resilience</h3>
+                    <p class="text-gray-600">
+                        Building mental toughness and the ability to perform consistently under high-pressure competition conditions.
+                    </p>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="w-12 h-12 bg-rsm-blue rounded-lg flex items-center justify-center mb-4">
+                        <i data-feather="search" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-rsm-dark-blue mb-3">Problem Analysis</h3>
+                    <p class="text-gray-600">
+                        Developing the ability to quickly assess problems, identify key insights, and choose optimal strategies.
+                    </p>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="w-12 h-12 bg-rsm-blue rounded-lg flex items-center justify-center mb-4">
+                        <i data-feather="users" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-rsm-dark-blue mb-3">Mathematical Communication</h3>
+                    <p class="text-gray-600">
+                        Learning to articulate complex mathematical ideas clearly and learn from peer discussions.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Milestones -->
+    <section class="py-16 bg-rsm-light-gray">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-rsm-dark-blue mb-4">Learning Milestones</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Track your child's progress through our advanced pathway to AIME qualification and beyond.
+                </p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <div class="space-y-4">
+                    <div class="milestone-item">
+                        <div class="milestone-icon">
+                            <span class="font-bold">1</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-rsm-dark-blue">Advanced MCP Readiness</h3>
+                            <p class="text-gray-600">Demonstration of mastery of Stage 2 concepts and readiness for advanced competition preparation.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="milestone-item">
+                        <div class="milestone-icon">
+                            <span class="font-bold">2</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-rsm-dark-blue">AMC 10/12 Proficiency</h3>
+                            <p class="text-gray-600">Consistent performance on practice tests showing mastery of competition-level problems.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="milestone-item">
+                        <div class="milestone-icon">
+                            <span class="font-bold">3</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-rsm-dark-blue">AIME Qualification Range</h3>
+                            <p class="text-gray-600">Achieving scores that consistently place students in the AIME qualification range.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="milestone-item">
+                        <div class="milestone-icon">
+                            <span class="font-bold">4</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-rsm-dark-blue">Competition Leadership</h3>
+                            <p class="text-gray-600">Taking on mentorship roles and helping guide younger students in their mathematical journey.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="milestone-item">
+                        <div class="milestone-icon">
+                            <span class="font-bold">5</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-rsm-dark-blue">Readiness for Stage 4</h3>
+                            <p class="text-gray-600">AIME qualification and invitation to our elite NMCP program for Olympiad-level training.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-16 bg-rsm-blue text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-4">Ready to Ascend to Elite Competition Level?</h2>
+            <p class="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+                Join our Stage 3 program and prepare for AIME qualification through our rigorous Advanced MCP curriculum.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="../index.html#contact" class="bg-rsm-gold text-rsm-dark-blue font-bold py-3 px-8 rounded-lg hover:bg-yellow-500 transition-colors">
+                    Schedule Assessment
+                </a>
+                <a href="../index.html#pathway" class="bg-white/10 border-2 border-white/30 text-white font-bold py-3 px-8 rounded-lg hover:bg-white hover:text-rsm-blue transition-colors">
+                    View All Stages
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Initialize Feather Icons
+        feather.replace();
+    </script>
+</body>
+</html>

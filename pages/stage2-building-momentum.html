@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stage 2: Building Momentum - RSM Competition Program</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/rsm-official.css">
+    <link rel="stylesheet" href="../assets/css/premium-design.css">
+    
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        .stage-hero {
+            background: linear-gradient(135deg, #005dab 0%, #003e7a 100%);
+            padding: 4rem 0;
+            color: white;
+        }
+        
+        .breadcrumb {
+            background: rgba(0, 93, 171, 0.1);
+            padding: 1rem 0;
+        }
+        
+        .skill-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .competition-badge {
+            background: #ffc72c;
+            color: #003e7a;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            display: inline-block;
+            margin: 0.25rem;
+        }
+        
+        .sample-problem {
+            background: #f8f9fa;
+            border-left: 4px solid #005dab;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+        }
+        
+        .milestone-item {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            margin: 0.5rem 0;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .milestone-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: #005dab;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+        }
+        
+        .topic-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid #dee2e6;
+            transition: all 0.3s ease;
+        }
+        
+        .topic-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="premium-body">
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container mx-auto px-6">
+            <nav class="flex items-center space-x-2 text-sm">
+                <a href="../index.html" class="text-rsm-blue hover:underline">Home</a>
+                <span class="text-gray-500">›</span>
+                <a href="../index.html#pathway" class="text-rsm-blue hover:underline">Competition Pathway</a>
+                <span class="text-gray-500">›</span>
+                <span class="text-gray-700">Stage 2: Building Momentum</span>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="stage-hero">
+        <div class="container mx-auto px-6 text-center">
+            <div class="rsm-badge mb-4">STAGE 2</div>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Building Momentum</h1>
+            <p class="text-xl text-blue-100 mb-2">Grades 6-8</p>
+            <p class="text-lg text-blue-200 max-w-3xl mx-auto">
+                Transitioning from foundational skills to structured competition preparation with introduction to the AMC 8 and our Math Competition Prep (MCP) program.
+            </p>
+        </div>
+    </section>
+
+    <!-- Overview -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold text-rsm-dark-blue mb-6">The Bridge to Competition Excellence</h2>
+                    <p class="text-gray-600 mb-6">
+                        Stage 2 represents a crucial transition period where students move from exploratory problem-solving to structured competition preparation. Students begin working with more sophisticated mathematical concepts while developing the discipline and techniques needed for formal competitions.
+                    </p>
+                    <p class="text-gray-600 mb-6">
+                        Our Math Competition Prep (MCP) program introduces students to the AMC 8 format and the systematic approach required for competition success. Students learn to balance speed with accuracy while building a strong foundation in key mathematical topics.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="competition-badge">AMC 8</span>
+                        <span class="competition-badge">MATHCOUNTS</span>
+                        <span class="competition-badge">Purple Comet</span>
+                        <span class="competition-badge">MOEMS</span>
+                    </div>
+                </div>
+                <div class="bg-rsm-light-gray rounded-lg p-8">
+                    <h3 class="text-xl font-bold text-rsm-dark-blue mb-4">Program Highlights</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i data-feather="target" class="w-5 h-5 text-rsm-gold mr-3 mt-1"></i>
+                            <span>Structured AMC 8 preparation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="book" class="w-5 h-5 text-rsm-gold mr-3 mt-1"></i>
+                            <span>Introduction to competition mathematics topics</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="clock" class="w-5 h-5 text-rsm-gold mr-3 mt-1"></i>
+                            <span>Time management and test-taking strategies</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="users" class="w-5 h-5 text-rsm-gold mr-3 mt-1"></i>
+                            <span>Peer collaboration and problem discussion</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Topics Covered -->
+    <section class="py-16 bg-rsm-light-gray">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-rsm-dark-blue mb-4">Key Topics Covered</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Our Stage 2 curriculum covers essential mathematical topics that form the foundation for AMC 8 success and future competition preparation.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="topic-card">
+                    <div class="w-12 h-12 bg-rsm-blue rounded-lg flex items-center justify-center mb-4">
+                        <i data-feather="hash" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-rsm-dark-blue mb-3">Number Theory</h3>
+                    <p class="text-gray-600">
+                        Divisibility, prime numbers, greatest common divisor, least common multiple, and modular arithmetic fundamentals.
+                    </p>
+                </div>
+                
+                <div class="topic-card">
+                    <div class="w-12 h-12 bg-rsm-blue rounded-lg flex items-center justify-center mb-4">
+                        <i data-feather="triangle" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-rsm-dark-blue mb-3">Geometry</h3>
+                    <p class="text-gray-600">
+                        Area, perimeter, angle relationships, similarity, congruence, and basic coordinate geometry concepts.
+                    </p>
+                </div>
+                
+                <div class="topic-card">
+                    <div class="w-12 h-12 bg-rsm-blue rounded-lg flex items-center justify-center mb-4">
+                        <i data-feather="bar-chart" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-rsm-dark-blue mb-3">Algebra</h3>
+                    <p class="text-gray-600">
+                        Linear equations, systems of equations, quadratic expressions, and algebraic manipulation techniques.
+                    </p>
+                </div>
+                
+                <div class="topic-card">
+                    <div class="w-12 h-12 bg-rsm-blue rounded-lg flex items-center justify-center mb-4">
+                        <i data-feather="grid" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-rsm-dark-blue mb-3">Combinatorics</h3>
+                    <p class="text-gray-600">
+                        Counting principles, permutations, combinations, and basic probability concepts.
+                    </p>
+                </div>
+                
+                <div class="topic-card">
+                    <div class="w-12 h-12 bg-rsm-blue rounded-lg flex items-center justify-center mb-4">
+                        <i data-feather="pie-chart" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-rsm-dark-blue mb-3">Statistics & Probability</h3>
+                    <p class="text-gray-600">
+                        Mean, median, mode, range, basic probability calculations, and data interpretation.
+                    </p>
+                </div>
+                
+                <div class="topic-card">
+                    <div class="w-12 h-12 bg-rsm-blue rounded-lg flex items-center justify-center mb-4">
+                        <i data-feather="cpu" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-rsm-dark-blue mb-3">Problem-Solving Strategies</h3>
+                    <p class="text-gray-600">
+                        Advanced techniques including working backwards, case analysis, and systematic enumeration.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sample Problem -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-rsm-dark-blue mb-4">Sample AMC 8 Style Problem</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Here's an example of the type of problem our Stage 2 students master:
+                </p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <div class="sample-problem">
+                    <h3 class="text-xl font-bold text-rsm-blue mb-4">Number Theory Challenge</h3>
+                    <p class="text-gray-700 mb-4">
+                        The sum of the digits of a two-digit number is 12. When the digits are reversed, the new number is 18 more than the original number. What is the original number?
+                    </p>
+                    <p class="text-gray-700 mb-4">
+                        <strong>Answer choices:</strong> (A) 39 (B) 48 (C) 57 (D) 75 (E) 84
+                    </p>
+                    
+                    <div class="mt-6 p-4 bg-blue-50 rounded-lg">
+                        <h4 class="font-bold text-rsm-blue mb-2">Solution Approach:</h4>
+                        <p class="text-gray-700 text-sm mb-2">
+                            Let the original number be 10a + b, where a and b are the tens and units digits.
+                        </p>
+                        <p class="text-gray-700 text-sm mb-2">
+                            Given: a + b = 12 and (10b + a) - (10a + b) = 18
+                        </p>
+                        <p class="text-gray-700 text-sm mb-2">
+                            Simplifying: 9b - 9a = 18, so b - a = 2
+                        </p>
+                        <p class="text-gray-700 text-sm">
+                            Solving the system: a = 5, b = 7, so the original number is 57.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Development -->
+    <section class="py-16 bg-rsm-light-gray">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-rsm-dark-blue mb-4">Skills Development Focus</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Stage 2 students develop advanced mathematical thinking skills essential for competition success.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="skill-card">
+                    <div class="w-12 h-12 bg-rsm-blue rounded-lg flex items-center justify-center mb-4">
+                        <i data-feather="zap" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-rsm-dark-blue mb-3">Speed & Accuracy</h3>
+                    <p class="text-gray-600">
+                        Developing the ability to solve problems quickly while maintaining high accuracy under time pressure.
+                    </p>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="w-12 h-12 bg-rsm-blue rounded-lg flex items-center justify-center mb-4">
+                        <i data-feather="layers" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-rsm-dark-blue mb-3">Multi-Step Problem Solving</h3>
+                    <p class="text-gray-600">
+                        Breaking down complex problems into manageable steps and connecting different mathematical concepts.
+                    </p>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="w-12 h-12 bg-rsm-blue rounded-lg flex items-center justify-center mb-4">
+                        <i data-feather="check-circle" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-rsm-dark-blue mb-3">Answer Verification</h3>
+                    <p class="text-gray-600">
+                        Learning to check answers efficiently and recognize when solutions are reasonable or need revision.
+                    </p>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="w-12 h-12 bg-rsm-blue rounded-lg flex items-center justify-center mb-4">
+                        <i data-feather="search" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-rsm-dark-blue mb-3">Strategic Thinking</h3>
+                    <p class="text-gray-600">
+                        Choosing appropriate methods and recognizing when to use different problem-solving strategies.
+                    </p>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="w-12 h-12 bg-rsm-blue rounded-lg flex items-center justify-center mb-4">
+                        <i data-feather="award" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-rsm-dark-blue mb-3">Competition Mindset</h3>
+                    <p class="text-gray-600">
+                        Developing confidence, resilience, and the ability to perform well in competitive environments.
+                    </p>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="w-12 h-12 bg-rsm-blue rounded-lg flex items-center justify-center mb-4">
+                        <i data-feather="trending-up" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-rsm-dark-blue mb-3">Mathematical Maturity</h3>
+                    <p class="text-gray-600">
+                        Building deeper understanding of mathematical concepts and their interconnections.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Milestones -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-rsm-dark-blue mb-4">Learning Milestones</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Track your child's progress through our structured pathway to AMC 8 success and beyond.
+                </p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <div class="space-y-4">
+                    <div class="milestone-item">
+                        <div class="milestone-icon">
+                            <span class="font-bold">1</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-rsm-dark-blue">MCP Program Entry</h3>
+                            <p class="text-gray-600">Successful completion of placement assessment and enrollment in structured competition preparation.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="milestone-item">
+                        <div class="milestone-icon">
+                            <span class="font-bold">2</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-rsm-dark-blue">Topic Mastery</h3>
+                            <p class="text-gray-600">Demonstrating proficiency in key mathematical areas including number theory, geometry, and algebra.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="milestone-item">
+                        <div class="milestone-icon">
+                            <span class="font-bold">3</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-rsm-dark-blue">AMC 8 Preparation</h3>
+                            <p class="text-gray-600">Completing multiple practice tests and achieving consistent scores that demonstrate readiness for competition.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="milestone-item">
+                        <div class="milestone-icon">
+                            <span class="font-bold">4</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-rsm-dark-blue">Competition Participation</h3>
+                            <p class="text-gray-600">Successfully participating in AMC 8 and other middle school competitions with confidence.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="milestone-item">
+                        <div class="milestone-icon">
+                            <span class="font-bold">5</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-rsm-dark-blue">Readiness for Stage 3</h3>
+                            <p class="text-gray-600">Achieving honor roll on AMC 8 and demonstrating readiness for high school level competition preparation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-16 bg-rsm-blue text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-4">Ready to Build Mathematical Momentum?</h2>
+            <p class="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+                Join our Stage 2 program and help your child develop the structured approach and advanced skills needed for competition success.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="../index.html#contact" class="bg-rsm-gold text-rsm-dark-blue font-bold py-3 px-8 rounded-lg hover:bg-yellow-500 transition-colors">
+                    Schedule Assessment
+                </a>
+                <a href="../index.html#pathway" class="bg-white/10 border-2 border-white/30 text-white font-bold py-3 px-8 rounded-lg hover:bg-white hover:text-rsm-blue transition-colors">
+                    View All Stages
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Initialize Feather Icons
+        feather.replace();
+    </script>
+</body>
+</html>

@@ -82,6 +82,68 @@
             outline: 2px solid var(--rsm-secondary);
             outline-offset: 2px;
         }
+        
+        /* Stage card hover effects */
+        .rsm-card.group:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 93, 171, 0.15);
+        }
+        
+        .rsm-card.group:hover::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0, 93, 171, 0.03) 0%, rgba(255, 199, 44, 0.03) 100%);
+            border-radius: inherit;
+            pointer-events: none;
+        }
+        
+        /* Testimonial carousel styles */
+        .testimonial-container {
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+        }
+        
+        .testimonial-track {
+            display: flex;
+            animation: scroll 60s linear infinite;
+            width: calc(320px * 16); /* 16 testimonials * 320px width */
+        }
+        
+        .testimonial-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 0 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            min-width: 280px;
+            max-width: 280px;
+            flex-shrink: 0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(calc(-320px * 12)); /* Move by 12 cards to loop seamlessly */
+            }
+        }
+        
+        /* Pause animation on hover */
+        .testimonial-container:hover .testimonial-track {
+            animation-play-state: paused;
+        }
     </style>
 </head>
 <body class="premium-body">
@@ -253,35 +315,57 @@
                 <div class="text-center mb-16">
                     <h2 class="text-rsm-h2">Your Child's Journey to the National Stage</h2>
                     <p class="mt-4 text-lg text-rsm-body max-w-3xl mx-auto">A clear progression from foundational skills to elite competition. This pathway is more than a series of classes; it's a long-term mentorship where students receive continuous guidance from our expert coaches. Our coaches guide students as they progress from local contests to national-level competitions like the AMC and AIME, offering advanced training and strategic preparation to help them succeed.</p>
+                    <div class="mt-6 bg-blue-50 border border-blue-200 rounded-lg p-4 max-w-2xl mx-auto">
+                        <p class="text-blue-800 text-sm font-medium flex items-center justify-center">
+                            <i data-feather="info" class="w-4 h-4 mr-2"></i>
+                            Click on any stage below to explore detailed curriculum, sample problems, and learning outcomes
+                        </p>
+                    </div>
                 </div>
                 <div class="relative">
                     <div class="hidden md:block absolute top-1/2 left-0 w-full h-1 bg-rsm-secondary/50 -translate-y-1/2"></div>
                     
                     <div class="grid md:grid-cols-4 gap-10 relative">
-                        <div class="rsm-card text-center border-t-4 border-rsm-secondary">
+                        <a href="pages/stage1-foundational-spark.html" class="rsm-card text-center border-t-4 border-rsm-secondary block hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer group">
                              <div class="rsm-badge mb-2">STAGE 1</div>
-                             <h4 class="text-rsm-h3 mb-2">Foundational Spark</h4>
+                             <h4 class="text-rsm-h3 mb-2 group-hover:text-rsm-blue transition-colors">Foundational Spark</h4>
                              <p class="text-rsm-small mb-3">(Grades 3-6)</p>
                              <p class="text-rsm-body text-sm">Focus on confidence and a love for creative problem-solving via competitions like Purple Comet & MOEMS.</p>
-                        </div>
-                        <div class="rsm-card text-center border-t-4 border-rsm-secondary">
+                             <div class="mt-4 flex items-center justify-center text-rsm-blue text-sm font-semibold group-hover:text-rsm-dark-blue">
+                                 <span>Learn More</span>
+                                 <i data-feather="arrow-right" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"></i>
+                             </div>
+                        </a>
+                        <a href="pages/stage2-building-momentum.html" class="rsm-card text-center border-t-4 border-rsm-secondary block hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer group">
                             <div class="rsm-badge mb-2">STAGE 2</div>
-                             <h4 class="text-rsm-h3 mb-2">Building Momentum</h4>
+                             <h4 class="text-rsm-h3 mb-2 group-hover:text-rsm-blue transition-colors">Building Momentum</h4>
                              <p class="text-rsm-small mb-3">(Grades 6-8)</p>
                              <p class="text-rsm-body text-sm">Introduction to the AMC 8 and structured training in our Math Competition Prep (MCP) program.</p>
-                        </div>
-                        <div class="rsm-card text-center border-t-4 border-rsm-secondary">
+                             <div class="mt-4 flex items-center justify-center text-rsm-blue text-sm font-semibold group-hover:text-rsm-dark-blue">
+                                 <span>Learn More</span>
+                                 <i data-feather="arrow-right" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"></i>
+                             </div>
+                        </a>
+                        <a href="pages/stage3-high-school-ascent.html" class="rsm-card text-center border-t-4 border-rsm-secondary block hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer group">
                             <div class="rsm-badge mb-2">STAGE 3</div>
-                             <h4 class="text-rsm-h3 mb-2">High School Ascent</h4>
+                             <h4 class="text-rsm-h3 mb-2 group-hover:text-rsm-blue transition-colors">High School Ascent</h4>
                              <p class="text-rsm-small mb-3">(Grades 9-12)</p>
                              <p class="text-rsm-body text-sm">Mastery of topics for the AMC 10/12 through our Advanced MCP tracks.</p>
-                        </div>
-                        <div class="rsm-card text-center border-t-4 border-rsm-secondary">
+                             <div class="mt-4 flex items-center justify-center text-rsm-blue text-sm font-semibold group-hover:text-rsm-dark-blue">
+                                 <span>Learn More</span>
+                                 <i data-feather="arrow-right" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"></i>
+                             </div>
+                        </a>
+                        <a href="pages/stage4-elite-level.html" class="rsm-card text-center border-t-4 border-rsm-secondary block hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer group">
                             <div class="rsm-badge mb-2">STAGE 4</div>
-                             <h4 class="text-rsm-h3 mb-2">The Elite Level</h4>
+                             <h4 class="text-rsm-h3 mb-2 group-hover:text-rsm-blue transition-colors">The Elite Level</h4>
                              <p class="text-rsm-small mb-3">(Invitation Only)</p>
                              <p class="text-rsm-body text-sm">Intensive, Olympiad-level training for AIME & USA(J)MO in our NMCP program.</p>
-                        </div>
+                             <div class="mt-4 flex items-center justify-center text-rsm-blue text-sm font-semibold group-hover:text-rsm-dark-blue">
+                                 <span>Learn More</span>
+                                 <i data-feather="arrow-right" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"></i>
+                             </div>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -303,7 +387,7 @@
                             <li class="flex items-start"><i data-feather="check-circle" class="w-5 h-5 text-green-500 mr-3 mt-1 flex-shrink-0"></i><span><strong>Key Focus:</strong> AMC 8, MOEMS, Purple Comet.</span></li>
                             <li class="flex items-start"><i data-feather="check-circle" class="w-5 h-5 text-green-500 mr-3 mt-1 flex-shrink-0"></i><span><strong>Selectivity:</strong> Selective, based on a qualifying admission test.</span></li>
                         </ul>
-                        <a href="#contact" class="w-full text-center bg-rsm-gold text-rsm-dark-blue font-bold py-3 px-6 rounded-lg hover:bg-yellow-500 transition-colors">Schedule an MCP Assessment</a>
+                        <button class="schedule-assessment-btn w-full text-center bg-rsm-gold text-rsm-dark-blue font-bold py-3 px-6 rounded-lg hover:bg-yellow-500 transition-colors">Schedule an MCP Assessment</button>
                         <button class="generate-problem-btn mt-4 w-full text-center bg-gray-200 text-rsm-dark-blue font-semibold py-3 px-6 rounded-lg hover:bg-gray-300 transition-colors" data-level="mcp">
                             ✨ Generate a Sample Problem
                         </button>
@@ -326,43 +410,200 @@
             </div>
         </section>
 
-        <section id="testimonials" class="py-20 md:py-24 bg-rsm-light-gray">
+        <section id="testimonials" class="py-20 md:py-24 bg-rsm-light-gray overflow-hidden">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
                     <h2 class="text-3xl md:text-4xl font-bold text-rsm-dark-blue">Don't Just Take Our Word For It. See the Results.</h2>
-                    <a href="#blog" class="mt-4 text-lg text-rsm-blue hover:underline transition-colors">Stories from the RSM Family</a>
+                    <p class="mt-4 text-lg text-rsm-blue font-semibold">Stories from the RSM Family</p>
                 </div>
-                <div class="grid lg:grid-cols-3 gap-8">
-                    <div class="bg-white rounded-lg shadow-lg p-8">
-                        <img src="https://placehold.co/100x100/005dab/ffffff?text=Student" alt="Student photo" class="w-24 h-24 rounded-full mx-auto -mt-20 border-4 border-white shadow-xl">
-                        <blockquote class="mt-6 text-gray-600 italic">
-                            RSM didn't just teach me formulas. My coach taught me how to think strategically under pressure. That's what got me to the AIME.
-                        </blockquote>
-                        <div class="mt-4 text-right">
-                            <p class="font-bold text-rsm-dark-blue">Alex Johnson</p>
-                            <p class="text-sm text-gray-500">AIME Qualifier, Grade 10</p>
+                
+                <!-- Auto-scrolling testimonials -->
+                <div class="relative">
+                    <div class="testimonial-container">
+                        <div class="testimonial-track" id="testimonial-track">
+                            <!-- First set of testimonials -->
+                            <div class="testimonial-card">
+                                <img src="https://placehold.co/80x80/005dab/ffffff?text=AS" alt="Student photo" class="w-20 h-20 rounded-full mx-auto mb-4 border-4 border-white shadow-lg">
+                                <blockquote class="text-gray-600 italic text-sm mb-4">
+                                    "RSM didn't just teach me formulas. My coach taught me how to think strategically under pressure. That's what got me to the AIME."
+                                </blockquote>
+                                <div class="text-center">
+                                    <p class="font-bold text-rsm-dark-blue text-sm">Alex Johnson</p>
+                                    <p class="text-xs text-gray-500">AIME Qualifier, Grade 10</p>
+                                </div>
+                            </div>
+                            
+                            <div class="testimonial-card">
+                                <img src="https://placehold.co/80x80/005dab/ffffff?text=MG" alt="Parent photo" class="w-20 h-20 rounded-full mx-auto mb-4 border-4 border-white shadow-lg">
+                                <blockquote class="text-gray-600 italic text-sm mb-4">
+                                    "We saw our daughter's confidence skyrocket. The skills she learned didn't just help her in math; they helped her excel in all her AP classes."
+                                </blockquote>
+                                <div class="text-center">
+                                    <p class="font-bold text-rsm-dark-blue text-sm">Maria Garcia</p>
+                                    <p class="text-xs text-gray-500">Parent of 8th Grader</p>
+                                </div>
+                            </div>
+                            
+                            <div class="testimonial-card">
+                                <img src="https://placehold.co/80x80/005dab/ffffff?text=SC" alt="Student photo" class="w-20 h-20 rounded-full mx-auto mb-4 border-4 border-white shadow-lg">
+                                <blockquote class="text-gray-600 italic text-sm mb-4">
+                                    "Making USAMO was a dream come true. RSM's advanced training prepared me for problems I never thought I could solve."
+                                </blockquote>
+                                <div class="text-center">
+                                    <p class="font-bold text-rsm-dark-blue text-sm">Sophia Chen</p>
+                                    <p class="text-xs text-gray-500">USAMO Qualifier, Grade 11</p>
+                                </div>
+                            </div>
+                            
+                            <div class="testimonial-card">
+                                <img src="https://placehold.co/80x80/005dab/ffffff?text=JP" alt="Parent photo" class="w-20 h-20 rounded-full mx-auto mb-4 border-4 border-white shadow-lg">
+                                <blockquote class="text-gray-600 italic text-sm mb-4">
+                                    "The growth mindset RSM instilled in my son extends far beyond mathematics. He approaches all challenges with confidence now."
+                                </blockquote>
+                                <div class="text-center">
+                                    <p class="font-bold text-rsm-dark-blue text-sm">Jennifer Park</p>
+                                    <p class="text-xs text-gray-500">Parent of 9th Grader</p>
+                                </div>
+                            </div>
+                            
+                            <div class="testimonial-card">
+                                <img src="https://placehold.co/80x80/005dab/ffffff?text=EK" alt="Student photo" class="w-20 h-20 rounded-full mx-auto mb-4 border-4 border-white shadow-lg">
+                                <blockquote class="text-gray-600 italic text-sm mb-4">
+                                    "From struggling with basic algebra to qualifying for AIME in two years. RSM's systematic approach works."
+                                </blockquote>
+                                <div class="text-center">
+                                    <p class="font-bold text-rsm-dark-blue text-sm">Ethan Kim</p>
+                                    <p class="text-xs text-gray-500">AIME Qualifier, Grade 12</p>
+                                </div>
+                            </div>
+                            
+                            <div class="testimonial-card">
+                                <img src="https://placehold.co/80x80/005dab/ffffff?text=RW" alt="Parent photo" class="w-20 h-20 rounded-full mx-auto mb-4 border-4 border-white shadow-lg">
+                                <blockquote class="text-gray-600 italic text-sm mb-4">
+                                    "My daughter went from hating math to loving it. Now she wants to major in mathematics at MIT!"
+                                </blockquote>
+                                <div class="text-center">
+                                    <p class="font-bold text-rsm-dark-blue text-sm">Rachel Williams</p>
+                                    <p class="text-xs text-gray-500">Parent of 11th Grader</p>
+                                </div>
+                            </div>
+                            
+                            <div class="testimonial-card">
+                                <img src="https://placehold.co/80x80/005dab/ffffff?text=DL" alt="Student photo" class="w-20 h-20 rounded-full mx-auto mb-4 border-4 border-white shadow-lg">
+                                <blockquote class="text-gray-600 italic text-sm mb-4">
+                                    "The collaborative problem-solving sessions taught me that mathematics is beautiful and creative, not just computational."
+                                </blockquote>
+                                <div class="text-center">
+                                    <p class="font-bold text-rsm-dark-blue text-sm">David Lee</p>
+                                    <p class="text-xs text-gray-500">Student, Grade 7</p>
+                                </div>
+                            </div>
+                            
+                            <div class="testimonial-card">
+                                <img src="https://placehold.co/80x80/005dab/ffffff?text=AN" alt="Parent photo" class="w-20 h-20 rounded-full mx-auto mb-4 border-4 border-white shadow-lg">
+                                <blockquote class="text-gray-600 italic text-sm mb-4">
+                                    "RSM coaches don't just teach problems—they teach students how to become mathematical thinkers for life."
+                                </blockquote>
+                                <div class="text-center">
+                                    <p class="font-bold text-rsm-dark-blue text-sm">Anna Nguyen</p>
+                                    <p class="text-xs text-gray-500">Parent of Twin 6th Graders</p>
+                                </div>
+                            </div>
+                            
+                            <div class="testimonial-card">
+                                <img src="https://placehold.co/80x80/005dab/ffffff?text=MS" alt="Student photo" class="w-20 h-20 rounded-full mx-auto mb-4 border-4 border-white shadow-lg">
+                                <blockquote class="text-gray-600 italic text-sm mb-4">
+                                    "Making the IMO team was the culmination of years of dedicated training at RSM. The foundation they built was incredible."
+                                </blockquote>
+                                <div class="text-center">
+                                    <p class="font-bold text-rsm-dark-blue text-sm">Michael Smith</p>
+                                    <p class="text-xs text-gray-500">IMO Team Member, Grade 12</p>
+                                </div>
+                            </div>
+                            
+                            <div class="testimonial-card">
+                                <img src="https://placehold.co/80x80/005dab/ffffff?text=LT" alt="Parent photo" class="w-20 h-20 rounded-full mx-auto mb-4 border-4 border-white shadow-lg">
+                                <blockquote class="text-gray-600 italic text-sm mb-4">
+                                    "The individual attention and personalized learning path made all the difference for our gifted but struggling child."
+                                </blockquote>
+                                <div class="text-center">
+                                    <p class="font-bold text-rsm-dark-blue text-sm">Linda Thompson</p>
+                                    <p class="text-xs text-gray-500">Parent of 5th Grader</p>
+                                </div>
+                            </div>
+                            
+                            <div class="testimonial-card">
+                                <img src="https://placehold.co/80x80/005dab/ffffff?text=JR" alt="Student photo" class="w-20 h-20 rounded-full mx-auto mb-4 border-4 border-white shadow-lg">
+                                <blockquote class="text-gray-600 italic text-sm mb-4">
+                                    "Purple Comet was my first competition. Now I'm preparing for USAMO. RSM made that journey possible."
+                                </blockquote>
+                                <div class="text-center">
+                                    <p class="font-bold text-rsm-dark-blue text-sm">Jessica Rodriguez</p>
+                                    <p class="text-xs text-gray-500">Student, Grade 10</p>
+                                </div>
+                            </div>
+                            
+                            <div class="testimonial-card">
+                                <img src="https://placehold.co/80x80/005dab/ffffff?text=KB" alt="Parent photo" class="w-20 h-20 rounded-full mx-auto mb-4 border-4 border-white shadow-lg">
+                                <blockquote class="text-gray-600 italic text-sm mb-4">
+                                    "RSM taught my son that struggle is part of learning. Now he embraces challenges instead of avoiding them."
+                                </blockquote>
+                                <div class="text-center">
+                                    <p class="font-bold text-rsm-dark-blue text-sm">Kevin Brown</p>
+                                    <p class="text-xs text-gray-500">Parent of 8th Grader</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Duplicate testimonials for seamless loop -->
+                            <div class="testimonial-card">
+                                <img src="https://placehold.co/80x80/005dab/ffffff?text=AS" alt="Student photo" class="w-20 h-20 rounded-full mx-auto mb-4 border-4 border-white shadow-lg">
+                                <blockquote class="text-gray-600 italic text-sm mb-4">
+                                    "RSM didn't just teach me formulas. My coach taught me how to think strategically under pressure. That's what got me to the AIME."
+                                </blockquote>
+                                <div class="text-center">
+                                    <p class="font-bold text-rsm-dark-blue text-sm">Alex Johnson</p>
+                                    <p class="text-xs text-gray-500">AIME Qualifier, Grade 10</p>
+                                </div>
+                            </div>
+                            
+                            <div class="testimonial-card">
+                                <img src="https://placehold.co/80x80/005dab/ffffff?text=MG" alt="Parent photo" class="w-20 h-20 rounded-full mx-auto mb-4 border-4 border-white shadow-lg">
+                                <blockquote class="text-gray-600 italic text-sm mb-4">
+                                    "We saw our daughter's confidence skyrocket. The skills she learned didn't just help her in math; they helped her excel in all her AP classes."
+                                </blockquote>
+                                <div class="text-center">
+                                    <p class="font-bold text-rsm-dark-blue text-sm">Maria Garcia</p>
+                                    <p class="text-xs text-gray-500">Parent of 8th Grader</p>
+                                </div>
+                            </div>
+                            
+                            <div class="testimonial-card">
+                                <img src="https://placehold.co/80x80/005dab/ffffff?text=SC" alt="Student photo" class="w-20 h-20 rounded-full mx-auto mb-4 border-4 border-white shadow-lg">
+                                <blockquote class="text-gray-600 italic text-sm mb-4">
+                                    "Making USAMO was a dream come true. RSM's advanced training prepared me for problems I never thought I could solve."
+                                </blockquote>
+                                <div class="text-center">
+                                    <p class="font-bold text-rsm-dark-blue text-sm">Sophia Chen</p>
+                                    <p class="text-xs text-gray-500">USAMO Qualifier, Grade 11</p>
+                                </div>
+                            </div>
+                            
+                            <div class="testimonial-card">
+                                <img src="https://placehold.co/80x80/005dab/ffffff?text=JP" alt="Parent photo" class="w-20 h-20 rounded-full mx-auto mb-4 border-4 border-white shadow-lg">
+                                <blockquote class="text-gray-600 italic text-sm mb-4">
+                                    "The growth mindset RSM instilled in my son extends far beyond mathematics. He approaches all challenges with confidence now."
+                                </blockquote>
+                                <div class="text-center">
+                                    <p class="font-bold text-rsm-dark-blue text-sm">Jennifer Park</p>
+                                    <p class="text-xs text-gray-500">Parent of 9th Grader</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="bg-white rounded-lg shadow-lg p-8">
-                        <img src="https://placehold.co/100x100/005dab/ffffff?text=Parent" alt="Parent photo" class="w-24 h-24 rounded-full mx-auto -mt-20 border-4 border-white shadow-xl">
-                        <blockquote class="mt-6 text-gray-600 italic">
-                           We saw our daughter's confidence skyrocket. The skills she learned in the competition program didn't just help her in math; they helped her excel in all her AP classes.
-                        </blockquote>
-                        <div class="mt-4 text-right">
-                            <p class="font-bold text-rsm-dark-blue">Maria Garcia</p>
-                            <p class="text-sm text-gray-500">Parent of 8th Grader</p>
-                        </div>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-lg p-8">
-                        <img src="https://placehold.co/100x100/005dab/ffffff?text=Coach" alt="Coach photo" class="w-24 h-24 rounded-full mx-auto -mt-20 border-4 border-white shadow-xl">
-                        <blockquote class="mt-6 text-gray-600 italic">
-                           I don’t just teach math — I teach students how to think deeply, logically, and bravely. At RSM, we explore challenging problems, train for competitions, and uncover how math helps us understand the world. This journey will stay with you — it builds not just skills for school, but confidence and thinking tools for life.
-                        </blockquote>
-                        <div class="mt-4 text-right">
-                            <p class="font-bold text-rsm-dark-blue">Anton Ovsinskiy</p>
-                            <p class="text-sm text-gray-500">Team Coach & Mentor</p>
-                        </div>
-                    </div>
+                    
+                    <!-- Gradient overlays for smooth edges -->
+                    <div class="absolute top-0 left-0 w-20 h-full bg-gradient-to-r from-rsm-light-gray to-transparent z-10 pointer-events-none"></div>
+                    <div class="absolute top-0 right-0 w-20 h-full bg-gradient-to-l from-rsm-light-gray to-transparent z-10 pointer-events-none"></div>
                 </div>
             </div>
         </section>
@@ -608,9 +849,9 @@
                     The first step is a comprehensive, no-obligation assessment with one of our program advisors. We will help you understand your child's current strengths and place them on the right path for success.
                 </p>
                 <div class="mt-10">
-                    <a href="#" class="bg-rsm-gold text-rsm-dark-blue font-bold py-4 px-10 rounded-lg shadow-xl hover:bg-yellow-500 transition-transform transform hover:scale-105 text-lg">
+                    <button id="schedule-assessment-btn" class="bg-rsm-gold text-rsm-dark-blue font-bold py-4 px-10 rounded-lg shadow-xl hover:bg-yellow-500 transition-transform transform hover:scale-105 text-lg">
                         Schedule Your Free Assessment Now
-                    </a>
+                    </button>
                 </div>
                 <div class="mt-12 border-t border-blue-400/50 pt-8">
                     <h3 class="text-2xl font-bold text-white mb-4">Contact Us</h3>
@@ -715,6 +956,156 @@
         </div>
     </div>
 
+    <!-- Assessment Scheduling Modal -->
+    <div id="assessment-modal" class="fixed inset-0 bg-black bg-opacity-60 z-50 hidden items-center justify-center p-4">
+        <div class="bg-white rounded-xl shadow-2xl p-6 md:p-8 max-w-2xl w-full m-4 transform transition-all duration-300 ease-out scale-95" id="assessment-modal-content-area">
+            <div class="flex justify-between items-center mb-6">
+                <h3 id="assessment-modal-title" class="text-2xl md:text-3xl font-bold text-rsm-dark-blue">Schedule Your Free Assessment</h3>
+                <button id="assessment-close-btn-x" class="text-gray-400 hover:text-gray-600 text-3xl leading-none">&times;</button>
+            </div>
+            
+            <form id="assessment-form" class="space-y-6">
+                <!-- Step 1: Basic Information -->
+                <div id="step-1" class="form-step">
+                    <div class="mb-6">
+                        <div class="flex items-center space-x-2 mb-4">
+                            <div class="w-8 h-8 bg-rsm-blue text-white rounded-full flex items-center justify-center text-sm font-bold">1</div>
+                            <span class="text-lg font-semibold text-gray-700">Student Information</span>
+                        </div>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <label for="student-name" class="block text-sm font-medium text-gray-700 mb-2">Student's Full Name *</label>
+                            <input type="text" id="student-name" name="studentName" required 
+                                   class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-rsm-blue focus:border-rsm-blue"
+                                   placeholder="Enter student's name">
+                        </div>
+                        <div>
+                            <label for="student-grade" class="block text-sm font-medium text-gray-700 mb-2">Current Grade *</label>
+                            <select id="student-grade" name="studentGrade" required 
+                                    class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-rsm-blue focus:border-rsm-blue">
+                                <option value="">Select grade</option>
+                                <option value="3">3rd Grade</option>
+                                <option value="4">4th Grade</option>
+                                <option value="5">5th Grade</option>
+                                <option value="6">6th Grade</option>
+                                <option value="7">7th Grade</option>
+                                <option value="8">8th Grade</option>
+                                <option value="9">9th Grade</option>
+                                <option value="10">10th Grade</option>
+                                <option value="11">11th Grade</option>
+                                <option value="12">12th Grade</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <label for="parent-name" class="block text-sm font-medium text-gray-700 mb-2">Parent/Guardian Name *</label>
+                            <input type="text" id="parent-name" name="parentName" required 
+                                   class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-rsm-blue focus:border-rsm-blue"
+                                   placeholder="Enter your name">
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required 
+                                   class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-rsm-blue focus:border-rsm-blue"
+                                   placeholder="(555) 123-4567">
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
+                        <input type="email" id="email" name="email" required 
+                               class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-rsm-blue focus:border-rsm-blue"
+                               placeholder="parent@example.com">
+                    </div>
+                </div>
+                
+                <!-- Step 2: Background & Preferences -->
+                <div id="step-2" class="form-step hidden">
+                    <div class="mb-6">
+                        <div class="flex items-center space-x-2 mb-4">
+                            <div class="w-8 h-8 bg-rsm-blue text-white rounded-full flex items-center justify-center text-sm font-bold">2</div>
+                            <span class="text-lg font-semibold text-gray-700">Background & Preferences</span>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label for="math-experience" class="block text-sm font-medium text-gray-700 mb-2">Math Competition Experience</label>
+                        <select id="math-experience" name="mathExperience" 
+                                class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-rsm-blue focus:border-rsm-blue">
+                            <option value="none">No previous experience</option>
+                            <option value="some">Some experience (local competitions)</option>
+                            <option value="amc8">AMC 8 experience</option>
+                            <option value="amc10-12">AMC 10/12 experience</option>
+                            <option value="aime">AIME qualifier</option>
+                            <option value="advanced">Advanced (USAMO/USAJMO)</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label for="location-preference" class="block text-sm font-medium text-gray-700 mb-2">Preferred Location/Format</label>
+                        <select id="location-preference" name="locationPreference" 
+                                class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-rsm-blue focus:border-rsm-blue">
+                            <option value="online">Online Classes</option>
+                            <option value="in-person">In-Person Classes</option>
+                            <option value="both">Both Options</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label for="goals" class="block text-sm font-medium text-gray-700 mb-2">Goals for Competition Program</label>
+                        <textarea id="goals" name="goals" rows="3" 
+                                  class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-rsm-blue focus:border-rsm-blue"
+                                  placeholder="What would you like your child to achieve through our competition program?"></textarea>
+                    </div>
+                </div>
+                
+                <!-- Step 3: Confirmation -->
+                <div id="step-3" class="form-step hidden">
+                    <div class="mb-6">
+                        <div class="flex items-center space-x-2 mb-4">
+                            <div class="w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center text-sm">✓</div>
+                            <span class="text-lg font-semibold text-gray-700">Assessment Scheduled!</span>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                        <h4 class="font-semibold text-green-800 mb-3">Thank you for your interest in RSM Competition Program!</h4>
+                        <div class="text-green-700 space-y-2">
+                            <p>✓ Your assessment request has been received</p>
+                            <p>✓ Our program advisor will contact you within 24 hours</p>
+                            <p>✓ You'll receive a confirmation email shortly</p>
+                        </div>
+                        
+                        <div class="mt-4 p-4 bg-white border border-green-200 rounded">
+                            <p class="text-sm text-gray-600">
+                                <strong>What's Next:</strong><br>
+                                Our advisor will schedule a convenient time for your child's assessment, discuss program options, and answer any questions you may have about our competition pathway.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Form Navigation -->
+                <div class="flex justify-between items-center pt-6 border-t">
+                    <button type="button" id="prev-step-btn" class="px-6 py-2 text-gray-600 hover:text-gray-800 font-medium hidden">
+                        ← Previous
+                    </button>
+                    <div class="flex space-x-2">
+                        <div class="step-indicator w-3 h-3 rounded-full bg-rsm-blue"></div>
+                        <div class="step-indicator w-3 h-3 rounded-full bg-gray-300"></div>
+                        <div class="step-indicator w-3 h-3 rounded-full bg-gray-300"></div>
+                    </div>
+                    <button type="button" id="next-step-btn" class="px-6 py-2 bg-rsm-blue text-white rounded-lg hover:bg-rsm-dark-blue font-medium">
+                        Next →
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
 
     <script>
         // --- Global Map Variables ---
@@ -949,12 +1340,46 @@
                     const level = button.dataset.level;
                     const { title, prompt } = prompts[level];
 
-                    // Show modal and loader
+                    // Show modal first
                     openModal();
                     modalTitle.textContent = `✨ Generating ${title}...`;
-                    modalContent.innerHTML = ''; // Clear previous content
+                    modalContent.innerHTML = '';
                     modalLoader.style.display = 'flex';
                     modalContent.appendChild(modalLoader);
+
+                    // Check if API is configured
+                    const geminiConfig = window.RSMConfig.getSecureConfig('gemini');
+                    if (!geminiConfig) {
+                        modalTitle.textContent = "Demo Mode";
+                        modalLoader.style.display = 'none';
+                        modalContent.innerHTML = `
+                            <div class="space-y-4 text-left">
+                                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                                    <h4 class="font-semibold text-blue-800 mb-2">Sample ${title.replace('Sample ', '')}</h4>
+                                    <p class="font-semibold text-gray-800 mb-3">
+                                        ${level === 'mcp' ? 
+                                            'Find the number of ways to arrange the letters in the word COMPETITION such that no two vowels are adjacent.' :
+                                            'Let p be a prime number greater than 3. Prove that p² - 1 is divisible by 24.'
+                                        }
+                                    </p>
+                                    <hr class="my-4">
+                                    <p class="font-bold text-rsm-blue mb-2">Solution:</p>
+                                    <p class="text-gray-600 text-sm">
+                                        ${level === 'mcp' ? 
+                                            'This is a demo problem. In the full version, our AI would generate a complete solution with step-by-step explanations tailored to your level.' :
+                                            'This is a demo problem. In the full version, our AI would provide detailed proof techniques and explanations for advanced competition problems.'
+                                        }
+                                    </p>
+                                </div>
+                                <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-3">
+                                    <p class="text-sm text-yellow-800">
+                                        <strong>Note:</strong> Problem generation is currently in demo mode. Contact us to learn more about our AI-powered practice problems.
+                                    </p>
+                                </div>
+                            </div>
+                        `;
+                        return;
+                    }
 
                     try {
                         const resultText = await callGemini(prompt);
@@ -964,7 +1389,7 @@
                         let solution = "No solution was provided.";
 
                         if (resultText.includes('Solution:')) {
-                            let parts = result.split('Solution:');
+                            let parts = resultText.split('Solution:');
                             problem = parts[0].replace('Problem:', '').trim();
                             solution = parts[1].trim();
                         } else {
@@ -1004,6 +1429,148 @@
                 }
             });
         });
+
+        // --- Assessment Form Modal ---
+        const assessmentModal = document.getElementById('assessment-modal');
+        const assessmentModalContentArea = document.getElementById('assessment-modal-content-area');
+        const assessmentCloseBtn = document.getElementById('assessment-close-btn-x');
+        const scheduleAssessmentBtn = document.getElementById('schedule-assessment-btn');
+        const assessmentForm = document.getElementById('assessment-form');
+        const prevStepBtn = document.getElementById('prev-step-btn');
+        const nextStepBtn = document.getElementById('next-step-btn');
+        const stepIndicators = document.querySelectorAll('.step-indicator');
+        const formSteps = document.querySelectorAll('.form-step');
+
+        let currentStep = 1;
+        const totalSteps = 3;
+
+        function openAssessmentModal() {
+            assessmentModal.classList.remove('hidden');
+            assessmentModal.classList.add('flex');
+            setTimeout(() => {
+                assessmentModal.style.opacity = '1';
+                assessmentModalContentArea.style.transform = 'scale(1)';
+            }, 10);
+        }
+
+        function closeAssessmentModal() {
+            assessmentModal.style.opacity = '0';
+            assessmentModalContentArea.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                assessmentModal.classList.add('hidden');
+                assessmentModal.classList.remove('flex');
+                // Reset form to step 1
+                currentStep = 1;
+                showStep(currentStep);
+                assessmentForm.reset();
+            }, 300);
+        }
+
+        function showStep(step) {
+            // Hide all steps
+            formSteps.forEach(stepEl => stepEl.classList.add('hidden'));
+            
+            // Show current step
+            const currentStepEl = document.getElementById(`step-${step}`);
+            if (currentStepEl) {
+                currentStepEl.classList.remove('hidden');
+            }
+
+            // Update step indicators
+            stepIndicators.forEach((indicator, index) => {
+                if (index < step) {
+                    indicator.classList.remove('bg-gray-300');
+                    indicator.classList.add('bg-rsm-blue');
+                } else {
+                    indicator.classList.remove('bg-rsm-blue');
+                    indicator.classList.add('bg-gray-300');
+                }
+            });
+
+            // Update navigation buttons
+            prevStepBtn.classList.toggle('hidden', step === 1);
+            
+            if (step === totalSteps) {
+                nextStepBtn.style.display = 'none';
+            } else {
+                nextStepBtn.style.display = 'block';
+                nextStepBtn.textContent = step === totalSteps - 1 ? 'Submit' : 'Next →';
+            }
+        }
+
+        function validateStep(step) {
+            const stepEl = document.getElementById(`step-${step}`);
+            const requiredFields = stepEl.querySelectorAll('input[required], select[required]');
+            
+            for (let field of requiredFields) {
+                if (!field.value.trim()) {
+                    field.focus();
+                    field.classList.add('border-red-500');
+                    setTimeout(() => field.classList.remove('border-red-500'), 3000);
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        function submitAssessmentForm() {
+            // Collect form data
+            const formData = new FormData(assessmentForm);
+            const data = Object.fromEntries(formData.entries());
+            
+            // In a real application, you would send this data to your backend
+            console.log('Assessment form data:', data);
+            
+            // Show success step
+            currentStep = 3;
+            showStep(currentStep);
+            
+            // Here you would typically send the data to your server
+            // fetch('/api/schedule-assessment', {
+            //     method: 'POST',
+            //     headers: { 'Content-Type': 'application/json' },
+            //     body: JSON.stringify(data)
+            // });
+        }
+
+        // Event listeners
+        scheduleAssessmentBtn.addEventListener('click', openAssessmentModal);
+        assessmentCloseBtn.addEventListener('click', closeAssessmentModal);
+        
+        // Handle all schedule assessment buttons
+        document.querySelectorAll('.schedule-assessment-btn').forEach(btn => {
+            btn.addEventListener('click', openAssessmentModal);
+        });
+
+        nextStepBtn.addEventListener('click', () => {
+            if (currentStep < totalSteps - 1) {
+                if (validateStep(currentStep)) {
+                    currentStep++;
+                    showStep(currentStep);
+                }
+            } else if (currentStep === totalSteps - 1) {
+                if (validateStep(currentStep)) {
+                    submitAssessmentForm();
+                }
+            }
+        });
+
+        prevStepBtn.addEventListener('click', () => {
+            if (currentStep > 1) {
+                currentStep--;
+                showStep(currentStep);
+            }
+        });
+
+        // Close modal if clicking on background
+        assessmentModal.addEventListener('click', (event) => {
+            if (event.target === assessmentModal) {
+                closeAssessmentModal();
+            }
+        });
+
+        // Initialize form
+        showStep(currentStep);
         
         // Function to scroll to locations page
         function scrollToLocations() {

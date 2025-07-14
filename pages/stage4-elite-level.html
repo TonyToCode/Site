@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stage 4: The Elite Level - RSM Competition Program</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/rsm-official.css">
+    <link rel="stylesheet" href="../assets/css/premium-design.css">
+    
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        .stage-hero {
+            background: linear-gradient(135deg, #003e7a 0%, #001d3d 100%);
+            padding: 4rem 0;
+            color: white;
+        }
+        
+        .breadcrumb {
+            background: rgba(0, 93, 171, 0.1);
+            padding: 1rem 0;
+        }
+        
+        .skill-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .competition-badge {
+            background: #ffc72c;
+            color: #003e7a;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            display: inline-block;
+            margin: 0.25rem;
+        }
+        
+        .elite-badge {
+            background: linear-gradient(135deg, #ffd700 0%, #ffb700 100%);
+            color: #003e7a;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            display: inline-block;
+            margin: 0.25rem;
+            border: 2px solid #ffb700;
+        }
+        
+        .sample-problem {
+            background: #f8f9fa;
+            border-left: 4px solid #003e7a;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+        }
+        
+        .milestone-item {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            margin: 0.5rem 0;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .milestone-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: #003e7a;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+        }
+        
+        .topic-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid #dee2e6;
+            transition: all 0.3s ease;
+        }
+        
+        .topic-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .exclusive-feature {
+            background: linear-gradient(135deg, #003e7a 0%, #005dab 100%);
+            color: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 1rem 0;
+        }
+        
+        .achievement-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-top: 4px solid #ffd700;
+            transition: all 0.3s ease;
+        }
+        
+        .achievement-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+</head>
+<body class="premium-body">
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container mx-auto px-6">
+            <nav class="flex items-center space-x-2 text-sm">
+                <a href="../index.html" class="text-rsm-blue hover:underline">Home</a>
+                <span class="text-gray-500">›</span>
+                <a href="../index.html#pathway" class="text-rsm-blue hover:underline">Competition Pathway</a>
+                <span class="text-gray-500">›</span>
+                <span class="text-gray-700">Stage 4: The Elite Level</span>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="stage-hero">
+        <div class="container mx-auto px-6 text-center">
+            <div class="rsm-badge mb-4">STAGE 4</div>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">The Elite Level</h1>
+            <p class="text-xl text-blue-100 mb-2">Invitation Only</p>
+            <p class="text-lg text-blue-200 max-w-3xl mx-auto">
+                Intensive, Olympiad-level training for AIME & USA(J)MO through our exclusive National Math Competition Prep (NMCP) program.
+            </p>
+        </div>
+    </section>
+
+    <!-- Exclusivity Notice -->
+    <section class="py-16 bg-gradient-to-r from-amber-50 to-orange-50">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="inline-block bg-gradient-to-r from-yellow-400 to-orange-400 text-white px-6 py-2 rounded-full font-bold mb-6">
+                    🏆 INVITATION ONLY PROGRAM
+                </div>
+                <h2 class="text-3xl font-bold text-rsm-dark-blue mb-6">Welcome to Mathematical Excellence</h2>
+                <p class="text-lg text-gray-700 mb-8">
+                    Stage 4 represents the pinnacle of our competition program. Entry is by invitation only, reserved for students who have demonstrated exceptional mathematical ability and achieved AIME qualification or equivalent performance.
+                </p>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <i data-feather="star" class="w-8 h-8 text-yellow-500 mx-auto mb-4"></i>
+                        <h3 class="font-bold text-rsm-dark-blue mb-2">Elite Performance</h3>
+                        <p class="text-gray-600 text-sm">AIME qualification or equivalent demonstrated ability</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <i data-feather="users" class="w-8 h-8 text-yellow-500 mx-auto mb-4"></i>
+                        <h3 class="font-bold text-rsm-dark-blue mb-2">Small Cohorts</h3>
+                        <p class="text-gray-600 text-sm">Maximum 8-12 students per class for personalized attention</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <i data-feather="award" class="w-8 h-8 text-yellow-500 mx-auto mb-4"></i>
+                        <h3 class="font-bold text-rsm-dark-blue mb-2">Master Coaches</h3>
+                        <p class="text-gray-600 text-sm">Our most experienced Olympiad-level instructors</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold text-rsm-dark-blue mb-6">The Summit of Mathematical Achievement</h2>
+                    <p class="text-gray-600 mb-6">
+                        Our National Math Competition Prep (NMCP) program represents the absolute pinnacle of mathematical competition training. Students work exclusively with Olympiad-level problems, developing the deep mathematical maturity required for USA(J)MO qualification and beyond.
+                    </p>
+                    <p class="text-gray-600 mb-6">
+                        This is not just about learning more mathematics—it's about thinking like a mathematician. Students develop intuition, creativity, and the ability to discover mathematical truths through rigorous exploration and proof.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="elite-badge">AIME</span>
+                        <span class="elite-badge">USAMO</span>
+                        <span class="elite-badge">USAJMO</span>
+                        <span class="elite-badge">IMO Selection</span>
+                    </div>
+                </div>
+                <div class="exclusive-feature">
+                    <h3 class="text-xl font-bold text-white mb-4">Exclusive Program Benefits</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i data-feather="check-circle" class="w-5 h-5 text-rsm-gold mr-3 mt-1"></i>
+                            <span>One-on-one mentoring with Olympiad veterans</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check-circle" class="w-5 h-5 text-rsm-gold mr-3 mt-1"></i>
+                            <span>Access to exclusive problem sets and materials</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check-circle" class="w-5 h-5 text-rsm-gold mr-3 mt-1"></i>
+                            <span>Personalized competition strategy development</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check-circle" class="w-5 h-5 text-rsm-gold mr-3 mt-1"></i>
+                            <span>Direct pathway to mathematical research opportunities</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Olympiad Topics -->
+    <section class="py-16 bg-rsm-light-gray">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-rsm-dark-blue mb-4">Olympiad-Level Mathematics</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Our curriculum covers the most advanced topics in competition mathematics, preparing students for the highest levels of mathematical competition.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="topic-card">
+                    <div class="w-12 h-12 bg-rsm-dark-blue rounded-lg flex items-center justify-center mb-4">
+                        <i data-feather="layers" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-rsm-dark-blue mb-3">Advanced Algebra</h3>
+                    <p class="text-gray-600">
+                        Polynomial theory, functional equations, algebraic inequalities, and advanced techniques in equation solving.
+                    </p>
+                </div>
+                
+                <div class="topic-card">
+                    <div class="w-12 h-12 bg-rsm-dark-blue rounded-lg flex items-center justify-center mb-4">
+                        <i data-feather="compass" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-rsm-dark-blue mb-3">Synthetic Geometry</h3>
+                    <p class="text-gray-600">
+                        Advanced geometric configurations, transformation geometry, and classical geometric theorems.
+                    </p>
+                </div>
+                
+                <div class="topic-card">
+                    <div class="w-12 h-12 bg-rsm-dark-blue rounded-lg flex items-center justify-center mb-4">
+                        <i data-feather="hash" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-rsm-dark-blue mb-3">Olympiad Number Theory</h3>
+                    <p class="text-gray-600">
+                        Advanced divisibility, quadratic residues, p-adic analysis, and number-theoretic functions.
+                    </p>
+                </div>
+                
+                <div class="topic-card">
+                    <div class="w-12 h-12 bg-rsm-dark-blue rounded-lg flex items-center justify-center mb-4">
+                        <i data-feather="grid" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-rsm-dark-blue mb-3">Extreme Combinatorics</h3>
+                    <p class="text-gray-600">
+                        Graph theory, extremal combinatorics, advanced counting techniques, and combinatorial game theory.
+                    </p>
+                </div>
+                
+                <div class="topic-card">
+                    <div class="w-12 h-12 bg-rsm-dark-blue rounded-lg flex items-center justify-center mb-4">
+                        <i data-feather="trending-up" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-rsm-dark-blue mb-3">Mathematical Inequalities</h3>
+                    <p class="text-gray-600">
+                        Advanced inequality techniques, optimization methods, and competition-specific approaches.
+                    </p>
+                </div>
+                
+                <div class="topic-card">
+                    <div class="w-12 h-12 bg-rsm-dark-blue rounded-lg flex items-center justify-center mb-4">
+                        <i data-feather="book" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-rsm-dark-blue mb-3">Proof Techniques</h3>
+                    <p class="text-gray-600">
+                        Advanced proof strategies, construction methods, and mathematical reasoning at the highest level.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sample Problem -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-rsm-dark-blue mb-4">Sample USA(J)MO Problem</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Here's an example of the Olympiad-level challenges our Stage 4 students tackle:
+                </p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="sample-problem">
+                    <h3 class="text-xl font-bold text-rsm-blue mb-4">Advanced Functional Equation</h3>
+                    <p class="text-gray-700 mb-4">
+                        Find all functions f: ℝ → ℝ such that for all real numbers x and y:
+                    </p>
+                    <p class="text-gray-700 mb-4 font-mono text-center">
+                        f(x + y) + f(x - y) = 2f(x)f(y)
+                    </p>
+                    
+                    <div class="mt-6 p-4 bg-blue-50 rounded-lg">
+                        <h4 class="font-bold text-rsm-blue mb-2">Solution Approach:</h4>
+                        <p class="text-gray-700 text-sm mb-2">
+                            <strong>Step 1:</strong> Analyze special cases (x = y = 0, y = 0, x = 0) to find constraints on f.
+                        </p>
+                        <p class="text-gray-700 text-sm mb-2">
+                            <strong>Step 2:</strong> Use substitution techniques to derive additional functional relationships.
+                        </p>
+                        <p class="text-gray-700 text-sm mb-2">
+                            <strong>Step 3:</strong> Apply continuity or other regularity conditions to narrow down solutions.
+                        </p>
+                        <p class="text-gray-700 text-sm">
+                            <strong>Result:</strong> The complete solution set includes f(x) = 0, f(x) = 1, f(x) = cos(ax), and f(x) = cosh(ax) for real constants a.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements -->
+    <section class="py-16 bg-rsm-light-gray">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-rsm-dark-blue mb-4">Student Achievements</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Our Stage 4 students consistently achieve the highest honors in national and international competitions.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="achievement-card">
+                    <div class="w-16 h-16 bg-gradient-to-br from-yellow-400 to-orange-400 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="trophy" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-rsm-dark-blue mb-3 text-center">USAMO/USAJMO Qualifiers</h3>
+                    <p class="text-gray-600 text-center">
+                        Multiple students advance to the highest level of American mathematical competition each year.
+                    </p>
+                </div>
+                
+                <div class="achievement-card">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-400 to-purple-400 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="globe" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-rsm-dark-blue mb-3 text-center">IMO Team Members</h3>
+                    <p class="text-gray-600 text-center">
+                        Several alumni have represented the United States at the International Mathematical Olympiad.
+                    </p>
+                </div>
+                
+                <div class="achievement-card">
+                    <div class="w-16 h-16 bg-gradient-to-br from-green-400 to-teal-400 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="graduation-cap" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-rsm-dark-blue mb-3 text-center">Top University Admissions</h3>
+                    <p class="text-gray-600 text-center">
+                        Outstanding college admission results at MIT, Harvard, Stanford, and other elite institutions.
+                    </p>
+                </div>
+                
+                <div class="achievement-card">
+                    <div class="w-16 h-16 bg-gradient-to-br from-red-400 to-pink-400 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="book-open" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-rsm-dark-blue mb-3 text-center">Research Publications</h3>
+                    <p class="text-gray-600 text-center">
+                        Students frequently publish original mathematical research in high school and beyond.
+                    </p>
+                </div>
+                
+                <div class="achievement-card">
+                    <div class="w-16 h-16 bg-gradient-to-br from-indigo-400 to-blue-400 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="users" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-rsm-dark-blue mb-3 text-center">Mathematics Leadership</h3>
+                    <p class="text-gray-600 text-center">
+                        Alumni become mathematics professors, researchers, and leaders in STEM fields.
+                    </p>
+                </div>
+                
+                <div class="achievement-card">
+                    <div class="w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="star" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-rsm-dark-blue mb-3 text-center">Lifetime Achievement</h3>
+                    <p class="text-gray-600 text-center">
+                        The mathematical thinking skills developed here provide a foundation for lifelong excellence.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Development -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-rsm-dark-blue mb-4">Olympiad-Level Skills</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Stage 4 students develop the highest level of mathematical thinking skills, preparing them for research and professional mathematics.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="skill-card">
+                    <div class="w-12 h-12 bg-rsm-dark-blue rounded-lg flex items-center justify-center mb-4">
+                        <i data-feather="lightbulb" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-rsm-dark-blue mb-3">Mathematical Creativity</h3>
+                    <p class="text-gray-600">
+                        The ability to discover new approaches, construct elegant solutions, and think beyond conventional methods.
+                    </p>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="w-12 h-12 bg-rsm-dark-blue rounded-lg flex items-center justify-center mb-4">
+                        <i data-feather="search" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-rsm-dark-blue mb-3">Deep Problem Analysis</h3>
+                    <p class="text-gray-600">
+                        The capacity to understand problem structure, identify key insights, and develop strategic approaches.
+                    </p>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="w-12 h-12 bg-rsm-dark-blue rounded-lg flex items-center justify-center mb-4">
+                        <i data-feather="layers" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-rsm-dark-blue mb-3">Abstract Reasoning</h3>
+                    <p class="text-gray-600">
+                        Working comfortably with abstract mathematical concepts and generalizing results across different contexts.
+                    </p>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="w-12 h-12 bg-rsm-dark-blue rounded-lg flex items-center justify-center mb-4">
+                        <i data-feather="shield" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-rsm-dark-blue mb-3">Mathematical Rigor</h3>
+                    <p class="text-gray-600">
+                        Constructing complete, logically sound proofs and maintaining the highest standards of mathematical precision.
+                    </p>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="w-12 h-12 bg-rsm-dark-blue rounded-lg flex items-center justify-center mb-4">
+                        <i data-feather="cpu" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-rsm-dark-blue mb-3">Research Methodology</h3>
+                    <p class="text-gray-600">
+                        Learning to formulate research questions, investigate mathematical phenomena, and present findings.
+                    </p>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="w-12 h-12 bg-rsm-dark-blue rounded-lg flex items-center justify-center mb-4">
+                        <i data-feather="users" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-rsm-dark-blue mb-3">Mathematical Leadership</h3>
+                    <p class="text-gray-600">
+                        Mentoring younger students, contributing to mathematical communities, and inspiring others.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Milestones -->
+    <section class="py-16 bg-rsm-light-gray">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-rsm-dark-blue mb-4">Elite Learning Milestones</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Track your child's progress through our exclusive pathway to mathematical excellence and research.
+                </p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <div class="space-y-4">
+                    <div class="milestone-item">
+                        <div class="milestone-icon">
+                            <span class="font-bold">1</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-rsm-dark-blue">NMCP Program Entry</h3>
+                            <p class="text-gray-600">Invitation to join our most exclusive program based on exceptional mathematical performance.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="milestone-item">
+                        <div class="milestone-icon">
+                            <span class="font-bold">2</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-rsm-dark-blue">Olympiad Problem Mastery</h3>
+                            <p class="text-gray-600">Demonstrating proficiency with USA(J)MO-level problems and proof techniques.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="milestone-item">
+                        <div class="milestone-icon">
+                            <span class="font-bold">3</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-rsm-dark-blue">National Competition Success</h3>
+                            <p class="text-gray-600">Achieving recognition at the USAMO/USAJMO level and competing at the highest echelons.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="milestone-item">
+                        <div class="milestone-icon">
+                            <span class="font-bold">4</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-rsm-dark-blue">Mathematical Research</h3>
+                            <p class="text-gray-600">Beginning independent mathematical research and contributing original mathematical insights.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="milestone-item">
+                        <div class="milestone-icon">
+                            <span class="font-bold">5</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-rsm-dark-blue">Lifelong Mathematical Excellence</h3>
+                            <p class="text-gray-600">Preparation for advanced mathematical study and leadership in STEM fields.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-16 bg-gradient-to-r from-rsm-dark-blue to-rsm-blue text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-4">Ready to Join the Mathematical Elite?</h2>
+            <p class="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+                Stage 4 admission is by invitation only. Exceptional students who demonstrate AIME-level performance may be considered for our elite NMCP program.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="../index.html#contact" class="bg-rsm-gold text-rsm-dark-blue font-bold py-3 px-8 rounded-lg hover:bg-yellow-500 transition-colors">
+                    Learn About Qualification
+                </a>
+                <a href="../index.html#pathway" class="bg-white/10 border-2 border-white/30 text-white font-bold py-3 px-8 rounded-lg hover:bg-white hover:text-rsm-blue transition-colors">
+                    View All Stages
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Initialize Feather Icons
+        feather.replace();
+    </script>
+</body>
+</html>

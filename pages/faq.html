@@ -212,11 +212,23 @@
 
     <script src="../assets/js/main.js"></script>
     <script>
-        // Initialize 3D logo for FAQ page
+        // Initialize 3D logo and mobile menu for FAQ page
         document.addEventListener('DOMContentLoaded', () => {
+            // Initialize Feather Icons
+            feather.replace();
+            
+            // Mobile Menu Toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+            
             const headerLogo = document.getElementById('header-logo-3d');
             if (headerLogo && typeof Logo3D !== 'undefined') {
-                new Logo3D('header-logo-3d', '../rsm.stl', {
+                new Logo3D('header-logo-3d', '../assets/RSM/rsm.stl', {
                     width: 300,
                     height: 80,
                     autoRotate: true,

@@ -24,7 +24,6 @@
       "Bash(npm run build:*)",
       "Bash(ls:*)",
       "Bash(node:*)",
-      "Bash(mv:*)",
       "WebFetch(domain:tonytocode.github.io)",
       "WebFetch(domain:mathschool-clone.same-app.com)",
       "WebFetch(domain:same-clone-httpswww-mathschool-com-5uzoryjthvl-latest.netlify.app)",
@@ -32,9 +31,7 @@
       "WebFetch(domain:docs.anthropic.com)",
       "Bash(claude mcp add:*)",
       "Bash(jq:*)",
-      "Bash(claude mcp:*)",
-      "Bash(npm run build:*)",
-      "Bash(node:*)"
+      "Bash(claude mcp:*)"
     ],
     "deny": []
   },

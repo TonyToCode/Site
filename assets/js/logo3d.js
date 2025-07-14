@@ -205,7 +205,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize header logo
     const headerLogo = document.getElementById('header-logo-3d');
     if (headerLogo) {
-        new Logo3D('header-logo-3d', './rsm.stl', {
+        new Logo3D('header-logo-3d', 'assets/RSM/rsm.stl', {
             width: 300,
             height: 80,
             autoRotate: true,
@@ -219,7 +219,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize hero logo if exists
     const heroLogo = document.getElementById('hero-logo-3d');
     if (heroLogo) {
-        new Logo3D('hero-logo-3d', './rsm.stl', {
+        new Logo3D('hero-logo-3d', 'assets/RSM/rsm.stl', {
             width: 300,
             height: 120,
             autoRotate: true,
