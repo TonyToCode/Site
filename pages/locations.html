@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="../assets/css/styles.css">
     <link rel="stylesheet" href="../assets/css/rsm-official.css">
     <script src="../assets/js/locations.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
     <style>
         html {
@@ -157,18 +159,9 @@
                     </p>
                 </div>
 
-                <!-- Interactive Google My Maps -->
+                <!-- Interactive Map with RSM Locations -->
                 <div class="bg-white rounded-xl shadow-xl overflow-hidden mb-12 google-maps-container">
-                    <!-- Google My Maps embed will show all RSM locations with custom pins -->
-                    <iframe 
-                        src="https://www.google.com/maps/d/embed?mid=1_gIQrPnpmRdjGL-U-AJLk7xkL6B2ykQ&ehbc=2E312F&hl=en" 
-                        width="100%" 
-                        height="540" 
-                        style="border:0; margin-top: -40px;" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
+                    <div id="locations-map" style="width: 100%; height: 540px;"></div>
                 </div>
 
                 <!-- Results Summary -->
@@ -267,11 +260,66 @@
         let currentMarkers = [];
         let searchTimeout;
 
+        // --- Initialize Leaflet Map for Locations Page ---
+        function initLocationsMap() {
+            const mapElement = document.getElementById('locations-map');
+            if (mapElement && typeof L !== 'undefined') {
+                // Initialize the Leaflet map
+                locationsMap = L.map('locations-map').setView([39.8283, -98.5795], 4);
+                
+                // Add OpenStreetMap tiles
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '© OpenStreetMap contributors'
+                }).addTo(locationsMap);
+                
+                // Add markers for all RSM locations
+                addLeafletMarkersToLocationsMap();
+            }
+        }
+        
+        // --- Add Leaflet Markers for RSM Locations ---
+        function addLeafletMarkersToLocationsMap() {
+            const allLocations = getAllLocations();
+            
+            allLocations.forEach(location => {
+                // Create custom marker
+                const marker = L.marker([location.lat, location.lng]).addTo(locationsMap);
+                
+                // Create popup content with website link
+                const locationURL = generateLocationURL(location);
+                const popupContent = `
+                    <div style="padding: 8px; min-width: 200px;">
+                        <h3 style="margin: 0 0 8px 0; color: #005dab; font-weight: bold;">RSM ${location.name}</h3>
+                        <div style="margin: 4px 0; color: #666; font-size: 12px;"><strong>Name:</strong> RSM ${location.name}</div>
+                        <div style="margin: 4px 0; color: #666; font-size: 12px;"><strong>Address:</strong> ${location.name}</div>
+                        <div style="margin: 4px 0; color: #666; font-size: 12px;"><strong>City:</strong> ${location.name}</div>
+                        <div style="margin: 4px 0; color: #666; font-size: 12px;"><strong>State:</strong> ${location.state}</div>
+                        <div style="margin: 4px 0; color: #666; font-size: 12px;"><strong>Country:</strong> ${location.country}</div>
+                        <div style="margin: 4px 0; color: #666; font-size: 12px;"><strong>ZIP:</strong> ${location.zip || 'N/A'}</div>
+                        <div style="margin: 4px 0; color: #666; font-size: 12px;"><strong>Latitude:</strong> ${location.lat}</div>
+                        <div style="margin: 4px 0; color: #666; font-size: 12px;"><strong>Longitude:</strong> ${location.lng}</div>
+                        <div style="margin: 4px 0 8px 0; color: #666; font-size: 12px;"><strong>Description:</strong> Russian School of Mathematics - Competition Math Program</div>
+                        <div style="margin-top: 12px;">
+                            <a href="${locationURL}" target="_blank" style="display: inline-block; background: #005dab; color: white; padding: 6px 12px; text-decoration: none; border-radius: 4px; font-size: 12px; font-weight: bold;">
+                                🏫 Visit ${location.name} Website
+                            </a>
+                        </div>
+                    </div>
+                `;
+                
+                marker.bindPopup(popupContent);
+                currentMarkers.push(marker);
+            });
+        }
+
         // Initialize the page
         document.addEventListener('DOMContentLoaded', () => {
             feather.replace();
             allLocations = getAllLocations();
             renderLocationsList(allLocations);
+            
+            // Initialize the map
+            initLocationsMap();
             
             // Setup search functionality
             const searchInput = document.getElementById('location-search');
