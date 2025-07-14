@@ -12,6 +12,8 @@
     <script src="https://threejs.org/examples/js/loaders/STLLoader.js"></script>
     <script src="assets/js/config.js"></script>
     <script src="assets/js/locations.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/rsm-official.css">
 
@@ -579,39 +581,9 @@
                     </p>
                 </div>
                 
-                <!-- Google My Maps with Custom Info Panel -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-8 google-maps-container relative">
-                    <iframe 
-                        src="https://www.google.com/maps/d/embed?mid=1_gIQrPnpmRdjGL-U-AJLk7xkL6B2ykQ&ehbc=2E312F&hl=en" 
-                        width="100%" 
-                        height="490" 
-                        style="border:0; margin-top: -40px;" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade"
-                        id="rsm-map-iframe">
-                    </iframe>
-                    
-                    <!-- Custom Location Info Panel -->
-                    <div id="location-info-panel" class="absolute top-4 left-4 bg-white rounded-lg shadow-xl p-4 w-72 hidden z-10">
-                        <div class="flex justify-between items-start mb-3">
-                            <h4 id="location-name" class="font-bold text-lg text-rsm-dark-blue"></h4>
-                            <button id="close-info-panel" class="text-gray-400 hover:text-gray-600">&times;</button>
-                        </div>
-                        <div id="location-details" class="space-y-2 text-sm text-gray-600 mb-4">
-                            <!-- Location details will be populated here -->
-                        </div>
-                        <div class="space-y-2">
-                            <a id="location-website-link" href="#" target="_blank" class="block bg-rsm-blue text-white text-center py-2 px-4 rounded-lg hover:bg-rsm-dark-blue transition-colors text-sm font-semibold">
-                                <i class="inline-block w-4 h-4 mr-2">🏫</i>
-                                Visit Branch Website
-                            </a>
-                            <a href="#contact" class="block bg-rsm-gold text-rsm-dark-blue text-center py-2 px-4 rounded-lg hover:bg-yellow-500 transition-colors text-sm font-semibold">
-                                <i class="inline-block w-4 h-4 mr-2">📅</i>
-                                Schedule Assessment
-                            </a>
-                        </div>
-                    </div>
+                <!-- Custom Interactive Google Maps with RSM Locations -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-8 google-maps-container">
+                    <div id="find-school-map" style="width: 100%; height: 490px;"></div>
                 </div>
                 
                 <div class="text-center">
@@ -648,7 +620,6 @@
                     <p class="mt-2 text-lg">
                         <a href="tel:1-800-555-6284" class="font-bold underline hover:text-white">1-800-555-6284</a>
                     </p>
-                    <p class="mt-4 text-blue-200 text-sm">(List of locations will be added here)</p>
                 </div>
             </div>
         </section>
@@ -745,77 +716,60 @@
 
 
     <script>
+        // --- Global Map Variables ---
+        let map;
+        let markers = [];
 
-        // --- Handle Map Location Info Panel ---
-        function setupLocationInfoPanel() {
-            const iframe = document.getElementById('rsm-map-iframe');
-            const infoPanel = document.getElementById('location-info-panel');
-            const closeButton = document.getElementById('close-info-panel');
-            
-            if (!iframe || !infoPanel || !closeButton) return;
-            
-            // Close panel when close button is clicked
-            closeButton.addEventListener('click', () => {
-                infoPanel.classList.add('hidden');
-            });
-            
-            // Sample locations for demonstration (in a real implementation, this would detect map clicks)
-            const sampleLocations = [
-                { name: 'RSM Newton', city: 'Newton', state: 'MA', zip: '02459', country: 'United States' },
-                { name: 'RSM Plano', city: 'Plano', state: 'TX', zip: '75023', country: 'United States' },
-                { name: 'RSM Bellevue', city: 'Bellevue', state: 'WA', zip: '98004', country: 'United States' }
-            ];
-            
-            // Add click handler to simulate location selection (for demonstration)
-            iframe.addEventListener('load', () => {
-                // Add a button to test the info panel
-                const testButton = document.createElement('button');
-                testButton.textContent = 'Click to see location info (Test)';
-                testButton.className = 'absolute bottom-4 right-4 bg-rsm-blue text-white px-4 py-2 rounded-lg shadow-lg text-sm z-20';
-                testButton.addEventListener('click', () => {
-                    showLocationInfo(sampleLocations[0]);
-                });
-                iframe.parentElement.appendChild(testButton);
-            });
+        // --- Initialize Leaflet Map for Find School Section ---
+        function initMap() {
+            const mapElement = document.getElementById('find-school-map');
+            if (mapElement && typeof L !== 'undefined') {
+                // Initialize the Leaflet map
+                map = L.map('find-school-map').setView([39.8283, -98.5795], 4);
+                
+                // Add OpenStreetMap tiles
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '© OpenStreetMap contributors'
+                }).addTo(map);
+                
+                // Add markers for all RSM locations
+                addLeafletMarkers();
+            }
         }
         
-        function showLocationInfo(locationData) {
-            const infoPanel = document.getElementById('location-info-panel');
-            const locationName = document.getElementById('location-name');
-            const locationDetails = document.getElementById('location-details');
-            const websiteLink = document.getElementById('location-website-link');
-            
-            if (!infoPanel || !locationName || !locationDetails || !websiteLink) return;
-            
-            // Find matching location from our data
+        // --- Add Leaflet Markers for RSM Locations ---
+        function addLeafletMarkers() {
             const allLocations = getAllLocations();
-            const matchedLocation = allLocations.find(loc => 
-                loc.name.toLowerCase().includes(locationData.name.toLowerCase().replace('RSM ', ''))
-            );
             
-            if (matchedLocation) {
-                // Populate panel with location info
-                locationName.textContent = locationData.name;
-                locationDetails.innerHTML = `
-                    <div><strong>Address:</strong> ${locationData.city}</div>
-                    <div><strong>City:</strong> ${locationData.city}</div>
-                    <div><strong>State:</strong> ${locationData.state}</div>
-                    <div><strong>Country:</strong> ${locationData.country}</div>
-                    <div><strong>ZIP:</strong> ${locationData.zip}</div>
-                    <div><strong>Description:</strong> Russian School of Mathematics - Competition Math Program</div>
+            allLocations.forEach(location => {
+                // Create custom marker
+                const marker = L.marker([location.lat, location.lng]).addTo(map);
+                
+                // Create popup content with website link
+                const locationURL = generateLocationURL(location);
+                const popupContent = `
+                    <div style="padding: 8px; min-width: 200px;">
+                        <h3 style="margin: 0 0 8px 0; color: #005dab; font-weight: bold;">RSM ${location.name}</h3>
+                        <div style="margin: 4px 0; color: #666; font-size: 12px;"><strong>Name:</strong> RSM ${location.name}</div>
+                        <div style="margin: 4px 0; color: #666; font-size: 12px;"><strong>Address:</strong> ${location.name}</div>
+                        <div style="margin: 4px 0; color: #666; font-size: 12px;"><strong>City:</strong> ${location.name}</div>
+                        <div style="margin: 4px 0; color: #666; font-size: 12px;"><strong>State:</strong> ${location.state}</div>
+                        <div style="margin: 4px 0; color: #666; font-size: 12px;"><strong>Country:</strong> ${location.country}</div>
+                        <div style="margin: 4px 0; color: #666; font-size: 12px;"><strong>ZIP:</strong> ${location.zip || 'N/A'}</div>
+                        <div style="margin: 4px 0; color: #666; font-size: 12px;"><strong>Latitude:</strong> ${location.lat}</div>
+                        <div style="margin: 4px 0; color: #666; font-size: 12px;"><strong>Longitude:</strong> ${location.lng}</div>
+                        <div style="margin: 4px 0 8px 0; color: #666; font-size: 12px;"><strong>Description:</strong> Russian School of Mathematics - Competition Math Program</div>
+                        <div style="margin-top: 12px;">
+                            <a href="${locationURL}" target="_blank" style="display: inline-block; background: #005dab; color: white; padding: 6px 12px; text-decoration: none; border-radius: 4px; font-size: 12px; font-weight: bold;">
+                                🏫 Visit ${location.name} Website
+                            </a>
+                        </div>
+                    </div>
                 `;
                 
-                // Set website link
-                const websiteURL = generateLocationURL(matchedLocation);
-                websiteLink.href = websiteURL;
-                websiteLink.innerHTML = `
-                    <i class="inline-block w-4 h-4 mr-2">🏫</i>
-                    Visit ${matchedLocation.name} Website
-                `;
-                
-                // Show the panel
-                infoPanel.classList.remove('hidden');
-            }
+                marker.bindPopup(popupContent);
+                markers.push(marker);
+            });
         }
 
         // --- Initial Setup ---
@@ -825,8 +779,8 @@
             // Initialize Feather Icons
             feather.replace();
             
-            // Setup location info panel
-            setupLocationInfoPanel();
+            // Initialize the map
+            initMap();
 
             // --- Mobile Menu Toggle ---
             const mobileMenuButton = document.getElementById('mobile-menu-button');
