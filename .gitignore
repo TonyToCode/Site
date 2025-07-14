@@ -4,6 +4,18 @@
 playwright-mcp/
 gh.zip
 bin/
+
+# Allow coach photos for GitHub Pages deployment
+!assets/images/*.png
+!assets/images/*.jpg
+!assets/images/*.jpeg
+!assets/images/*.gif
+!assets/images/*.bmp
+!assets/images/*.webp
+!assets/RSM/*.png
+!assets/RSM/*.gif
+
+# Block other image files
 *.png
 *.jpg
 *.jpeg
