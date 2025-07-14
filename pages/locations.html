@@ -387,14 +387,22 @@
             const card = document.createElement('div');
             card.className = 'location-card bg-rsm-light-gray p-4 rounded-lg border-2 border-transparent hover:border-rsm-secondary cursor-pointer';
             
+            const locationURL = generateLocationURL(location);
+            
             card.innerHTML = `
                 <h5 class="font-bold text-rsm-dark-blue mb-2">${location.name}</h5>
                 <p class="text-gray-600 text-sm mb-2">${formatLocationName(location)}</p>
                 ${location.zip ? `<p class="text-gray-500 text-xs mb-3">ZIP: ${location.zip}</p>` : '<div class="mb-3"></div>'}
-                <a href="../index.html#contact" class="text-rsm-blue hover:text-rsm-dark-blue font-semibold text-sm transition-colors">
-                    <i data-feather="calendar" class="w-4 h-4 inline mr-1"></i>
-                    Schedule Assessment
-                </a>
+                <div class="flex flex-col space-y-2">
+                    <a href="${locationURL}" target="_blank" class="text-rsm-blue hover:text-rsm-dark-blue font-semibold text-sm transition-colors">
+                        <i data-feather="external-link" class="w-4 h-4 inline mr-1"></i>
+                        Visit ${location.name} Website
+                    </a>
+                    <a href="../index.html#contact" class="text-rsm-gold hover:text-yellow-600 font-semibold text-sm transition-colors">
+                        <i data-feather="calendar" class="w-4 h-4 inline mr-1"></i>
+                        Schedule Assessment
+                    </a>
+                </div>
             `;
 
             // Add click handler to highlight the card
