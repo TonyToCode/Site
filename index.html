@@ -113,8 +113,7 @@
         .testimonial-track {
             display: flex;
             animation: scroll 80s linear infinite;
-            width: calc(275px * 16); /* 16 testimonials * 275px width (260px + margin) */
-            padding-left: 100px; /* Start with proper padding */
+            width: calc(275px * 24); /* 24 testimonials total (12 unique + 12 duplicates) * 275px width */
         }
         
         .testimonial-card {
@@ -145,7 +144,7 @@
                 transform: translateX(0);
             }
             100% {
-                transform: translateX(calc(-320px * 12)); /* Move by 12 cards to loop seamlessly */
+                transform: translateX(calc(-275px * 12)); /* Move exactly by 12 unique cards for seamless loop */
             }
         }
         
@@ -605,6 +604,94 @@
                                 <div class="text-center">
                                     <p class="font-bold text-rsm-dark-blue text-sm">Jennifer Park</p>
                                     <p class="text-xs text-gray-500">Parent of 9th Grader</p>
+                                </div>
+                            </div>
+                            
+                            <div class="testimonial-card">
+                                <img src="https://placehold.co/80x80/005dab/ffffff?text=EK" alt="Student photo" class="w-20 h-20 rounded-full mx-auto mb-4 border-4 border-white shadow-lg">
+                                <blockquote class="text-gray-600 italic text-sm mb-4">
+                                    "From struggling with basic algebra to qualifying for AIME in two years. RSM's systematic approach works."
+                                </blockquote>
+                                <div class="text-center">
+                                    <p class="font-bold text-rsm-dark-blue text-sm">Ethan Kim</p>
+                                    <p class="text-xs text-gray-500">AIME Qualifier, Grade 12</p>
+                                </div>
+                            </div>
+                            
+                            <div class="testimonial-card">
+                                <img src="https://placehold.co/80x80/005dab/ffffff?text=RW" alt="Parent photo" class="w-20 h-20 rounded-full mx-auto mb-4 border-4 border-white shadow-lg">
+                                <blockquote class="text-gray-600 italic text-sm mb-4">
+                                    "My daughter went from hating math to loving it. Now she wants to major in mathematics at MIT!"
+                                </blockquote>
+                                <div class="text-center">
+                                    <p class="font-bold text-rsm-dark-blue text-sm">Rachel Williams</p>
+                                    <p class="text-xs text-gray-500">Parent of 11th Grader</p>
+                                </div>
+                            </div>
+                            
+                            <div class="testimonial-card">
+                                <img src="https://placehold.co/80x80/005dab/ffffff?text=DL" alt="Student photo" class="w-20 h-20 rounded-full mx-auto mb-4 border-4 border-white shadow-lg">
+                                <blockquote class="text-gray-600 italic text-sm mb-4">
+                                    "The collaborative problem-solving sessions taught me that mathematics is beautiful and creative, not just computational."
+                                </blockquote>
+                                <div class="text-center">
+                                    <p class="font-bold text-rsm-dark-blue text-sm">David Lee</p>
+                                    <p class="text-xs text-gray-500">Student, Grade 7</p>
+                                </div>
+                            </div>
+                            
+                            <div class="testimonial-card">
+                                <img src="https://placehold.co/80x80/005dab/ffffff?text=AN" alt="Parent photo" class="w-20 h-20 rounded-full mx-auto mb-4 border-4 border-white shadow-lg">
+                                <blockquote class="text-gray-600 italic text-sm mb-4">
+                                    "RSM coaches don't just teach problems—they teach students how to become mathematical thinkers for life."
+                                </blockquote>
+                                <div class="text-center">
+                                    <p class="font-bold text-rsm-dark-blue text-sm">Anna Nguyen</p>
+                                    <p class="text-xs text-gray-500">Parent of Twin 6th Graders</p>
+                                </div>
+                            </div>
+                            
+                            <div class="testimonial-card">
+                                <img src="https://placehold.co/80x80/005dab/ffffff?text=MS" alt="Student photo" class="w-20 h-20 rounded-full mx-auto mb-4 border-4 border-white shadow-lg">
+                                <blockquote class="text-gray-600 italic text-sm mb-4">
+                                    "Making the IMO team was the culmination of years of dedicated training at RSM. The foundation they built was incredible."
+                                </blockquote>
+                                <div class="text-center">
+                                    <p class="font-bold text-rsm-dark-blue text-sm">Michael Smith</p>
+                                    <p class="text-xs text-gray-500">IMO Team Member, Grade 12</p>
+                                </div>
+                            </div>
+                            
+                            <div class="testimonial-card">
+                                <img src="https://placehold.co/80x80/005dab/ffffff?text=LT" alt="Parent photo" class="w-20 h-20 rounded-full mx-auto mb-4 border-4 border-white shadow-lg">
+                                <blockquote class="text-gray-600 italic text-sm mb-4">
+                                    "The individual attention and personalized learning path made all the difference for our gifted but struggling child."
+                                </blockquote>
+                                <div class="text-center">
+                                    <p class="font-bold text-rsm-dark-blue text-sm">Linda Thompson</p>
+                                    <p class="text-xs text-gray-500">Parent of 5th Grader</p>
+                                </div>
+                            </div>
+                            
+                            <div class="testimonial-card">
+                                <img src="https://placehold.co/80x80/005dab/ffffff?text=JR" alt="Student photo" class="w-20 h-20 rounded-full mx-auto mb-4 border-4 border-white shadow-lg">
+                                <blockquote class="text-gray-600 italic text-sm mb-4">
+                                    "Purple Comet was my first competition. Now I'm preparing for USAMO. RSM made that journey possible."
+                                </blockquote>
+                                <div class="text-center">
+                                    <p class="font-bold text-rsm-dark-blue text-sm">Jessica Rodriguez</p>
+                                    <p class="text-xs text-gray-500">Student, Grade 10</p>
+                                </div>
+                            </div>
+                            
+                            <div class="testimonial-card">
+                                <img src="https://placehold.co/80x80/005dab/ffffff?text=KB" alt="Parent photo" class="w-20 h-20 rounded-full mx-auto mb-4 border-4 border-white shadow-lg">
+                                <blockquote class="text-gray-600 italic text-sm mb-4">
+                                    "RSM taught my son that struggle is part of learning. Now he embraces challenges instead of avoiding them."
+                                </blockquote>
+                                <div class="text-center">
+                                    <p class="font-bold text-rsm-dark-blue text-sm">Kevin Brown</p>
+                                    <p class="text-xs text-gray-500">Parent of 8th Grader</p>
                                 </div>
                             </div>
                         </div>
