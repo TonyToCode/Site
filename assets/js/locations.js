@@ -165,7 +165,33 @@ function formatLocationName(location) {
     }
 }
 
+// Generate website URL for a location
+function generateLocationURL(location) {
+    // If location already has a website URL, use it
+    if (location.website) {
+        return location.website;
+    }
+    
+    // Generate URL based on location name only (RSM URLs don't include state suffixes)
+    const baseURL = "https://www.mathschool.com/locations/";
+    let locationSlug = location.name.toLowerCase()
+        .replace(/[^a-z0-9\s-]/g, '') // Remove special characters
+        .replace(/\s+/g, '-') // Replace spaces with hyphens
+        .replace(/-+/g, '-') // Replace multiple hyphens with single
+        .trim();
+    
+    // For most RSM locations, URLs are just the location name without state
+    // Only add country suffix for non-US locations
+    if (location.country === "Canada") {
+        locationSlug += `-canada`;
+    } else if (location.country !== "US") {
+        locationSlug += `-${location.country.toLowerCase()}`;
+    }
+    
+    return baseURL + locationSlug;
+}
+
 // Export for use in other scripts
 if (typeof module !== 'undefined' && module.exports) {
-    module.exports = { RSM_LOCATIONS, getAllLocations, searchLocations, formatLocationName };
+    module.exports = { RSM_LOCATIONS, getAllLocations, searchLocations, formatLocationName, generateLocationURL };
 }
