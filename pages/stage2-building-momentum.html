@@ -251,28 +251,29 @@
             
             <div class="max-w-3xl mx-auto">
                 <div class="sample-problem">
-                    <h3 class="text-xl font-bold text-rsm-blue mb-4">Number Theory Challenge</h3>
+                    <h3 class="text-xl font-bold text-rsm-blue mb-4">Zari the Zebra Game Board Problem</h3>
                     <p class="text-gray-700 mb-4">
-                        The sum of the digits of a two-digit number is 12. When the digits are reversed, the new number is 18 more than the original number. What is the original number?
+                        Zari the Zebra starts at square 1 on a 100-square game board. She flips a fair coin:
+                    </p>
+                    <ul class="text-gray-700 mb-4 list-disc list-inside">
+                        <li>If it lands heads, she moves forward 1 square.</li>
+                        <li>If it lands tails, she moves forward 2 squares.</li>
+                    </ul>
+                    <p class="text-gray-700 mb-4">
+                        She keeps flipping the coin and moving forward until she lands exactly on square 100.
                     </p>
                     <p class="text-gray-700 mb-4">
-                        <strong>Answer choices:</strong> (A) 39 (B) 48 (C) 57 (D) 75 (E) 84
+                        <strong>What is the minimum number of coin flips it could take for Zari to land exactly on square 100?</strong>
                     </p>
                     
                     <div class="mt-6 p-4 bg-blue-50 rounded-lg">
-                        <h4 class="font-bold text-rsm-blue mb-2">Solution Approach:</h4>
-                        <p class="text-gray-700 text-sm mb-2">
-                            Let the original number be 10a + b, where a and b are the tens and units digits.
-                        </p>
-                        <p class="text-gray-700 text-sm mb-2">
-                            Given: a + b = 12 and (10b + a) - (10a + b) = 18
-                        </p>
-                        <p class="text-gray-700 text-sm mb-2">
-                            Simplifying: 9b - 9a = 18, so b - a = 2
-                        </p>
-                        <p class="text-gray-700 text-sm">
-                            Solving the system: a = 5, b = 7, so the original number is 57.
-                        </p>
+                        <h4 class="font-bold text-rsm-blue mb-2">Teaching Approach:</h4>
+                        <div class="text-gray-700 text-sm space-y-2">
+                            <p>Read the problem aloud and ask what Zari is trying to do (reach square 100). Ask what her possible moves are (1 or 2 steps).</p>
+                            <p>Say we want the fewest flips, so we should use more 2s than 1s. Set up the equation: h + 2t = 100.</p>
+                            <p>To minimize h + t, we maximize t. Try t = 50, h = 0 → total flips = 50.</p>
+                            <p>That's the minimum. Wrap up by asking what strategies helped and highlight efficiency.</p>
+                        </div>
                     </div>
                 </div>
             </div>

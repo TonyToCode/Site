@@ -31,7 +31,9 @@
       "WebFetch(domain:docs.anthropic.com)",
       "Bash(claude mcp add:*)",
       "Bash(jq:*)",
-      "Bash(claude mcp:*)"
+      "Bash(claude mcp:*)",
+      "Bash(git checkout:*)",
+      "Bash(git stash:*)"
     ],
     "deny": []
   },

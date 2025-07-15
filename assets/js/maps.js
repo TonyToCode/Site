@@ -58,13 +58,19 @@ function addLocationMarkers(locationsToShow = null) {
         });
 
         // Create info window content
+        const locationURL = generateLocationURL(location);
         const infoContent = `
-            <div style="padding: 8px; max-width: 200px;">
+            <div style="padding: 8px; max-width: 250px;">
                 <h3 style="margin: 0 0 8px 0; color: #005dab; font-weight: bold;">${location.name}</h3>
                 <p style="margin: 0; color: #666; font-size: 14px;">${formatLocationName(location)}</p>
                 ${location.zip ? `<p style="margin: 4px 0 0 0; color: #666; font-size: 12px;">ZIP: ${location.zip}</p>` : ''}
-                <div style="margin-top: 8px;">
-                    <a href="#contact" style="color: #005dab; text-decoration: none; font-weight: bold; font-size: 12px;">Schedule Assessment</a>
+                <div style="margin-top: 12px; display: flex; flex-direction: column; gap: 6px;">
+                    <a href="${locationURL}" target="_blank" style="color: #005dab; text-decoration: none; font-weight: bold; font-size: 12px; display: inline-flex; align-items: center;">
+                        🏫 Visit ${location.name} Website
+                    </a>
+                    <a href="#contact" style="color: #94c041; text-decoration: none; font-weight: bold; font-size: 12px; display: inline-flex; align-items: center;">
+                        📅 Schedule Assessment
+                    </a>
                 </div>
             </div>
         `;

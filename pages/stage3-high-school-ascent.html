@@ -189,7 +189,8 @@
                 </p>
             </div>
             
-            <div class="grid lg:grid-cols-2 gap-8">
+            <!-- Track Descriptions -->
+            <div class="grid lg:grid-cols-2 gap-8 mb-12">
                 <div class="track-card">
                     <h3 class="text-2xl font-bold text-rsm-dark-blue mb-4">AMC 10 Focus Track</h3>
                     <p class="text-gray-600 mb-4">
@@ -238,6 +239,68 @@
                             <span>Olympiad-style problem approaches</span>
                         </li>
                     </ul>
+                </div>
+            </div>
+            
+            <!-- Sample Problems -->
+            <div class="grid lg:grid-cols-2 gap-8">
+                <!-- AMC 10 Sample Problem -->
+                <div class="p-6 bg-amber-50 rounded-lg border border-amber-200">
+                    <h4 class="text-xl font-bold text-rsm-gold mb-4">Sample AMC 10 Problem</h4>
+                    <p class="text-gray-700 mb-4">
+                        How many three-digit numbers with all different digits have digits summing to 18 and increase by 198 when reversed?
+                    </p>
+                    <div class="grid grid-cols-5 gap-2 mb-4">
+                        <div class="bg-white p-2 rounded text-center text-sm font-medium">A) 1</div>
+                        <div class="bg-white p-2 rounded text-center text-sm font-medium">B) 2</div>
+                        <div class="bg-white p-2 rounded text-center text-sm font-medium">C) 3</div>
+                        <div class="bg-white p-2 rounded text-center text-sm font-medium">D) 4</div>
+                        <div class="bg-white p-2 rounded text-center text-sm font-medium">E) 5</div>
+                    </div>
+                    
+                    <div class="mt-4 p-3 bg-white rounded border border-amber-100">
+                        <h5 class="font-bold text-rsm-gold mb-2 text-sm">Teaching Approach:</h5>
+                        <div class="text-gray-600 text-xs space-y-1">
+                            <p>Start by identifying the key conditions: digits sum to 18, reversed number is 198 greater, and digits are different.</p>
+                            <p>Set digits as a, b, c and write the equation for the difference when reversed: 99(c - a) = 198, so c - a = 2.</p>
+                            <p>Use the sum condition: a + b + c = 18, substitute c = a + 2 to get b = 16 - 2a.</p>
+                            <p>Check values of a from 1 to 9, only keep those where b and c are digits 0–9.</p>
+                            <p>Count all valid triples (a, b, c) that satisfy these and have distinct digits.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- AMC 12 Sample Problem -->
+                <div class="p-6 bg-blue-50 rounded-lg border border-blue-200">
+                    <h4 class="text-xl font-bold text-rsm-blue mb-4">Sample AMC 12 Problem</h4>
+                    <p class="text-gray-700 mb-4">
+                        A sequence of numbers is defined as follows: a₁=2, and for every n≥1,
+                    </p>
+                    <p class="text-gray-700 mb-4 text-center font-mono text-lg">
+                        aₙ₊₁ = 3aₙ + 1
+                    </p>
+                    <p class="text-gray-700 mb-4">
+                        What is the remainder when a₁₀ is divided by 7?
+                    </p>
+                    <div class="grid grid-cols-5 gap-2 mb-4">
+                        <div class="bg-white p-2 rounded text-center text-sm font-medium">A) 0</div>
+                        <div class="bg-white p-2 rounded text-center text-sm font-medium">B) 1</div>
+                        <div class="bg-white p-2 rounded text-center text-sm font-medium">C) 2</div>
+                        <div class="bg-white p-2 rounded text-center text-sm font-medium">D) 3</div>
+                        <div class="bg-white p-2 rounded text-center text-sm font-medium">E) 4</div>
+                    </div>
+                    
+                    <div class="mt-4 p-3 bg-white rounded border border-blue-100">
+                        <h5 class="font-bold text-rsm-blue mb-2 text-sm">Teaching Approach:</h5>
+                        <div class="text-gray-600 text-xs space-y-1">
+                            <p>Start by understanding the recursive formula aₙ₊₁ = 3aₙ + 1.</p>
+                            <p>Explain the problem asks for the remainder of a₁₀ mod 7, so introduce modular arithmetic.</p>
+                            <p>Calculate the first few terms modulo 7 to identify a pattern or cycle.</p>
+                            <p>Show how to use patterns or the concept of modular cycles to avoid large computations.</p>
+                            <p>Guide students to find a₁≡2 mod 7, then a₂, etc., until they detect a repeating pattern.</p>
+                            <p>Use the pattern to find the remainder of a₁₀ without calculating the full number.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -317,38 +380,83 @@
         </div>
     </section>
 
-    <!-- Sample Problem -->
+    <!-- Sample Problems -->
     <section class="py-16 bg-rsm-light-gray">
         <div class="container mx-auto px-6">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-rsm-dark-blue mb-4">Sample AMC 12 Problem</h2>
+                <h2 class="text-3xl font-bold text-rsm-dark-blue mb-4">Sample Problems</h2>
                 <p class="text-gray-600 max-w-2xl mx-auto">
-                    Here's an example of the challenging problems our Stage 3 students master:
+                    Here are examples of the challenging problems our Stage 3 students master:
                 </p>
             </div>
             
-            <div class="max-w-3xl mx-auto">
+            <div class="max-w-4xl mx-auto space-y-8">
+                <!-- AMC 10 Focus Problem -->
                 <div class="sample-problem">
-                    <h3 class="text-xl font-bold text-rsm-blue mb-4">Complex Numbers and Geometry</h3>
+                    <div class="mb-6">
+                        <h3 class="text-xl font-bold text-rsm-gold mb-2">AMC 10 Focus Track</h3>
+                    </div>
+                    
+                    <h4 class="text-lg font-bold text-rsm-dark-blue mb-4">Problem:</h4>
                     <p class="text-gray-700 mb-4">
-                        Let z₁, z₂, z₃ be complex numbers such that |z₁| = |z₂| = |z₃| = 1 and z₁ + z₂ + z₃ = 0. 
-                        If z₁z₂ + z₂z₃ + z₃z₁ = 0, find |z₁ - z₂|².
+                        How many three-digit numbers with all different digits have digits summing to 18 and increase by 198 when reversed?
                     </p>
-                    <p class="text-gray-700 mb-4">
-                        <strong>Answer choices:</strong> (A) 1 (B) 2 (C) 3 (D) 4 (E) 6
-                    </p>
+                    <div class="grid grid-cols-5 gap-4 mb-6">
+                        <div class="bg-gray-100 p-2 rounded text-center">A) 1</div>
+                        <div class="bg-gray-100 p-2 rounded text-center">B) 2</div>
+                        <div class="bg-gray-100 p-2 rounded text-center">C) 3</div>
+                        <div class="bg-gray-100 p-2 rounded text-center">D) 4</div>
+                        <div class="bg-gray-100 p-2 rounded text-center">E) 5</div>
+                    </div>
                     
                     <div class="mt-6 p-4 bg-blue-50 rounded-lg">
-                        <h4 class="font-bold text-rsm-blue mb-2">Solution Strategy:</h4>
-                        <p class="text-gray-700 text-sm mb-2">
-                            Since z₁, z₂, z₃ lie on the unit circle and sum to zero, they form vertices of a triangle centered at the origin.
-                        </p>
-                        <p class="text-gray-700 text-sm mb-2">
-                            Using the constraint z₁z₂ + z₂z₃ + z₃z₁ = 0 and properties of complex numbers on the unit circle.
-                        </p>
-                        <p class="text-gray-700 text-sm">
-                            This leads to the conclusion that the triangle is equilateral, giving |z₁ - z₂|² = 3.
-                        </p>
+                        <h4 class="font-bold text-rsm-blue mb-2">Teaching Approach:</h4>
+                        <div class="text-gray-700 text-sm space-y-2">
+                            <p>Start by identifying the key conditions: digits sum to 18, reversed number is 198 greater, and digits are different.</p>
+                            <p>Set digits as a, b, c and write the equation for the difference when reversed: 99(c - a) = 198, so c - a = 2.</p>
+                            <p>Use the sum condition: a + b + c = 18, substitute c = a + 2 to get b = 16 - 2a.</p>
+                            <p>Check values of a from 1 to 9, only keep those where b and c are digits 0–9.</p>
+                            <p>Count all valid triples (a, b, c) that satisfy these and have distinct digits.</p>
+                            <p>The answer is the total number of such numbers.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- AMC 12 Focus Problem -->
+                <div class="sample-problem">
+                    <div class="mb-6">
+                        <h3 class="text-xl font-bold text-rsm-blue mb-2">AMC 12 Focus Track</h3>
+                    </div>
+                    
+                    <h4 class="text-lg font-bold text-rsm-dark-blue mb-4">Problem:</h4>
+                    <p class="text-gray-700 mb-4">
+                        A sequence of numbers is defined as follows: a₁=2, and for every n≥1,
+                    </p>
+                    <p class="text-gray-700 mb-4 text-center font-mono text-lg">
+                        aₙ₊₁ = 3aₙ + 1
+                    </p>
+                    <p class="text-gray-700 mb-4">
+                        What is the remainder when a₁₀ is divided by 7?
+                    </p>
+                    <div class="grid grid-cols-5 gap-4 mb-6">
+                        <div class="bg-gray-100 p-2 rounded text-center">A) 0</div>
+                        <div class="bg-gray-100 p-2 rounded text-center">B) 1</div>
+                        <div class="bg-gray-100 p-2 rounded text-center">C) 2</div>
+                        <div class="bg-gray-100 p-2 rounded text-center">D) 3</div>
+                        <div class="bg-gray-100 p-2 rounded text-center">E) 4</div>
+                    </div>
+                    
+                    <div class="mt-6 p-4 bg-blue-50 rounded-lg">
+                        <h4 class="font-bold text-rsm-blue mb-2">Teaching Approach:</h4>
+                        <div class="text-gray-700 text-sm space-y-2">
+                            <p>Start by understanding the recursive formula aₙ₊₁ = 3aₙ + 1.</p>
+                            <p>Explain the problem asks for the remainder of a₁₀ mod 7, so introduce modular arithmetic.</p>
+                            <p>Calculate the first few terms modulo 7 to identify a pattern or cycle.</p>
+                            <p>Show how to use patterns or the concept of modular cycles to avoid large computations.</p>
+                            <p>Guide students to find a₁≡2 mod 7, then a₂, etc., until they detect a repeating pattern.</p>
+                            <p>Use the pattern to find the remainder of a₁₀ without calculating the full number.</p>
+                            <p>Encourage checking work carefully to avoid mistakes in modular arithmetic.</p>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stage 3: High School Ascent | RSM Competition Program</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/rsm-official.css">
+    
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: var(--rsm-primary);
+            color: white;
+            padding: 8px;
+            text-decoration: none;
+            border-radius: 0 0 4px 4px;
+            z-index: 1000;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        .skip-link:focus {
+            top: 0;
+        }
+        
+        .rsm-nav-link:focus,
+        .btn-primary:focus,
+        button:focus {
+            outline: 2px solid var(--rsm-secondary);
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+
+    <!-- Skip Navigation Links -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="rsm-header sticky top-0 z-40" role="banner">
+        <div class="rsm-container">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo Section with SVG -->
+                <a href="../index.html" class="flex items-center group" aria-label="RSM Competition Program - Home">
+                    <img src="../assets/RSM/rsm.svg" alt="RSM Competition Program Logo" class="h-12 w-auto transition-transform group-hover:scale-105">
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <nav class="hidden xl:flex items-center space-x-1" role="navigation" aria-label="Main navigation">
+                    <a href="../index.html#why-rsm" class="rsm-nav-link group">
+                        <i data-feather="target" class="w-4 h-4 mr-2 flex-shrink-0 group-hover:text-rsm-secondary" aria-hidden="true"></i>
+                        <span class="hidden 2xl:inline">Why Competitions?</span>
+                        <span class="2xl:hidden">Why?</span>
+                    </a>
+                    <a href="../index.html#pathway" class="rsm-nav-link group">
+                        <i data-feather="trending-up" class="w-4 h-4 mr-2 flex-shrink-0 group-hover:text-rsm-secondary" aria-hidden="true"></i>
+                        <span class="hidden 2xl:inline">The RSM Pathway</span>
+                        <span class="2xl:hidden">Pathway</span>
+                    </a>
+                    <a href="../index.html#programs" class="rsm-nav-link group">
+                        <i data-feather="book-open" class="w-4 h-4 mr-2 flex-shrink-0 group-hover:text-rsm-secondary" aria-hidden="true"></i>
+                        <span>Programs</span>
+                    </a>
+                    <a href="../index.html#coaches" class="rsm-nav-link group">
+                        <i data-feather="users" class="w-4 h-4 mr-2 flex-shrink-0 group-hover:text-rsm-secondary" aria-hidden="true"></i>
+                        <span class="hidden 2xl:inline">Our Team</span>
+                        <span class="2xl:hidden">Team</span>
+                    </a>
+                    <a href="../index.html#contact" class="rsm-nav-link group">
+                        <i data-feather="mail" class="w-4 h-4 mr-2 flex-shrink-0 group-hover:text-rsm-secondary" aria-hidden="true"></i>
+                        <span>Contact</span>
+                    </a>
+                </nav>
+                
+                <!-- CTA Button -->
+                <div class="hidden md:flex items-center space-x-3">
+                    <a href="../index.html#contact" class="btn-primary flex-shrink-0">
+                        <i data-feather="calendar" class="w-4 h-4 mr-2 flex-shrink-0" aria-hidden="true"></i>
+                        <span class="hidden xl:inline">Schedule Assessment</span>
+                        <span class="xl:hidden">Schedule</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" role="main">
+        <!-- Breadcrumb -->
+        <section class="bg-rsm-light-gray py-4">
+            <div class="rsm-container">
+                <nav class="flex items-center space-x-2 text-sm">
+                    <a href="../index.html" class="text-rsm-blue hover:text-rsm-dark-blue">Home</a>
+                    <i data-feather="chevron-right" class="w-4 h-4 text-gray-400"></i>
+                    <a href="../index.html#pathway" class="text-rsm-blue hover:text-rsm-dark-blue">RSM Pathway</a>
+                    <i data-feather="chevron-right" class="w-4 h-4 text-gray-400"></i>
+                    <span class="text-gray-600">Stage 3: High School Ascent</span>
+                </nav>
+            </div>
+        </section>
+
+        <!-- Hero Section -->
+        <section class="py-16 bg-gradient-to-br from-rsm-blue to-rsm-dark-blue text-white">
+            <div class="rsm-container">
+                <div class="max-w-4xl mx-auto text-center">
+                    <div class="inline-block bg-rsm-secondary text-rsm-dark-blue px-4 py-2 rounded-full font-bold text-sm mb-6">
+                        STAGE 3
+                    </div>
+                    <h1 class="text-4xl md:text-5xl font-bold mb-6">High School Ascent</h1>
+                    <p class="text-xl md:text-2xl mb-4 text-blue-100">Grades 9-12</p>
+                    <p class="text-lg md:text-xl max-w-3xl mx-auto">
+                        Mastery of topics for the AMC 10/12 through our Advanced MCP tracks.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Overview Section -->
+        <section class="py-16 bg-white">
+            <div class="rsm-container">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-3xl md:text-4xl font-bold text-rsm-dark-blue mb-8 text-center">Stage Overview</h2>
+                    
+                    <div class="grid md:grid-cols-2 gap-8 mb-12">
+                        <div class="bg-rsm-light-gray rounded-xl p-6">
+                            <h3 class="text-2xl font-bold text-rsm-dark-blue mb-4">Learning Objectives</h3>
+                            <ul class="space-y-3 text-gray-700">
+                                <li class="flex items-start">
+                                    <i data-feather="check-circle" class="w-5 h-5 text-green-500 mr-3 mt-1 flex-shrink-0"></i>
+                                    <span>Master advanced topics for AMC 10/12 success</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-feather="check-circle" class="w-5 h-5 text-green-500 mr-3 mt-1 flex-shrink-0"></i>
+                                    <span>Develop sophisticated problem-solving techniques</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-feather="check-circle" class="w-5 h-5 text-green-500 mr-3 mt-1 flex-shrink-0"></i>
+                                    <span>Prepare for AIME qualification</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-feather="check-circle" class="w-5 h-5 text-green-500 mr-3 mt-1 flex-shrink-0"></i>
+                                    <span>Build college application portfolio</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-blue-50 rounded-xl p-6">
+                            <h3 class="text-2xl font-bold text-rsm-blue mb-4">Key Competitions</h3>
+                            <ul class="space-y-3 text-gray-700">
+                                <li class="flex items-start">
+                                    <i data-feather="star" class="w-5 h-5 text-rsm-gold mr-3 mt-1 flex-shrink-0"></i>
+                                    <span><strong>AMC 10/12:</strong> American Mathematics Competitions</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-feather="star" class="w-5 h-5 text-rsm-gold mr-3 mt-1 flex-shrink-0"></i>
+                                    <span><strong>AIME:</strong> American Invitational Mathematics Examination</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-feather="star" class="w-5 h-5 text-rsm-gold mr-3 mt-1 flex-shrink-0"></i>
+                                    <span><strong>State/Regional:</strong> Advanced local competitions</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sample Problems Section -->
+        <section class="py-16 bg-rsm-light-gray">
+            <div class="rsm-container">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-3xl md:text-4xl font-bold text-rsm-dark-blue mb-8 text-center">Sample Problems</h2>
+                    
+                    <!-- AMC 10 Focus Problem -->
+                    <div class="bg-white rounded-xl shadow-lg p-8 mb-8">
+                        <div class="mb-6">
+                            <h3 class="text-2xl font-bold text-rsm-gold mb-2">AMC 10 Focus Track</h3>
+                        </div>
+                        
+                        <div class="mb-8">
+                            <h4 class="text-xl font-bold text-rsm-dark-blue mb-4">Problem:</h4>
+                            <div class="text-lg text-gray-700 leading-relaxed">
+                                <p class="mb-4">How many three-digit numbers with all different digits have digits summing to 18 and increase by 198 when reversed?</p>
+                                <div class="grid grid-cols-5 gap-4 text-center">
+                                    <div class="bg-gray-100 p-2 rounded">A) 1</div>
+                                    <div class="bg-gray-100 p-2 rounded">B) 2</div>
+                                    <div class="bg-gray-100 p-2 rounded">C) 3</div>
+                                    <div class="bg-gray-100 p-2 rounded">D) 4</div>
+                                    <div class="bg-gray-100 p-2 rounded">E) 5</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="border-t pt-6">
+                            <h4 class="text-xl font-bold text-rsm-blue mb-4">Teaching Approach:</h4>
+                            <div class="text-gray-700 leading-relaxed space-y-3">
+                                <p>Start by identifying the key conditions: digits sum to 18, reversed number is 198 greater, and digits are different.</p>
+                                <p>Set digits as a, b, c and write the equation for the difference when reversed: 99(c - a) = 198, so c - a = 2.</p>
+                                <p>Use the sum condition: a + b + c = 18, substitute c = a + 2 to get b = 16 - 2a.</p>
+                                <p>Check values of a from 1 to 9, only keep those where b and c are digits 0–9.</p>
+                                <p>Count all valid triples (a, b, c) that satisfy these and have distinct digits.</p>
+                                <p>The answer is the total number of such numbers.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- AMC 12 Focus Problem -->
+                    <div class="bg-white rounded-xl shadow-lg p-8">
+                        <div class="mb-6">
+                            <h3 class="text-2xl font-bold text-rsm-blue mb-2">AMC 12 Focus Track</h3>
+                        </div>
+                        
+                        <div class="mb-8">
+                            <h4 class="text-xl font-bold text-rsm-dark-blue mb-4">Problem:</h4>
+                            <div class="text-lg text-gray-700 leading-relaxed">
+                                <p class="mb-4">A sequence of numbers is defined as follows: a₁=2, and for every n≥1,</p>
+                                <p class="mb-4 text-center font-mono text-xl">aₙ₊₁ = 3aₙ + 1</p>
+                                <p class="mb-4">What is the remainder when a₁₀ is divided by 7?</p>
+                                <div class="grid grid-cols-5 gap-4 text-center">
+                                    <div class="bg-gray-100 p-2 rounded">A) 0</div>
+                                    <div class="bg-gray-100 p-2 rounded">B) 1</div>
+                                    <div class="bg-gray-100 p-2 rounded">C) 2</div>
+                                    <div class="bg-gray-100 p-2 rounded">D) 3</div>
+                                    <div class="bg-gray-100 p-2 rounded">E) 4</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="border-t pt-6">
+                            <h4 class="text-xl font-bold text-rsm-blue mb-4">Teaching Approach:</h4>
+                            <div class="text-gray-700 leading-relaxed space-y-3">
+                                <p>Start by understanding the recursive formula aₙ₊₁ = 3aₙ + 1.</p>
+                                <p>Explain the problem asks for the remainder of a₁₀ mod 7, so introduce modular arithmetic.</p>
+                                <p>Calculate the first few terms modulo 7 to identify a pattern or cycle.</p>
+                                <p>Show how to use patterns or the concept of modular cycles to avoid large computations.</p>
+                                <p>Guide students to find a₁≡2 mod 7, then a₂, etc., until they detect a repeating pattern.</p>
+                                <p>Use the pattern to find the remainder of a₁₀ without calculating the full number.</p>
+                                <p>Encourage checking work carefully to avoid mistakes in modular arithmetic.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Development Section -->
+        <section class="py-16 bg-white">
+            <div class="rsm-container">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-3xl md:text-4xl font-bold text-rsm-dark-blue mb-8 text-center">Skills Development</h2>
+                    
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="text-center">
+                            <div class="bg-rsm-primary text-white w-16 h-16 rounded-full mx-auto flex items-center justify-center mb-6">
+                                <i data-feather="cpu" class="w-8 h-8"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-rsm-dark-blue mb-3">Advanced Problem Solving</h3>
+                            <p class="text-gray-600">Master complex techniques including modular arithmetic, number theory, and advanced combinatorics.</p>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="bg-rsm-primary text-white w-16 h-16 rounded-full mx-auto flex items-center justify-center mb-6">
+                                <i data-feather="award" class="w-8 h-8"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-rsm-dark-blue mb-3">Competition Excellence</h3>
+                            <p class="text-gray-600">Develop the skills and confidence needed to excel in AMC 10/12 and qualify for AIME.</p>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="bg-rsm-primary text-white w-16 h-16 rounded-full mx-auto flex items-center justify-center mb-6">
+                                <i data-feather="trending-up" class="w-8 h-8"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-rsm-dark-blue mb-3">College Readiness</h3>
+                            <p class="text-gray-600">Build a strong mathematical foundation and competition record for elite college applications.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="py-16 bg-rsm-blue text-white">
+            <div class="rsm-container">
+                <div class="max-w-3xl mx-auto text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Ascend to High School Excellence?</h2>
+                    <p class="text-lg md:text-xl mb-8 text-blue-100">
+                        Stage 3 prepares students for the most challenging high school competitions and builds the skills needed for AIME qualification.
+                    </p>
+                    <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                        <a href="../index.html#contact" class="btn-primary bg-rsm-gold text-rsm-dark-blue hover:bg-yellow-500">
+                            <i data-feather="calendar" class="w-5 h-5 mr-2"></i>
+                            Schedule Free Assessment
+                        </a>
+                        <a href="../index.html#pathway" class="bg-white/10 backdrop-blur-sm text-white border-2 border-white/30 hover:bg-white hover:text-rsm-primary font-semibold py-3 px-6 rounded-lg transition-all">
+                            <i data-feather="arrow-left" class="w-5 h-5 mr-2 inline"></i>
+                            Back to Pathway
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-rsm-primary text-white">
+        <div class="rsm-container py-8">
+            <div class="text-center">
+                <p class="text-white/80">&copy; 2025 Russian School of Mathematics. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            feather.replace();
+        });
+    </script>
+
+</body>
+</html>
